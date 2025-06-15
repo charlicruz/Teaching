@@ -1,1 +1,14 @@
 https://zenodo.org/records/15051349
+This tutorial is part of the Digital Electronics course, in the Telecommunication Technologies, Communication Electronics, Telecommunication Systems Engineering, and Telematics Engineering degrees at the University of Alcalá.
+
+The objective of this tutorial is to explain how to use the Quartus tool by guiding students through the creation of a basic project. This project involves designing and simulating a combinational system composed of a multiplexer and an adder. Through this practice, students gain essential knowledge about digital design and the implementation of logic circuits in a CPLD board.
+
+This material is intended for students and professionals interested in digital system design, providing a solid knowledge for using development tools in the field of digital electronics.
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Este tutorial forma parte de la asignatura Electrónica Digital, impartida en los grados en Tecnologías de la Telecomunicación, Electrónica de Comunicaciones, Ingeniería en Sistemas de Telecomunicación e Ingeniería Telemática de la Universidad de Alcalá.
+
+El objetivo de este tutorial es explicar el funcionamiento de la herramienta Quartus, mostrando paso a paso la realización de un proyecto básico. En este proyecto, se diseña y simula un sistema combinacional compuesto por un multiplexor y un sumador. A través de esta práctica, los estudiantes adquieren conocimientos fundamentales sobre el diseño digital y la implementación de circuitos lógicos en una tarjeta CPLD.
+
+Este material está dirigido a estudiantes y profesionales interesados en el diseño de sistemas digitales, proporcionando una base sólida para el uso de herramientas de desarrollo en el ámbito de la electrónica digital.
