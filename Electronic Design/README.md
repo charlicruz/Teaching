@@ -43,11 +43,7 @@ El repositorio se actualizará periódicamente con nuevo material académico.
 
 ## 👨‍🏫 Asignatura impartida en los grados
 
-- Grado en Tecnologías de la Telecomunicación
-- Grado en Electrónica de Comunicaciones
 - Grado en Ingeniería en Sistemas de Telecomunicación
-- Grado en Ingeniería Telemática
-
 ---
 
 ## 🛠 Herramientas recomendadas
