@@ -15,7 +15,7 @@
 - 🛠️ **Ejercicios prácticos de diseño electrónico**  
   [https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Exercises](https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Exercises)
 
--
+
 
 ## 👨‍🏫 Asignatura impartida en los grados
 
@@ -26,7 +26,7 @@
 
 ## 🛠 Herramientas recomendadas
 
--
+
 - **Quartus Prime**, **VIVADO** – Diseño digital  
 
 
