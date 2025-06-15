@@ -2,6 +2,8 @@
 
 This repository contains a comprehensive set of VHDL-focused practice questions from the resource **"Electronics Design with VHDL: Questions"** by **Dr. Carlos Cruz de la Torre**, University of Alcalá. The material is designed to help students and advanced learners strengthen their understanding of digital systems design using VHDL.
 
+📄 **DOI:** [10.5281/zenodo.13854051](https://doi.org/10.5281/zenodo.13854051)
+
 ## 📘 Overview
 
 The questions cover key aspects of VHDL and digital design, providing a hands-on approach to:
@@ -43,3 +45,5 @@ This material is ideal for:
 - Anyone interested in mastering VHDL and digital circuit design
 
 ## 📂 Repository Structure
+
+
