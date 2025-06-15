@@ -1,14 +1,29 @@
-https://zenodo.org/records/15051349
-This tutorial is part of the Digital Electronics course, in the Telecommunication Technologies, Communication Electronics, Telecommunication Systems Engineering, and Telematics Engineering degrees at the University of Alcalá.
+# Quartus Tutorial: Combinational System Design
 
-The objective of this tutorial is to explain how to use the Quartus tool by guiding students through the creation of a basic project. This project involves designing and simulating a combinational system composed of a multiplexer and an adder. Through this practice, students gain essential knowledge about digital design and the implementation of logic circuits in a CPLD board.
+📺 **Video Tutorial:** [Watch on Zenodo](https://zenodo.org/records/15051349)
 
-This material is intended for students and professionals interested in digital system design, providing a solid knowledge for using development tools in the field of digital electronics.
+This repository contains support material for the video tutorial **"Combinational System Design with Quartus"**, part of the **Digital Electronics** course at the **University of Alcalá**.  
+It is aimed at students and professionals learning to use **Quartus** for digital circuit design.
 
-----------------------------------------------------------------------------------------------------------------------------
+## 🎯 Objective
 
-Este tutorial forma parte de la asignatura Electrónica Digital, impartida en los grados en Tecnologías de la Telecomunicación, Electrónica de Comunicaciones, Ingeniería en Sistemas de Telecomunicación e Ingeniería Telemática de la Universidad de Alcalá.
+The goal of this tutorial is to demonstrate how to use **Intel Quartus** to create and simulate a basic **combinational digital system** composed of a **multiplexer and an adder**. Students are guided step-by-step through the process of:
 
-El objetivo de este tutorial es explicar el funcionamiento de la herramienta Quartus, mostrando paso a paso la realización de un proyecto básico. En este proyecto, se diseña y simula un sistema combinacional compuesto por un multiplexor y un sumador. A través de esta práctica, los estudiantes adquieren conocimientos fundamentales sobre el diseño digital y la implementación de circuitos lógicos en una tarjeta CPLD.
+- Creating a new project in Quartus
+- Designing digital components
+- Simulating circuit behavior
+- Implementing logic in a **CPLD development board**
 
-Este material está dirigido a estudiantes y profesionales interesados en el diseño de sistemas digitales, proporcionando una base sólida para el uso de herramientas de desarrollo en el ámbito de la electrónica digital.
+By completing this practice, learners acquire key skills for working with digital systems and development tools.
+
+## 🧠 Intended Audience
+
+- Undergraduate students in:
+  - Telecommunication Technologies
+  - Communication Electronics
+  - Telecommunication Systems Engineering
+  - Telematics Engineering
+- Anyone interested in **digital system design** and learning how to use **Quartus** and **CPLD boards**
+
+## 📂 Repository Contents
+
