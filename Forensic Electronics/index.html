@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Electrónica Forense – Recursos Académicos | UAH</title>
+
+  <style>
+    :root{
+      --uah-blue:#002f6c;
+      --link:#0056b3;
+      --bg:#ffffff;
+      --muted:#5b6675;
+      --card:#f6f8fb;
+      --border:#e3e8ef;
+    }
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 0 18px;
+      line-height: 1.65;
+      color: #222;
+      background: var(--bg);
+    }
+    h1,h2{ color: var(--uah-blue); margin: 0.6em 0 0.35em; }
+    h3{
+      color: var(--uah-blue);
+      margin: 0.6em 0 0.35em;
+      font-size: 1.45rem;
+      line-height: 1.25;
+    }
+    p{ margin: 0.35em 0 0.8em; }
+    a{ color: var(--link); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    hr{ border:0; border-top:1px solid var(--border); margin: 26px 0; }
+
+    .lead{ font-size: 1.05rem; color:#1f2937; }
+    .muted{ color: var(--muted); }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 16px 14px;
+      margin: 14px 0;
+    }
+    .btnrow{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 10px; }
+    .btn{
+      display:inline-block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background:#fff;
+      font-weight: 600;
+    }
+    .btn.primary{
+      background: var(--uah-blue);
+      border-color: var(--uah-blue);
+      color:#fff;
+    }
+    .btn.primary:hover{ text-decoration:none; opacity:0.95; }
+
+    ul{ margin: 8px 0 0 18px; }
+    li{ margin: 6px 0; }
+
+    pre{
+      background: #0b1220;
+      color: #e5e7eb;
+      padding: 14px;
+      border-radius: 12px;
+      overflow-x: auto;
+      font-size: 0.92rem;
+      margin: 0;
+    }
+
+    .tag{
+      display:inline-block;
+      font-size: 0.86rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background:#fff;
+      color: var(--muted);
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* Idiomas */
+    .topbar{
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .langbar{ display:flex; gap: 8px; }
+    .langbtn{
+      cursor:pointer;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background:#fff;
+      font-weight: 700;
+    }
+    .langbtn.active{
+      background: var(--uah-blue);
+      color:#fff;
+      border-color: var(--uah-blue);
+    }
+    [data-lang]{ display:none; }
+    [data-lang].active{ display:block; }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div>
+      <a href="../">
+        ⬅
+        <span data-lang="es" class="active">Volver a Recursos Académicos</span>
+        <span data-lang="en">Back to Academic Resources</span>
+      </a>
+    </div>
+
+    <div class="langbar" aria-label="Language selector">
+      <button class="langbtn active" id="btn-es" type="button">ES</button>
+      <button class="langbtn" id="btn-en" type="button">EN</button>
+    </div>
+  </div>
+
+  <!-- ======================= -->
+  <!-- ====== ESPAÑOL ========= -->
+  <!-- ======================= -->
+  <div data-lang="es" class="active">
+    <h1>🔍 Electrónica Forense <span class="tag">Universidad de Alcalá (UAH)</span></h1>
+
+    <p class="lead">
+      Bienvenido/a al repositorio de materiales para la asignatura
+      <strong>Electrónica Forense</strong>, impartida en el
+      <strong>Máster en Ingeniería Forense</strong> de la
+      <strong>Universidad de Alcalá (UAH)</strong>.
+    </p>
+
+    <div class="card">
+      <h2>📚 Página oficial de la asignatura</h2>
+      <div class="btnrow">
+        <a class="btn primary"
+           href="https://www.uah.es/es/estudios/estudios-oficiales/grados/asignatura/Electronica-Forense-652037/"
+           target="_blank" rel="noopener">
+          Abrir página oficial (UAH)
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🎯 Objetivo del repositorio</h2>
+      <ul>
+        <li>Organizar y compartir <strong>contenidos propios</strong> sobre electrónica forense aplicada.</li>
+        <li>Publicar <strong>apuntes, ejercicios y casos prácticos</strong>.</li>
+        <li>Compilar enlaces a <strong>herramientas forenses</strong> y recursos didácticos.</li>
+        <li>Documentar estudios de caso en <strong>procesamiento de señales</strong>,
+            <strong>instrumentación</strong> y <strong>recuperación de evidencias</strong>.</li>
+      </ul>
+      <p class="muted">El repositorio se actualizará regularmente con nuevos materiales de clase.</p>
+    </div>
+
+    <div class="card">
+      <h2>🧰 Herramientas y recursos destacados</h2>
+      <p class="muted">Acceso directo a prácticas con software forense:</p>
+      <div class="btnrow">
+        <a class="btn primary"
+           href="https://github.com/charlicruz/Teaching/tree/main/Forensic%20Electronics/Autopsy"
+           target="_blank" rel="noopener">
+          🗄️ Autopsy – Análisis forense
+        </a>
+        <a class="btn"
+           href="https://github.com/charlicruz/Teaching/tree/main/Forensic%20Electronics/wireshark"
+           target="_blank" rel="noopener">
+          🌐 Wireshark – Análisis de tráfico
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📂 Estructura del repositorio</h2>
+      <pre>
+/casos_practicos/     # Casos reales o simulados
+/ejercicios/          # Ejercicios de instrumentación y análisis
+/herramientas/        # Herramientas forenses (DMM, osciloscopio, etc.)
+/videos/              # Vídeos explicativos
+/docs/                # Guías e informes
+README.md
+      </pre>
+    </div>
+  </div>
+
+  <!-- ======================= -->
+  <!-- ======= ENGLISH ======== -->
+  <!-- ======================= -->
+  <div data-lang="en">
+    <h1>🔍 Forensic Electronics <span class="tag">University of Alcalá (UAH)</span></h1>
+
+    <p class="lead">
+      Welcome to the repository of materials for the
+      <strong>Forensic Electronics</strong> course, taught in the
+      <strong>Master’s Degree in Forensic Engineering</strong> at the
+      <strong>University of Alcalá (UAH)</strong>.
+    </p>
+
+    <div class="card">
+      <h2>📚 Official course page</h2>
+      <div class="btnrow">
+        <a class="btn primary"
+           href="https://www.uah.es/es/estudios/estudios-oficiales/grados/asignatura/Electronica-Forense-652037/"
+           target="_blank" rel="noopener">
+          Open official course page (UAH)
+        </a>
+      </div>
+      <p class="muted">Note: the official page is available in Spanish.</p>
+    </div>
+
+    <div class="card">
+      <h2>🎯 Repository goals</h2>
+      <ul>
+        <li>Organize and share <strong>original content</strong> on applied forensic electronics.</li>
+        <li>Publish <strong>notes, exercises, and practical case studies</strong>.</li>
+        <li>Compile links to <strong>forensic tools</strong> and learning resources.</li>
+        <li>Document real-world experiences in <strong>signal processing</strong>,
+            <strong>instrumentation</strong>, and <strong>evidence recovery</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>🧰 Featured tools</h2>
+      <p class="muted">Hands-on forensic software resources:</p>
+      <div class="btnrow">
+        <a class="btn primary"
+           href="https://github.com/charlicruz/Teaching/tree/main/Forensic%20Electronics/Autopsy"
+           target="_blank" rel="noopener">
+          🗄️ Autopsy – Forensic analysis
+        </a>
+        <a class="btn"
+           href="https://github.com/charlicruz/Teaching/tree/main/Forensic%20Electronics/wireshark"
+           target="_blank" rel="noopener">
+          🌐 Wireshark – Network traffic analysis
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📂 Repository structure</h2>
+      <pre>
+/case_studies/        # Real or simulated forensic cases
+/exercises/           # Instrumentation and analysis exercises
+/tools/               # Forensic tools and scripts
+/videos/              # Explanatory videos
+/docs/                # Guides and reference documents
+README.md
+      </pre>
+    </div>
+  </div>
+
+  <script>
+    const btnES = document.getElementById('btn-es');
+    const btnEN = document.getElementById('btn-en');
+    const blocks = document.querySelectorAll('[data-lang]');
+
+    function setLang(lang){
+      blocks.forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === lang));
+      btnES.classList.toggle('active', lang === 'es');
+      btnEN.classList.toggle('active', lang === 'en');
+      document.documentElement.lang = lang;
+      try { localStorage.setItem('lang', lang); } catch(e){}
+    }
+
+    btnES.addEventListener('click', () => setLang('es'));
+    btnEN.addEventListener('click', () => setLang('en'));
+
+    (function init(){
+      let lang = 'es';
+      try {
+        const saved = localStorage.getItem('lang');
+        if(saved === 'es' || saved === 'en') lang = saved;
+        else lang = (navigator.language || '').toLowerCase().startsWith('en') ? 'en' : 'es';
+      } catch(e){}
+      setLang(lang);
+    })();
+  </script>
+
+</body>
+</html>
