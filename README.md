@@ -13,7 +13,7 @@ https://github.com/charlicruz/Teaching/tree/main/Digital_Electronics
 
 ### 🛠 Electronic Design  
 Ejercicios y proyectos centrados en el diseño de sistemas electrónicos digitales y analógicos, incluyendo el uso de herramientas como Quartus, ModelSim, y herramientas de simulación.
-https://github.com/charlicruz/Teaching/tree/main/Electronic_design
+https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design
 
 ### 💡 Electronics Fundamentals  
 Material introductorio sobre análisis de circuitos, componentes básicos, ley de Ohm, ley de Kirchhoff, amplificadores, filtros, y fundamentos de electrónica digital.
