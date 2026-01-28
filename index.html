@@ -23,7 +23,6 @@
       background: var(--bg);
     }
     h1,h2{ color: var(--uah-blue); margin: 0.6em 0 0.35em; }
-    /* Títulos de asignaturas más grandes */
     h3{
       color: var(--uah-blue);
       margin: 0.6em 0 0.35em;
@@ -114,6 +113,27 @@
     }
     [data-lang]{ display:none; }
     [data-lang].active{ display:block; }
+
+    /* Perfil con foto */
+    .profile{
+      display:flex;
+      gap: 14px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .profile img{
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+    .profile .content{
+      flex: 1;
+      min-width: 240px;
+    }
   </style>
 </head>
 
@@ -138,50 +158,23 @@
 
     <div class="card">
       <h2>👤 Perfil oficial UAH</h2>
-      <p class="muted">
-        Para más detalles sobre mi trayectoria académica, investigación y docencia, puedes consultar mi perfil oficial en la UAH:
-      </p>
-      <div class="btnrow">
-        <a class="btn primary" href="https://www.uah.es/en/estudios/profesor/Carlos-Cruz-de-la-Torre/" target="_blank" rel="noopener">
-          🔗 Perfil UAH – Carlos Cruz de la Torre
-        </a>
-        <a class="btn" href="https://portalcientifico.uah.es/investigadores/201819/detalle" target="_blank" rel="noopener">
-          🔬 Portal Científico UAH – Perfil
-        </a>
-      </div>
-    </div>
 
-    <hr>
-
-    <div class="grid two">
-      <div class="card">
-        <h2>🎓 Docencia – Grados</h2>
-        <p class="muted">Imparto docencia en los siguientes programas de Grado:</p>
-        <ul>
-          <li>Ingeniería en Sistemas de Telecomunicación (G39/G390)</li>
-          <li>Ingeniería en Tecnologías de Telecomunicación (G35/G350)</li>
-          <li>Ingeniería Telemática (G38/G380)</li>
-          <li>Ingeniería en Electrónica de Comunicaciones (G37/G370)</li>
-          <li>Ingeniería Electrónica y Automática Industrial (G60)</li>
-          <li>Ingeniería en Tecnologías Industriales (G610)</li>
-          <li>Ciencias y Tecnologías Forenses (G652)</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>📅 Tutorías / reuniones</h2>
-        <p class="muted">
-          Si quieres agendar una reunión o tutoría, puedes reservar un hueco aquí:
-        </p>
-        <div class="btnrow">
-          <!-- Sustituye por tu enlace real -->
-          <a class="btn primary" href="https://calendly.com/" target="_blank" rel="noopener">
-            📅 Calendly – Carlos Cruz
-          </a>
+      <!-- Nota: guarda tu imagen como "profile.jpg" en esta misma carpeta -->
+      <div class="profile">
+        <img src="profile.jpg" alt="Foto de perfil">
+        <div class="content">
+          <p class="muted">
+            Para más detalles sobre mi trayectoria académica, investigación y docencia, puedes consultar mi perfil oficial en la UAH:
+          </p>
+          <div class="btnrow">
+            <a class="btn primary" href="https://www.uah.es/en/estudios/profesor/Carlos-Cruz-de-la-Torre/" target="_blank" rel="noopener">
+              🔗 Perfil UAH – Carlos Cruz de la Torre
+            </a>
+            <a class="btn" href="https://portalcientifico.uah.es/investigadores/201819/detalle" target="_blank" rel="noopener">
+              🔬 Portal Científico UAH – Perfil
+            </a>
+          </div>
         </div>
-        <p class="muted" style="margin-top:10px;">
-          Consejo: indica la asignatura y el tema para poder preparar la sesión.
-        </p>
       </div>
     </div>
 
@@ -262,19 +255,39 @@
       </div>
     </div>
 
+    <!-- ✅ MOVIDO AL FINAL -->
     <hr>
 
-    <h2>📂 Estructura común del repositorio</h2>
-    <pre>
-/asignatura/
-  /videos/             # Tutoriales y explicaciones en vídeo
-  /ejercicios/         # Ejercicios propuestos y resueltos
-  /proyectos/          # Proyectos de diseño y simulación
-  /pcb_design/         # Diseño de PCB (KiCad, Proteus, etc.)
-  /simulaciones/       # Archivos de simulación
-    </pre>
+    <div class="grid two">
+      <div class="card">
+        <h2>🎓 Docencia – Grados</h2>
+        <p class="muted">Imparto docencia en los siguientes programas de Grado:</p>
+        <ul>
+          <li>Ingeniería en Sistemas de Telecomunicación (G39/G390)</li>
+          <li>Ingeniería en Tecnologías de Telecomunicación (G35/G350)</li>
+          <li>Ingeniería Telemática (G38/G380)</li>
+          <li>Ingeniería en Electrónica de Comunicaciones (G37/G370)</li>
+          <li>Ingeniería Electrónica y Automática Industrial (G60)</li>
+          <li>Ingeniería en Tecnologías Industriales (G610)</li>
+          <li>Ciencias y Tecnologías Forenses (G652)</li>
+        </ul>
+      </div>
 
-    <p class="muted">Nota: algunas carpetas pueden variar según la asignatura y el curso académico.</p>
+      <div class="card">
+        <h2>📅 Tutorías / reuniones</h2>
+        <p class="muted">
+          Si quieres agendar una reunión o tutoría, puedes reservar un hueco aquí:
+        </p>
+        <div class="btnrow">
+          <a class="btn primary" href="https://calendly.com/" target="_blank" rel="noopener">
+            📅 Calendly – Carlos Cruz
+          </a>
+        </div>
+        <p class="muted" style="margin-top:10px;">
+          Consejo: indica la asignatura y el tema para poder preparar la sesión.
+        </p>
+      </div>
+    </div>
   </div>
 
   <!-- ======================= -->
@@ -290,50 +303,23 @@
 
     <div class="card">
       <h2>👤 Official UAH profile</h2>
-      <p class="muted">
-        For more details about my academic background, research, and teaching activities, you can visit my official profile:
-      </p>
-      <div class="btnrow">
-        <a class="btn primary" href="https://www.uah.es/en/estudios/profesor/Carlos-Cruz-de-la-Torre/" target="_blank" rel="noopener">
-          🔗 UAH – Carlos Cruz de la Torre
-        </a>
-        <a class="btn" href="https://portalcientifico.uah.es/investigadores/201819/detalle" target="_blank" rel="noopener">
-          🔬 UAH Scientific Portal – Profile
-        </a>
-      </div>
-    </div>
 
-    <hr>
-
-    <div class="grid two">
-      <div class="card">
-        <h2>🎓 Teaching – Bachelor’s Degrees</h2>
-        <p class="muted">I currently teach in the following Bachelor’s programmes:</p>
-        <ul>
-          <li>Electronic Communications Engineering (G37/G370)</li>
-          <li>Telecommunication Systems Engineering (G39/G390)</li>
-          <li>Telecommunication Technologies Engineering (G35/G350)</li>
-          <li>Telematics Engineering (G38/G380)</li>
-          <li>Industrial Electronics and Automation Engineering (G60)</li>
-          <li>Industrial Technologies Engineering (G610)</li>
-          <li>Forensic Science and Technology (G652)</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>📅 Tutoring / meetings</h2>
-        <p class="muted">
-          If you would like to schedule a meeting or tutoring session, you can book a time slot here:
-        </p>
-        <div class="btnrow">
-          <!-- Replace with your real Calendly link -->
-          <a class="btn primary" href="https://calendly.com/" target="_blank" rel="noopener">
-            📅 Calendly – Carlos Cruz
-          </a>
+      <!-- Note: save your image as "profile.jpg" in this same folder -->
+      <div class="profile">
+        <img src="profile.jpg" alt="Profile photo">
+        <div class="content">
+          <p class="muted">
+            For more details about my academic background, research, and teaching activities, you can visit my official profile:
+          </p>
+          <div class="btnrow">
+            <a class="btn primary" href="https://www.uah.es/en/estudios/profesor/Carlos-Cruz-de-la-Torre/" target="_blank" rel="noopener">
+              🔗 UAH – Carlos Cruz de la Torre
+            </a>
+            <a class="btn" href="https://portalcientifico.uah.es/investigadores/201819/detalle" target="_blank" rel="noopener">
+              🔬 UAH Scientific Portal – Profile
+            </a>
+          </div>
         </div>
-        <p class="muted" style="margin-top:10px;">
-          Tip: Include the course name and topic so I can prepare in advance.
-        </p>
       </div>
     </div>
 
@@ -414,19 +400,39 @@
       </div>
     </div>
 
+    <!-- ✅ MOVED TO THE END -->
     <hr>
 
-    <h2>📂 Common repository structure</h2>
-    <pre>
-/course/
-  /videos/             # Tutorials and video explanations
-  /exercises/          # Proposed and solved exercises
-  /projects/           # Design and simulation projects
-  /pcb_design/         # PCB design (KiCad, Proteus, etc.)
-  /simulations/        # Simulation files
-    </pre>
+    <div class="grid two">
+      <div class="card">
+        <h2>🎓 Teaching – Bachelor’s Degrees</h2>
+        <p class="muted">I currently teach in the following Bachelor’s programmes:</p>
+        <ul>
+          <li>Electronic Communications Engineering (G37/G370)</li>
+          <li>Telecommunication Systems Engineering (G39/G390)</li>
+          <li>Telecommunication Technologies Engineering (G35/G350)</li>
+          <li>Telematics Engineering (G38/G380)</li>
+          <li>Industrial Electronics and Automation Engineering (G60)</li>
+          <li>Industrial Technologies Engineering (G610)</li>
+          <li>Forensic Science and Technology (G652)</li>
+        </ul>
+      </div>
 
-    <p class="muted">Note: folders may vary depending on the course and academic year.</p>
+      <div class="card">
+        <h2>📅 Tutoring / meetings</h2>
+        <p class="muted">
+          If you would like to schedule a meeting or tutoring session, you can book a time slot here:
+        </p>
+        <div class="btnrow">
+          <a class="btn primary" href="https://calendly.com/" target="_blank" rel="noopener">
+            📅 Calendly – Carlos Cruz
+          </a>
+        </div>
+        <p class="muted" style="margin-top:10px;">
+          Tip: Include the course name and topic so I can prepare in advance.
+        </p>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -439,15 +445,12 @@
       btnES.classList.toggle('active', lang === 'es');
       btnEN.classList.toggle('active', lang === 'en');
       document.documentElement.lang = lang;
-
-      // opcional: recordar preferencia
       try { localStorage.setItem('lang', lang); } catch(e){}
     }
 
     btnES.addEventListener('click', () => setLang('es'));
     btnEN.addEventListener('click', () => setLang('en'));
 
-    // opcional: aplicar preferencia guardada o idioma del navegador
     (function init(){
       let lang = 'es';
       try {

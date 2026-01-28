@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tecnología Electrónica – Recursos Académicos | UAH</title>
+
+  <style>
+    :root{
+      --uah-blue:#002f6c;
+      --link:#0056b3;
+      --bg:#ffffff;
+      --muted:#5b6675;
+      --card:#f6f8fb;
+      --border:#e3e8ef;
+    }
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 0 18px;
+      line-height: 1.65;
+      color: #222;
+      background: var(--bg);
+    }
+    h1,h2{ color: var(--uah-blue); margin: 0.6em 0 0.35em; }
+    h3{
+      color: var(--uah-blue);
+      margin: 0.6em 0 0.35em;
+      font-size: 1.45rem;
+      line-height: 1.25;
+    }
+    p{ margin: 0.35em 0 0.8em; }
+    a{ color: var(--link); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    hr{ border:0; border-top:1px solid var(--border); margin: 26px 0; }
+
+    .lead{ font-size: 1.05rem; color:#1f2937; }
+    .muted{ color: var(--muted); }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 16px 14px;
+      margin: 14px 0;
+    }
+    .btnrow{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 10px; }
+    .btn{
+      display:inline-block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background:#fff;
+      font-weight: 600;
+    }
+    .btn.primary{
+      background: var(--uah-blue);
+      border-color: var(--uah-blue);
+      color:#fff;
+    }
+    .btn.primary:hover{ text-decoration:none; opacity:0.95; }
+    .btn:hover{ text-decoration:none; background:#ffffff; }
+
+    ul{ margin: 8px 0 0 18px; }
+    li{ margin: 6px 0; }
+
+    pre{
+      background: #0b1220;
+      color: #e5e7eb;
+      padding: 14px;
+      border-radius: 12px;
+      overflow-x: auto;
+      font-size: 0.92rem;
+      margin: 0;
+    }
+
+    .tag{
+      display:inline-block;
+      font-size: 0.86rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background:#fff;
+      color: var(--muted);
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* Idiomas */
+    .topbar{
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .langbar{
+      display:flex;
+      gap: 8px;
+    }
+    .langbtn{
+      cursor:pointer;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background:#fff;
+      font-weight: 700;
+    }
+    .langbtn.active{
+      background: var(--uah-blue);
+      color:#fff;
+      border-color: var(--uah-blue);
+    }
+    [data-lang]{ display:none; }
+    [data-lang].active{ display:block; }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <!-- Back link (bilingüe) -->
+    <div>
+      <a href="../">
+        ⬅
+        <span data-lang="es" id="back-es">Volver a Recursos Académicos</span>
+        <span data-lang="en" id="back-en">Back to Academic Resources</span>
+      </a>
+    </div>
+
+    <!-- Selector de idioma -->
+    <div class="langbar" aria-label="Language selector">
+      <button class="langbtn active" id="btn-es" type="button">ES</button>
+      <button class="langbtn" id="btn-en" type="button">EN</button>
+    </div>
+  </div>
+
+  <!-- ======================= -->
+  <!-- ====== ESPAÑOL ========= -->
+  <!-- ======================= -->
+  <div data-lang="es" class="active">
+    <h1>⚙️ Tecnología Electrónica <span class="tag">Laboratorio y Diseño de PCB</span></h1>
+    <p class="lead">
+      📍 <strong>Universidad de Alcalá</strong><br>
+      Este repositorio contiene materiales y recursos para la parte de <strong>laboratorio</strong> y <strong>diseño de PCB</strong>
+      de las asignaturas <strong>Tecnología Electrónica</strong>.
+    </p>
+
+    <div class="card">
+      <h2>📚 Asignaturas oficiales</h2>
+      <ul>
+        <li>
+          <a href="https://www.uah.es/es/estudios/estudios-oficiales/grados/asignatura/Tecnologia-Electronica-370003/" target="_blank" rel="noopener">
+            Tecnología Electrónica – 370003
+          </a>
+        </li>
+        <li>
+          <a href="https://www.uah.es/es/estudios/estudios-oficiales/grados/asignatura/Tecnologia-Electronica-350046/" target="_blank" rel="noopener">
+            Tecnología Electrónica – 350046
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>🎯 Objetivo</h2>
+      <p>Compilar y compartir:</p>
+      <ul>
+        <li>Diseño de <strong>PCB</strong> para aplicaciones electrónicas analógicas y digitales.</li>
+        <li>Apuntes y guías de <strong>laboratorio</strong> sobre fabricación, montaje y pruebas de placas.</li>
+        <li>Proyectos y prácticas <strong>hands-on</strong> con equipos de laboratorio.</li>
+        <li>Simulaciones previas a fabricación para validación de circuitos.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>📄 Materiales (enlaces directos)</h2>
+      <p class="muted">Acceso rápido a documentación clave del repositorio:</p>
+      <div class="btnrow">
+        <a class="btn primary"
+           href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Technology/Libros"
+           target="_blank" rel="noopener">
+          📚 Libros
+        </a>
+        <a class="btn primary"
+           href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Technology/Transparencias"
+           target="_blank" rel="noopener">
+          🖥️ Transparencias
+        </a>
+        <a class="btn"
+           href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Technology"
+           target="_blank" rel="noopener">
+          🗂 Carpeta principal en GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📂 Estructura del repositorio</h2>
+      <pre>
+/pcb_design/          # Proyectos de PCB (KiCad, Altium, Proteus)
+/lab_guides/          # Guías prácticas de laboratorio paso a paso
+/schematics/          # Esquemas eléctricos y diagramas funcionales
+/simulations/         # Simulaciones (LTspice, Proteus, etc.)
+/test_reports/        # Informes de pruebas, validaciones y mediciones
+/videos/              # Vídeos demostrativos de montaje, ensayo y diseño PCB
+README.md
+      </pre>
+      <p class="muted">Nota: algunas carpetas pueden variar según el curso académico.</p>
+    </div>
+  </div>
+
+  <!-- ======================= -->
+  <!-- ======= ENGLISH ======== -->
+  <!-- ======================= -->
+  <div data-lang="en">
+    <h1>⚙️ Electronic Technology <span class="tag">Lab & PCB Design</span></h1>
+    <p class="lead">
+      📍 <strong>University of Alcalá</strong><br>
+      This repository contains materials and resources for the <strong>laboratory</strong> and <strong>PCB design</strong>
+      component of the <strong>Electronic Technology</strong> courses.
+    </p>
+
+    <div class="card">
+      <h2>📚 Official courses</h2>
+      <ul>
+        <li>
+          <a href="https://www.uah.es/es/estudios/estudios-oficiales/grados/asignatura/Tecnologia-Electronica-370003/" target="_blank" rel="noopener">
+            Electronic Technology – 370003
+          </a>
+        </li>
+        <li>
+          <a href="https://www.uah.es/es/estudios/estudios-oficiales/grados/asignatura/Tecnologia-Electronica-350046/" target="_blank" rel="noopener">
+            Electronic Technology – 350046
+          </a>
+        </li>
+      </ul>
+      <p class="muted">Note: UAH course pages are provided in Spanish.</p>
+    </div>
+
+    <div class="card">
+      <h2>🎯 Goal</h2>
+      <p>This repository aims to compile and share:</p>
+      <ul>
+        <li><strong>PCB design</strong> for analog and digital electronic applications.</li>
+        <li><strong>Lab notes and guides</strong> on manufacturing, assembly, and testing of boards.</li>
+        <li><strong>Hands-on projects</strong> using lab equipment.</li>
+        <li>Pre-fabrication <strong>simulations</strong> to validate circuits.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>📄 Materials (quick links)</h2>
+      <p class="muted">Direct access to key documents in the repository:</p>
+      <div class="btnrow">
+        <a class="btn primary"
+           href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Technology/Libros"
+           target="_blank" rel="noopener">
+          📚 Books
+        </a>
+        <a class="btn primary"
+           href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Technology/Transparencias"
+           target="_blank" rel="noopener">
+          🖥️ Slides
+        </a>
+        <a class="btn"
+           href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Technology"
+           target="_blank" rel="noopener">
+          🗂 Main folder on GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📂 Repository structure</h2>
+      <pre>
+/pcb_design/          # PCB projects (KiCad, Altium, Proteus)
+/lab_guides/          # Step-by-step lab guides
+/schematics/          # Schematics and functional diagrams
+/simulations/         # Simulations (LTspice, Proteus, etc.)
+/test_reports/        # Test reports, validation and measurements
+/videos/              # Demo videos: assembly, testing and PCB design
+README.md
+      </pre>
+      <p class="muted">Note: folders may vary depending on the academic year.</p>
+    </div>
+  </div>
+
+  <script>
+    const btnES = document.getElementById('btn-es');
+    const btnEN = document.getElementById('btn-en');
+    const blocks = document.querySelectorAll('[data-lang]');
+    const backES = document.getElementById('back-es');
+    const backEN = document.getElementById('back-en');
+
+    function setLang(lang){
+      blocks.forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === lang));
+      btnES.classList.toggle('active', lang === 'es');
+      btnEN.classList.toggle('active', lang === 'en');
+      backES.classList.toggle('active', lang === 'es');
+      backEN.classList.toggle('active', lang === 'en');
+      document.documentElement.lang = lang;
+
+      try { localStorage.setItem('lang', lang); } catch(e){}
+    }
+
+    btnES.addEventListener('click', () => setLang('es'));
+    btnEN.addEventListener('click', () => setLang('en'));
+
+    (function init(){
+      let lang = 'es';
+      try {
+        const saved = localStorage.getItem('lang');
+        if(saved === 'es' || saved === 'en') lang = saved;
+        else lang = (navigator.language || '').toLowerCase().startsWith('en') ? 'en' : 'es';
+      } catch(e){}
+      setLang(lang);
+    })();
+  </script>
+
+</body>
+</html>

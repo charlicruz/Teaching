@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fundamentos de Electrónica – Recursos Académicos | UAH</title>
+
+  <style>
+    :root{
+      --uah-blue:#002f6c;
+      --link:#0056b3;
+      --bg:#ffffff;
+      --muted:#5b6675;
+      --card:#f6f8fb;
+      --border:#e3e8ef;
+    }
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 0 18px;
+      line-height: 1.65;
+      color: #222;
+      background: var(--bg);
+    }
+    h1,h2{ color: var(--uah-blue); margin: 0.6em 0 0.35em; }
+    h3{
+      color: var(--uah-blue);
+      margin: 0.6em 0 0.35em;
+      font-size: 1.45rem;
+      line-height: 1.25;
+    }
+    p{ margin: 0.35em 0 0.8em; }
+    a{ color: var(--link); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    hr{ border:0; border-top:1px solid var(--border); margin: 26px 0; }
+
+    .lead{ font-size: 1.05rem; color:#1f2937; }
+    .muted{ color: var(--muted); }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 16px 14px;
+      margin: 14px 0;
+    }
+    .btnrow{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 10px; }
+    .btn{
+      display:inline-block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background:#fff;
+      font-weight: 600;
+    }
+    .btn.primary{
+      background: var(--uah-blue);
+      border-color: var(--uah-blue);
+      color:#fff;
+    }
+    .btn.primary:hover{ text-decoration:none; opacity:0.95; }
+
+    ul{ margin: 8px 0 0 18px; }
+    li{ margin: 6px 0; }
+
+    pre{
+      background: #0b1220;
+      color: #e5e7eb;
+      padding: 14px;
+      border-radius: 12px;
+      overflow-x: auto;
+      font-size: 0.92rem;
+      margin: 0;
+    }
+
+    .tag{
+      display:inline-block;
+      font-size: 0.86rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background:#fff;
+      color: var(--muted);
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* Idiomas */
+    .topbar{
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .langbar{ display:flex; gap: 8px; }
+    .langbtn{
+      cursor:pointer;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background:#fff;
+      font-weight: 700;
+    }
+    .langbtn.active{
+      background: var(--uah-blue);
+      color:#fff;
+      border-color: var(--uah-blue);
+    }
+    [data-lang]{ display:none; }
+    [data-lang].active{ display:block; }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div>
+      <a href="../">
+        ⬅
+        <span data-lang="es" id="back-es">Volver a Recursos Académicos</span>
+        <span data-lang="en" id="back-en">Back to Academic Resources</span>
+      </a>
+    </div>
+
+    <div class="langbar" aria-label="Language selector">
+      <button class="langbtn active" id="btn-es" type="button">ES</button>
+      <button class="langbtn" id="btn-en" type="button">EN</button>
+    </div>
+  </div>
+
+  <!-- ======================= -->
+  <!-- ====== ESPAÑOL ========= -->
+  <!-- ======================= -->
+  <div data-lang="es" class="active">
+    <h1>💡 Fundamentos de Electrónica <span class="tag">Universidad de Alcalá (UAH)</span></h1>
+
+    <p class="lead">
+      Bienvenido/a al repositorio de recursos elaborados para la parte de
+      <strong>Electrónica Digital</strong> de la asignatura
+      <strong>Fundamentos de Electrónica</strong>, impartida en los grados de ingeniería
+      de la <strong>Universidad de Alcalá (UAH)</strong>.
+    </p>
+
+    <div class="card">
+      <h2>📚 Página oficial de la asignatura</h2>
+      <div class="btnrow">
+        <a class="btn primary"
+           href="https://www.uah.es/es/estudios/estudios-oficiales/grados/asignatura/Fundamentos-de-Electronica-610017/"
+           target="_blank" rel="noopener">
+          Abrir página oficial (UAH)
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🎯 Objetivo del repositorio</h2>
+      <ul>
+        <li>Centralizar <strong>apuntes, ejercicios y materiales</strong> de electrónica analógica y digital básica.</li>
+        <li>Publicar <strong>ejercicios de circuitos</strong>, prácticas de laboratorio y simulaciones.</li>
+        <li>Incluir <strong>vídeos explicativos</strong>, diagramas y herramientas útiles.</li>
+        <li>Evolucionar con nuevos recursos y aportes estudiantiles.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>📄 Material destacado</h2>
+      <p class="muted">Acceso directo a los recursos más utilizados:</p>
+      <div class="btnrow">
+        <a class="btn primary"
+           href="https://github.com/charlicruz/Teaching/tree/main/Electronics%20Fundamentals/Ejercicios"
+           target="_blank" rel="noopener">
+          ✏️ Ejercicios (GitHub)
+        </a>
+        <a class="btn"
+           href="https://github.com/charlicruz/Teaching/tree/main/Electronics%20Fundamentals"
+           target="_blank" rel="noopener">
+          🗂 Carpeta principal
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📂 Estructura del repositorio</h2>
+      <pre>
+/teoria/              # Apuntes y resúmenes de teoría electrónica
+/practicas/           # Guías de laboratorio con esquemas y procedimientos
+/ejercicios/          # Ejercicios resueltos y propuestos
+/simulaciones/        # LTspice, Multisim, etc.
+/videos/              # Vídeos explicativos y de laboratorio
+/docs/                # Documentación adicional y diagramas
+README.md
+      </pre>
+    </div>
+  </div>
+
+  <!-- ======================= -->
+  <!-- ======= ENGLISH ======== -->
+  <!-- ======================= -->
+  <div data-lang="en">
+    <h1>💡 Electronics Fundamentals <span class="tag">University of Alcalá (UAH)</span></h1>
+
+    <p class="lead">
+      Welcome to the repository of resources developed for the
+      <strong>Digital Electronics</strong> component of the
+      <strong>Electronics Fundamentals</strong> course, taught in several engineering
+      degrees at the <strong>University of Alcalá (UAH)</strong>.
+    </p>
+
+    <div class="card">
+      <h2>📚 Official course page</h2>
+      <div class="btnrow">
+        <a class="btn primary"
+           href="https://www.uah.es/es/estudios/estudios-oficiales/grados/asignatura/Fundamentos-de-Electronica-610017/"
+           target="_blank" rel="noopener">
+          Open official course page (UAH)
+        </a>
+      </div>
+      <p class="muted">Note: the official page is available in Spanish.</p>
+    </div>
+
+    <div class="card">
+      <h2>🎯 Repository goals</h2>
+      <ul>
+        <li>Centralize <strong>notes, exercises, and learning materials</strong>.</li>
+        <li>Publish <strong>circuit exercises</strong>, lab practices, and simulations.</li>
+        <li>Provide <strong>explanatory videos</strong>, diagrams, and useful tools.</li>
+        <li>Continuously evolve with new resources and examples.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>📄 Featured material</h2>
+      <p class="muted">Quick access to key resources:</p>
+      <div class="btnrow">
+        <a class="btn primary"
+           href="https://github.com/charlicruz/Teaching/tree/main/Electronics%20Fundamentals/Ejercicios"
+           target="_blank" rel="noopener">
+          ✏️ Exercises (GitHub)
+        </a>
+        <a class="btn"
+           href="https://github.com/charlicruz/Teaching/tree/main/Electronics%20Fundamentals"
+           target="_blank" rel="noopener">
+          🗂 Main folder
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📂 Repository structure</h2>
+      <pre>
+/theory/              # Theory notes and summaries
+/labs/                # Laboratory guides and procedures
+/exercises/           # Solved and proposed exercises
+/simulations/         # LTspice, Multisim, etc.
+/videos/              # Explanatory and lab videos
+/docs/                # Additional documentation
+README.md
+      </pre>
+    </div>
+  </div>
+
+  <script>
+    const btnES = document.getElementById('btn-es');
+    const btnEN = document.getElementById('btn-en');
+    const blocks = document.querySelectorAll('[data-lang]');
+    const backES = document.getElementById('back-es');
+    const backEN = document.getElementById('back-en');
+
+    function setLang(lang){
+      blocks.forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === lang));
+      btnES.classList.toggle('active', lang === 'es');
+      btnEN.classList.toggle('active', lang === 'en');
+      backES.classList.toggle('active', lang === 'es');
+      backEN.classList.toggle('active', lang === 'en');
+      document.documentElement.lang = lang;
+      try { localStorage.setItem('lang', lang); } catch(e){}
+    }
+
+    btnES.addEventListener('click', () => setLang('es'));
+    btnEN.addEventListener('click', () => setLang('en'));
+
+    (function init(){
+      let lang = 'es';
+      try {
+        const saved = localStorage.getItem('lang');
+        if(saved === 'es' || saved === 'en') lang = saved;
+        else lang = (navigator.language || '').toLowerCase().startsWith('en') ? 'en' : 'es';
+      } catch(e){}
+      setLang(lang);
+    })();
+  </script>
+
+</body>
+</html>
