@@ -1,14 +1,1 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Audio player</title>
-</head>
-<body>
-  <h2>Audio de prueba</h2>
-  <audio controls>
-    <source src="aUpdate VHDL_no_se_ejecuta,_se_sintetiza.m4a" type="audio/mpeg">
-    Tu navegador no soporta audio HTML5
-  </audio>
-</body>
-</html>
+
