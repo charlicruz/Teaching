@@ -2,98 +2,276 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Electrónica Digital – Universidad de Alcalá</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Electrónica Digital – Universidad de Alcalá (UAH)</title>
 
   <style>
-    body {
+    :root{
+      --uah-blue:#002f6c;
+      --link:#0056b3;
+      --bg:#ffffff;
+      --muted:#5b6675;
+      --card:#f6f8fb;
+      --border:#e3e8ef;
+    }
+    body{
       font-family: Arial, Helvetica, sans-serif;
-      max-width: 900px;
+      max-width: 980px;
       margin: 40px auto;
-      line-height: 1.6;
+      padding: 0 18px;
+      line-height: 1.65;
       color: #222;
+      background: var(--bg);
+    }
+    h1,h2{ color: var(--uah-blue); margin: 0.6em 0 0.35em; }
+    h3{
+      color: var(--uah-blue);
+      margin: 0.6em 0 0.35em;
+      font-size: 1.45rem;
+      line-height: 1.25;
+    }
+    p{ margin: 0.35em 0 0.8em; }
+    a{ color: var(--link); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    hr{ border:0; border-top:1px solid var(--border); margin: 26px 0; }
+
+    .lead{ font-size: 1.05rem; color:#1f2937; }
+    .muted{ color: var(--muted); }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 16px 14px;
+      margin: 14px 0;
+    }
+    .btnrow{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 10px; }
+    .btn{
+      display:inline-block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background:#fff;
+      font-weight: 600;
+    }
+    .btn.primary{
+      background: var(--uah-blue);
+      border-color: var(--uah-blue);
+      color:#fff;
+    }
+    .btn.primary:hover{ text-decoration:none; opacity:0.95; }
+    .btn:hover{ text-decoration:none; background:#ffffff; }
+
+    ul{ margin: 8px 0 0 18px; }
+    li{ margin: 6px 0; }
+
+    pre{
+      background: #0b1220;
+      color: #e5e7eb;
+      padding: 14px;
+      border-radius: 12px;
+      overflow-x: auto;
+      font-size: 0.92rem;
+      margin: 0;
     }
 
-    h1, h2, h3 {
-      color: #002f6c;
+    .tag{
+      display:inline-block;
+      font-size: 0.86rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background:#fff;
+      color: var(--muted);
+      margin-left: 8px;
+      vertical-align: middle;
     }
 
-    a {
-      color: #0056b3;
-      text-decoration: none;
+    /* Idiomas */
+    .topbar{
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
     }
-
-    a:hover {
-      text-decoration: underline;
+    .langbar{
+      display:flex;
+      gap: 8px;
     }
-
-    ul {
-      margin-left: 20px;
+    .langbtn{
+      cursor:pointer;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background:#fff;
+      font-weight: 700;
     }
-
-    .section {
-      margin-bottom: 40px;
+    .langbtn.active{
+      background: var(--uah-blue);
+      color:#fff;
+      border-color: var(--uah-blue);
     }
-
-    .box {
-      background: #f4f6f8;
-      padding: 15px;
-      border-left: 4px solid #002f6c;
-    }
+    [data-lang]{ display:none; }
+    [data-lang].active{ display:block; }
   </style>
 </head>
 
 <body>
 
-<p><a href="../">⬅ Volver a Recursos Académicos</a></p>
+  <div class="topbar">
+    <!-- Back link -->
+    <div>
+      <a href="../">⬅ <span data-lang="es" class="active">Volver a Recursos Académicos</span><span data-lang="en">Back to Academic Resources</span></a>
+    </div>
 
-<h1>🔌 Electrónica Digital – Universidad de Alcalá</h1>
-
-<p>
-Bienvenido/a a este repositorio general de <strong>materiales, ejercicios y recursos multimedia</strong>
-relacionados con la asignatura <strong>Electrónica Digital</strong>, impartida en varios grados de
-ingeniería en la <strong>Universidad de Alcalá (UAH)</strong>.
-</p>
-
-<p>
-📚 <strong>Página oficial de la asignatura:</strong><br>
-<a href="https://www.uah.es/es/estudios/estudios-oficiales/grados/asignatura/Electronica-Digital-350007/"
-   target="_blank">
-https://www.uah.es/es/estudios/estudios-oficiales/grados/asignatura/Electronica-Digital-350007/
-</a>
-</p>
-
-<hr>
-
-<div class="section">
-  <h2>🎯 Objetivo de este repositorio</h2>
-
-  <p>Este espacio tiene como finalidad:</p>
-
-  <ul>
-    <li>Organizar y compartir <strong>contenidos propios</strong> creados para la asignatura.</li>
-    <li>Recopilar <strong>ejercicios prácticos</strong>, <strong>proyectos de diseño</strong> y
-        <strong>recursos didácticos</strong>.</li>
-    <li>Registrar los <strong>vídeos explicativos</strong> desarrollados para apoyar el aprendizaje.</li>
-    <li>Enlazar a los <strong>repositorios públicos</strong> con ejercicios, simulaciones y documentación.</li>
-  </ul>
-
-  <div class="box">
-    Este repositorio se irá actualizando progresivamente con nuevo material.
+    <!-- Selector de idioma -->
+    <div class="langbar" aria-label="Language selector">
+      <button class="langbtn active" id="btn-es" type="button">ES</button>
+      <button class="langbtn" id="btn-en" type="button">EN</button>
+    </div>
   </div>
-</div>
 
-<div class="section">
-  <h2>📂 Estructura del repositorio</h2>
+  <!-- ======================= -->
+  <!-- ====== ESPAÑOL ========= -->
+  <!-- ======================= -->
+  <div data-lang="es" class="active">
+    <h1>🔌 Electrónica Digital <span class="tag">Universidad de Alcalá (UAH)</span></h1>
 
-  <pre>
+    <p class="lead">
+      Bienvenido/a a este repositorio general de <strong>materiales, ejercicios y recursos multimedia</strong>
+      relacionados con la asignatura <strong>Electrónica Digital</strong>, impartida en varios grados de
+      ingeniería en la <strong>Universidad de Alcalá (UAH)</strong>.
+    </p>
+
+    <div class="card">
+      <h2>📚 Página oficial de la asignatura</h2>
+      <p class="muted">Consulta la guía docente y la información institucional de la asignatura:</p>
+      <div class="btnrow">
+        <a class="btn primary"
+           href="https://www.uah.es/es/estudios/estudios-oficiales/grados/asignatura/Electronica-Digital-350007/"
+           target="_blank" rel="noopener">
+          Abrir página oficial (UAH)
+        </a>
+      </div>
+      <p class="muted" style="margin-top:10px;">
+        Enlace directo:
+        <a href="https://www.uah.es/es/estudios/estudios-oficiales/grados/asignatura/Electronica-Digital-350007/"
+           target="_blank" rel="noopener">
+          https://www.uah.es/es/estudios/estudios-oficiales/grados/asignatura/Electronica-Digital-350007/
+        </a>
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>🎯 Objetivo de este repositorio</h2>
+      <p>Este espacio tiene como finalidad:</p>
+      <ul>
+        <li>Organizar y compartir <strong>contenidos propios</strong> creados para la asignatura.</li>
+        <li>Recopilar <strong>ejercicios prácticos</strong>, <strong>proyectos de diseño</strong> y <strong>recursos didácticos</strong>.</li>
+        <li>Registrar los <strong>vídeos explicativos</strong> desarrollados para apoyar el aprendizaje.</li>
+        <li>Enlazar a <strong>repositorios públicos</strong> con ejercicios, simulaciones y documentación.</li>
+      </ul>
+      <p class="muted"><strong>Nota:</strong> este repositorio se irá actualizando progresivamente con nuevo material.</p>
+    </div>
+
+    <div class="card">
+      <h2>📂 Estructura del repositorio</h2>
+      <pre>
 /Digital_Electronics/
   /videos/             # Clases grabadas y tutoriales
   /ejercicios/         # Ejercicios propuestos y resueltos
   /proyectos/          # Proyectos de diseño digital
   /simulaciones/       # Simulación VHDL / Verilog
   /fpga/               # Implementaciones en FPGA
-  </pre>
-</div>
+      </pre>
+    </div>
+  </div>
+
+  <!-- ======================= -->
+  <!-- ======= ENGLISH ======== -->
+  <!-- ======================= -->
+  <div data-lang="en">
+    <h1>🔌 Digital Electronics <span class="tag">University of Alcalá (UAH)</span></h1>
+
+    <p class="lead">
+      Welcome to this general repository of <strong>materials, exercises, and multimedia resources</strong>
+      related to the <strong>Digital Electronics</strong> course, taught across several engineering Bachelor’s
+      programmes at the <strong>University of Alcalá (UAH)</strong>.
+    </p>
+
+    <div class="card">
+      <h2>📚 Official course page</h2>
+      <p class="muted">Syllabus and institutional information for the course:</p>
+      <div class="btnrow">
+        <a class="btn primary"
+           href="https://www.uah.es/es/estudios/estudios-oficiales/grados/asignatura/Electronica-Digital-350007/"
+           target="_blank" rel="noopener">
+          Open official page (UAH)
+        </a>
+      </div>
+      <p class="muted" style="margin-top:10px;">
+        Direct link:
+        <a href="https://www.uah.es/es/estudios/estudios-oficiales/grados/asignatura/Electronica-Digital-350007/"
+           target="_blank" rel="noopener">
+          https://www.uah.es/es/estudios/estudios-oficiales/grados/asignatura/Electronica-Digital-350007/
+        </a>
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>🎯 Repository purpose</h2>
+      <p>This space aims to:</p>
+      <ul>
+        <li>Organize and share <strong>original content</strong> created for the course.</li>
+        <li>Collect <strong>practical exercises</strong>, <strong>design projects</strong>, and <strong>learning resources</strong>.</li>
+        <li>List and track <strong>explanatory videos</strong> developed to support learning.</li>
+        <li>Link to <strong>public repositories</strong> with exercises, simulations, and documentation.</li>
+      </ul>
+      <p class="muted"><strong>Note:</strong> this repository will be progressively updated with new material.</p>
+    </div>
+
+    <div class="card">
+      <h2>📂 Repository structure</h2>
+      <pre>
+/Digital_Electronics/
+  /videos/             # Recorded lessons and tutorials
+  /exercises/          # Proposed and solved exercises
+  /projects/           # Digital design projects
+  /simulations/        # VHDL / Verilog simulation
+  /fpga/               # FPGA implementations
+      </pre>
+    </div>
+  </div>
+
+  <script>
+    const btnES = document.getElementById('btn-es');
+    const btnEN = document.getElementById('btn-en');
+    const blocks = document.querySelectorAll('[data-lang]');
+
+    function setLang(lang){
+      blocks.forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === lang));
+      btnES.classList.toggle('active', lang === 'es');
+      btnEN.classList.toggle('active', lang === 'en');
+      document.documentElement.lang = lang;
+
+      try { localStorage.setItem('lang', lang); } catch(e){}
+    }
+
+    btnES.addEventListener('click', () => setLang('es'));
+    btnEN.addEventListener('click', () => setLang('en'));
+
+    (function init(){
+      let lang = 'es';
+      try {
+        const saved = localStorage.getItem('lang');
+        if(saved === 'es' || saved === 'en') lang = saved;
+        else lang = (navigator.language || '').toLowerCase().startsWith('en') ? 'en' : 'es';
+      } catch(e){}
+      setLang(lang);
+    })();
+  </script>
 
 </body>
 </html>
