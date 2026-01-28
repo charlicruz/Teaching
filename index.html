@@ -2,134 +2,460 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Recursos Académicos – Electrónica | UAH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recursos Académicos – Electrónica | Universidad de Alcalá (UAH)</title>
   <style>
-    body {
+    :root{
+      --uah-blue:#002f6c;
+      --link:#0056b3;
+      --bg:#ffffff;
+      --muted:#5b6675;
+      --card:#f6f8fb;
+      --border:#e3e8ef;
+    }
+    body{
       font-family: Arial, Helvetica, sans-serif;
-      max-width: 900px;
+      max-width: 980px;
       margin: 40px auto;
-      line-height: 1.6;
+      padding: 0 18px;
+      line-height: 1.65;
       color: #222;
+      background: var(--bg);
     }
-    h1, h2, h3 {
-      color: #002f6c;
+    h1,h2{ color: var(--uah-blue); margin: 0.6em 0 0.35em; }
+    /* Títulos de asignaturas más grandes */
+    h3{
+      color: var(--uah-blue);
+      margin: 0.6em 0 0.35em;
+      font-size: 1.45rem;
+      line-height: 1.25;
     }
-    a {
-      color: #0056b3;
-      text-decoration: none;
+    p{ margin: 0.35em 0 0.8em; }
+    a{ color: var(--link); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    hr{ border:0; border-top:1px solid var(--border); margin: 26px 0; }
+
+    .lead{ font-size: 1.05rem; color:#1f2937; }
+    .muted{ color: var(--muted); }
+
+    .grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
     }
-    a:hover {
-      text-decoration: underline;
+    @media (min-width: 880px){
+      .grid.two{ grid-template-columns: 1fr 1fr; }
     }
-    ul {
-      margin-left: 20px;
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 16px 14px;
     }
-    code, pre {
-      background: #f4f4f4;
-      padding: 10px;
-      display: block;
+    .btnrow{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 10px; }
+    .btn{
+      display:inline-block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background:#fff;
+      font-weight: 600;
+    }
+    .btn.primary{
+      background: var(--uah-blue);
+      border-color: var(--uah-blue);
+      color:#fff;
+    }
+    .btn.primary:hover{ text-decoration:none; opacity:0.95; }
+    .btn:hover{ text-decoration:none; background:#ffffff; }
+
+    ul{ margin: 8px 0 0 18px; }
+    li{ margin: 6px 0; }
+
+    pre{
+      background: #0b1220;
+      color: #e5e7eb;
+      padding: 14px;
+      border-radius: 12px;
       overflow-x: auto;
+      font-size: 0.92rem;
     }
+    .tag{
+      display:inline-block;
+      font-size: 0.86rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background:#fff;
+      color: var(--muted);
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* Idiomas */
+    .langbar{
+      display:flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .langbtn{
+      cursor:pointer;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background:#fff;
+      font-weight: 700;
+    }
+    .langbtn.active{
+      background: var(--uah-blue);
+      color:#fff;
+      border-color: var(--uah-blue);
+    }
+    [data-lang]{ display:none; }
+    [data-lang].active{ display:block; }
   </style>
 </head>
 
 <body>
 
-<h1>Recursos Académicos – Electrónica | Universidad de Alcalá</h1>
+  <!-- Selector de idioma -->
+  <div class="langbar" aria-label="Selector de idioma">
+    <button class="langbtn active" id="btn-es" type="button">ES</button>
+    <button class="langbtn" id="btn-en" type="button">EN</button>
+  </div>
 
-<p>
-Este repositorio agrupa contenidos didácticos y materiales desarrollados para distintas asignaturas del área de
-<strong>Electrónica</strong> impartidas en la <strong>Universidad de Alcalá (UAH)</strong>.
-Incluye <strong>ejercicios, proyectos, guías de laboratorio, simulaciones, diseños PCB y vídeos explicativos</strong>,
-orientados a estudiantes de ingeniería.
-</p>
+  <!-- ======================= -->
+  <!-- ====== ESPAÑOL ========= -->
+  <!-- ======================= -->
+  <div data-lang="es" class="active">
+    <h1>Recursos Académicos – Electrónica <span class="tag">Universidad de Alcalá (UAH)</span></h1>
+    <p class="lead">
+      Esta página reúne materiales docentes y repositorios desarrollados para distintas asignaturas del área de
+      <strong>Electrónica</strong> impartidas en la <strong>Universidad de Alcalá (UAH)</strong>.
+      Incluye <strong>ejercicios, proyectos, guías de laboratorio, simulaciones, diseños PCB y vídeos explicativos</strong>.
+    </p>
 
-<hr>
+    <div class="card">
+      <h2>👤 Perfil oficial UAH</h2>
+      <p class="muted">
+        Para más detalles sobre mi trayectoria académica, investigación y docencia, puedes consultar mi perfil oficial en la UAH:
+      </p>
+      <div class="btnrow">
+        <a class="btn primary" href="https://www.uah.es/en/estudios/profesor/Carlos-Cruz-de-la-Torre/" target="_blank" rel="noopener">
+          🔗 Perfil UAH – Carlos Cruz de la Torre
+        </a>
+        <a class="btn" href="https://portalcientifico.uah.es/investigadores/201819/detalle" target="_blank" rel="noopener">
+          🔬 Portal Científico UAH – Perfil
+        </a>
+      </div>
+    </div>
 
-  
-<h2>📚 Asignaturas incluidas</h2>
+    <hr>
 
-<p>
-Diseño de sistemas digitales mediante VHDL, lógica combinacional y secuencial, implementación en FPGAs y simulación con testbenches.
-</p>
-<p>
-<ul>
-<li><a href="Digital_Electronics/">🔌 Digital Electronics</a></li>
-</ul>
-  <a href="https://github.com/charlicruz/Teaching/tree/main/Digital_Electronics" target="_blank">
-Acceder a Github Digital Electronics
-</a>
-</p>
+    <div class="grid two">
+      <div class="card">
+        <h2>🎓 Docencia – Grados</h2>
+        <p class="muted">Imparto docencia en los siguientes programas de Grado:</p>
+        <ul>
+          <li>Ingeniería en Sistemas de Telecomunicación (G39/G390)</li>
+          <li>Ingeniería en Tecnologías de Telecomunicación (G35/G350)</li>
+          <li>Ingeniería Telemática (G38/G380)</li>
+          <li>Ingeniería en Electrónica de Comunicaciones (G37/G370)</li>
+          <li>Ingeniería Electrónica y Automática Industrial (G60)</li>
+          <li>Ingeniería en Tecnologías Industriales (G610)</li>
+          <li>Ciencias y Tecnologías Forenses (G652)</li>
+        </ul>
+      </div>
 
-<h3>🛠 Electronic Design</h3>
-<p>
-Ejercicios y proyectos centrados en el diseño de sistemas electrónicos digitales y analógicos, incluyendo el uso de herramientas
-como Quartus, ModelSim y simuladores.
-</p>
-<p>
+      <div class="card">
+        <h2>📅 Tutorías / reuniones</h2>
+        <p class="muted">
+          Si quieres agendar una reunión o tutoría, puedes reservar un hueco aquí:
+        </p>
+        <div class="btnrow">
+          <!-- Sustituye por tu enlace real -->
+          <a class="btn primary" href="https://calendly.com/" target="_blank" rel="noopener">
+            📅 Calendly – Carlos Cruz
+          </a>
+        </div>
+        <p class="muted" style="margin-top:10px;">
+          Consejo: indica la asignatura y el tema para poder preparar la sesión.
+        </p>
+      </div>
+    </div>
 
-  <ul>
-<li><a href="Electronic%20Design/">🛠 Electronic Design</a></li>
-</ul>
-  <a href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design" target="_blank">
-Acceder a Github Electronic Design
-</a>
-</p>
+    <hr>
 
-<h3>💡 Electronics Fundamentals</h3>
-<p>
-Material introductorio sobre análisis de circuitos, componentes básicos, ley de Ohm, ley de Kirchhoff, amplificadores,
-filtros y fundamentos de electrónica digital.
-</p>
-<p>
-  <ul>
-<li><a href="Electronics%20Fundamentals/">💡 Electronics Fundamentals</a></li>
-</ul>
-<a href="https://github.com/charlicruz/Teaching/tree/main/Electronics%20Fundamentals" target="_blank">
-Acceder a Electronics Fundamentals
-</a>
-</p>
+    <h2>📚 Repositorios de asignaturas (GitHub)</h2>
+    <p class="muted">
+      Acceso directo a materiales y recursos prácticos. Cada asignatura incluye ejercicios, proyectos, guías de laboratorio y más.
+    </p>
 
-<h3>⚙️ Electronic Technology</h3>
-<p>
-Diseño electrónico aplicado: prácticas de laboratorio, diseño de PCB, simulaciones en LTspice, montaje de prototipos
-y validación experimental.
-</p>
-<p>
-<ul>
-<li><a href="Electronic%20Technology/">⚙️ Electronic Technology</a></li>
-</ul>
-<a href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Technology" target="_blank">
-Acceder a Electronic Technology
-</a>
-</p>
+    <div class="grid two">
+      <div class="card">
+        <h3>🔌 Digital Electronics</h3>
+        <p>Diseño de sistemas digitales con VHDL, lógica combinacional y secuencial, implementación en FPGA y simulación con testbenches.</p>
+        <div class="btnrow">
+          <a class="btn" href="Digital_Electronics/">Abrir carpeta web</a>
+          <a class="btn primary" href="https://github.com/charlicruz/Teaching/tree/main/Digital_Electronics" target="_blank" rel="noopener">
+            Abrir en GitHub
+          </a>
+        </div>
+      </div>
 
-<h3>🔍 Forensic Electronics</h3>
-<p>
-Aplicaciones de la electrónica en entornos forenses: análisis de señales, recuperación de evidencias,
-instrumentación avanzada y documentación técnica.
-</p>
-<p>
-<ul>
-<li><a href="Forensic%20Electronics/">🔍 Forensic Electronics</a></li>
-</ul>
-<a href="https://github.com/charlicruz/Teaching/tree/main/Forensic%20Electronics" target="_blank">
-Acceder a Forensic Electronics
-</a>
-</p>
+      <div class="card">
+        <h3>🛠 Electronic Design</h3>
+        <p>Ejercicios y proyectos de diseño electrónico digital y analógico, incluyendo herramientas como Quartus, ModelSim y simuladores.</p>
+        <div class="btnrow">
+          <a class="btn" href="Electronic%20Design/">Abrir carpeta web</a>
+          <a class="btn primary" href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design" target="_blank" rel="noopener">
+            Abrir en GitHub
+          </a>
+        </div>
+      </div>
 
-<hr>
+      <div class="card">
+        <h3>💡 Electronics Fundamentals</h3>
+        <p>Material introductorio: análisis de circuitos, componentes, leyes de Ohm y Kirchhoff, amplificadores, filtros y fundamentos digitales.</p>
+        <div class="btnrow">
+          <a class="btn" href="Electronics%20Fundamentals/">Abrir carpeta web</a>
+          <a class="btn primary" href="https://github.com/charlicruz/Teaching/tree/main/Electronics%20Fundamentals" target="_blank" rel="noopener">
+            Abrir en GitHub
+          </a>
+        </div>
+      </div>
 
-<h2>📂 Estructura común del repositorio</h2>
+      <div class="card">
+        <h3>⚙️ Electronic Technology</h3>
+        <p>Electrónica aplicada: prácticas de laboratorio, diseño de PCB, simulaciones (LTspice), prototipado y validación experimental.</p>
+        <div class="btnrow">
+          <a class="btn" href="Electronic%20Technology/">Abrir carpeta web</a>
+          <a class="btn primary" href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Technology" target="_blank" rel="noopener">
+            Abrir en GitHub
+          </a>
+        </div>
+      </div>
 
-<pre>
+      <div class="card">
+        <h3>🔍 Forensic Electronics</h3>
+        <p>Electrónica en entornos forenses: análisis de señales, recuperación de evidencias, instrumentación avanzada y documentación técnica.</p>
+        <div class="btnrow">
+          <a class="btn" href="Forensic%20Electronics/">Abrir carpeta web</a>
+          <a class="btn primary" href="https://github.com/charlicruz/Teaching/tree/main/Forensic%20Electronics" target="_blank" rel="noopener">
+            Abrir en GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>✅ Vista general</h3>
+        <p class="muted">Acceso rápido al conjunto completo de recursos (web) y al repositorio principal.</p>
+        <div class="btnrow">
+          <a class="btn primary" href="https://charlicruz.github.io/Teaching/" target="_blank" rel="noopener">
+            🌐 Academic Resources (Web)
+          </a>
+          <a class="btn" href="https://github.com/charlicruz/Teaching/" target="_blank" rel="noopener">
+            🗂 Repositorio principal en GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>📂 Estructura común del repositorio</h2>
+    <pre>
 /asignatura/
   /videos/             # Tutoriales y explicaciones en vídeo
   /ejercicios/         # Ejercicios propuestos y resueltos
   /proyectos/          # Proyectos de diseño y simulación
   /pcb_design/         # Diseño de PCB (KiCad, Proteus, etc.)
-  /simulaciones/
-</pre>
+  /simulaciones/       # Archivos de simulación
+    </pre>
+
+    <p class="muted">Nota: algunas carpetas pueden variar según la asignatura y el curso académico.</p>
+  </div>
+
+  <!-- ======================= -->
+  <!-- ======= ENGLISH ======== -->
+  <!-- ======================= -->
+  <div data-lang="en">
+    <h1>Academic Resources – Electronics <span class="tag">University of Alcalá (UAH)</span></h1>
+    <p class="lead">
+      This page gathers teaching materials and repositories developed for several <strong>Electronics</strong> courses at the
+      <strong>University of Alcalá (UAH)</strong>. You will find <strong>exercises, projects, lab guides, simulations, PCB designs,
+      and explanatory videos</strong>.
+    </p>
+
+    <div class="card">
+      <h2>👤 Official UAH profile</h2>
+      <p class="muted">
+        For more details about my academic background, research, and teaching activities, you can visit my official profile:
+      </p>
+      <div class="btnrow">
+        <a class="btn primary" href="https://www.uah.es/en/estudios/profesor/Carlos-Cruz-de-la-Torre/" target="_blank" rel="noopener">
+          🔗 UAH – Carlos Cruz de la Torre
+        </a>
+        <a class="btn" href="https://portalcientifico.uah.es/investigadores/201819/detalle" target="_blank" rel="noopener">
+          🔬 UAH Scientific Portal – Profile
+        </a>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>🎓 Teaching – Bachelor’s Degrees</h2>
+        <p class="muted">I currently teach in the following Bachelor’s programmes:</p>
+        <ul>
+          <li>Electronic Communications Engineering (G37/G370)</li>
+          <li>Telecommunication Systems Engineering (G39/G390)</li>
+          <li>Telecommunication Technologies Engineering (G35/G350)</li>
+          <li>Telematics Engineering (G38/G380)</li>
+          <li>Industrial Electronics and Automation Engineering (G60)</li>
+          <li>Industrial Technologies Engineering (G610)</li>
+          <li>Forensic Science and Technology (G652)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>📅 Tutoring / meetings</h2>
+        <p class="muted">
+          If you would like to schedule a meeting or tutoring session, you can book a time slot here:
+        </p>
+        <div class="btnrow">
+          <!-- Replace with your real Calendly link -->
+          <a class="btn primary" href="https://calendly.com/" target="_blank" rel="noopener">
+            📅 Calendly – Carlos Cruz
+          </a>
+        </div>
+        <p class="muted" style="margin-top:10px;">
+          Tip: Include the course name and topic so I can prepare in advance.
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>📚 Course repositories (GitHub)</h2>
+    <p class="muted">
+      Direct access to course materials and practical resources.
+    </p>
+
+    <div class="grid two">
+      <div class="card">
+        <h3>🔌 Digital Electronics</h3>
+        <p>Digital system design using VHDL, combinational and sequential logic, FPGA implementation, and testbench-based simulation.</p>
+        <div class="btnrow">
+          <a class="btn" href="Digital_Electronics/">Open web folder</a>
+          <a class="btn primary" href="https://github.com/charlicruz/Teaching/tree/main/Digital_Electronics" target="_blank" rel="noopener">
+            Open on GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🛠 Electronic Design</h3>
+        <p>Exercises and projects on digital and analog electronic design, including tools such as Quartus, ModelSim, and simulators.</p>
+        <div class="btnrow">
+          <a class="btn" href="Electronic%20Design/">Open web folder</a>
+          <a class="btn primary" href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design" target="_blank" rel="noopener">
+            Open on GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>💡 Electronics Fundamentals</h3>
+        <p>Introductory material on circuit analysis, basic components, Ohm/Kirchhoff laws, amplifiers, filters, and digital fundamentals.</p>
+        <div class="btnrow">
+          <a class="btn" href="Electronics%20Fundamentals/">Open web folder</a>
+          <a class="btn primary" href="https://github.com/charlicruz/Teaching/tree/main/Electronics%20Fundamentals" target="_blank" rel="noopener">
+            Open on GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>⚙️ Electronic Technology</h3>
+        <p>Applied electronics: lab practices, PCB design, LTspice simulations, prototyping, and experimental validation.</p>
+        <div class="btnrow">
+          <a class="btn" href="Electronic%20Technology/">Open web folder</a>
+          <a class="btn primary" href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Technology" target="_blank" rel="noopener">
+            Open on GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🔍 Forensic Electronics</h3>
+        <p>Electronics for forensic contexts: signal analysis, evidence recovery, advanced instrumentation, and technical documentation.</p>
+        <div class="btnrow">
+          <a class="btn" href="Forensic%20Electronics/">Open web folder</a>
+          <a class="btn primary" href="https://github.com/charlicruz/Teaching/tree/main/Forensic%20Electronics" target="_blank" rel="noopener">
+            Open on GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>✅ Full overview</h3>
+        <p class="muted">Quick access to the web version and the main repository.</p>
+        <div class="btnrow">
+          <a class="btn primary" href="https://charlicruz.github.io/Teaching/" target="_blank" rel="noopener">
+            🌐 Academic Resources (Web)
+          </a>
+          <a class="btn" href="https://github.com/charlicruz/Teaching/" target="_blank" rel="noopener">
+            🗂 Main GitHub Repository
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>📂 Common repository structure</h2>
+    <pre>
+/course/
+  /videos/             # Tutorials and video explanations
+  /exercises/          # Proposed and solved exercises
+  /projects/           # Design and simulation projects
+  /pcb_design/         # PCB design (KiCad, Proteus, etc.)
+  /simulations/        # Simulation files
+    </pre>
+
+    <p class="muted">Note: folders may vary depending on the course and academic year.</p>
+  </div>
+
+  <script>
+    const btnES = document.getElementById('btn-es');
+    const btnEN = document.getElementById('btn-en');
+    const blocks = document.querySelectorAll('[data-lang]');
+
+    function setLang(lang){
+      blocks.forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === lang));
+      btnES.classList.toggle('active', lang === 'es');
+      btnEN.classList.toggle('active', lang === 'en');
+      document.documentElement.lang = lang;
+
+      // opcional: recordar preferencia
+      try { localStorage.setItem('lang', lang); } catch(e){}
+    }
+
+    btnES.addEventListener('click', () => setLang('es'));
+    btnEN.addEventListener('click', () => setLang('en'));
+
+    // opcional: aplicar preferencia guardada o idioma del navegador
+    (function init(){
+      let lang = 'es';
+      try {
+        lang = localStorage.getItem('lang') || (navigator.language || '').toLowerCase().startsWith('en') ? 'en' : 'es';
+      } catch(e){}
+      setLang(lang);
+    })();
+  </script>
 
 </body>
 </html>

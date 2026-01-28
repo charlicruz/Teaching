@@ -2,146 +2,349 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Electronic Design – Recursos Académicos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Electronic Design – Recursos Académicos | UAH</title>
 
   <style>
-    body {
+    :root{
+      --uah-blue:#002f6c;
+      --link:#0056b3;
+      --bg:#ffffff;
+      --muted:#5b6675;
+      --card:#f6f8fb;
+      --border:#e3e8ef;
+    }
+    body{
       font-family: Arial, Helvetica, sans-serif;
-      max-width: 900px;
+      max-width: 980px;
       margin: 40px auto;
-      line-height: 1.6;
+      padding: 0 18px;
+      line-height: 1.65;
       color: #222;
+      background: var(--bg);
+    }
+    h1,h2{ color: var(--uah-blue); margin: 0.6em 0 0.35em; }
+    h3{
+      color: var(--uah-blue);
+      margin: 0.6em 0 0.35em;
+      font-size: 1.45rem;
+      line-height: 1.25;
+    }
+    p{ margin: 0.35em 0 0.8em; }
+    a{ color: var(--link); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    hr{ border:0; border-top:1px solid var(--border); margin: 26px 0; }
+
+    .lead{ font-size: 1.05rem; color:#1f2937; }
+    .muted{ color: var(--muted); }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 16px 14px;
+      margin: 14px 0;
+    }
+    .btnrow{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 10px; }
+    .btn{
+      display:inline-block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background:#fff;
+      font-weight: 600;
+    }
+    .btn.primary{
+      background: var(--uah-blue);
+      border-color: var(--uah-blue);
+      color:#fff;
+    }
+    .btn.primary:hover{ text-decoration:none; opacity:0.95; }
+    .btn:hover{ text-decoration:none; background:#ffffff; }
+
+    ul{ margin: 8px 0 0 18px; }
+    li{ margin: 6px 0; }
+
+    .tag{
+      display:inline-block;
+      font-size: 0.86rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background:#fff;
+      color: var(--muted);
+      margin-left: 8px;
+      vertical-align: middle;
     }
 
-    h1, h2, h3 {
-      color: #002f6c;
+    /* Idiomas */
+    .topbar{
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
     }
-
-    a {
-      color: #0056b3;
-      text-decoration: none;
+    .langbar{
+      display:flex;
+      gap: 8px;
     }
-
-    a:hover {
-      text-decoration: underline;
+    .langbtn{
+      cursor:pointer;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background:#fff;
+      font-weight: 700;
     }
-
-    ul {
-      margin-left: 20px;
+    .langbtn.active{
+      background: var(--uah-blue);
+      color:#fff;
+      border-color: var(--uah-blue);
     }
-
-    .section {
-      margin-bottom: 40px;
-    }
-
-    .note {
-      background: #f4f6f8;
-      padding: 15px;
-      border-left: 4px solid #002f6c;
-    }
+    [data-lang]{ display:none; }
+    [data-lang].active{ display:block; }
   </style>
 </head>
 
 <body>
 
-<h1>Electronic Design – Recursos Académicos</h1>
+  <div class="topbar">
+    <!-- Back link (bilingüe) -->
+    <div>
+      <a href="../">
+        ⬅
+        <span data-lang="es" id="back-es">Volver a Recursos Académicos</span>
+        <span data-lang="en" id="back-en">Back to Academic Resources</span>
+      </a>
+    </div>
 
-<p>
-Este espacio recoge materiales docentes orientados al <strong>diseño electrónico y digital</strong>,
-con especial énfasis en el uso de <strong>VHDL</strong>, metodologías de diseño estructurado y
-validación mediante simulación.
-</p>
-
-<hr>
-
-<div class="section">
-  <h2>🎥 Vídeos disponibles</h2>
-  <div class="note">
-    <em>Próximamente se incluirán enlaces a tutoriales de simulación, diseño y análisis.</em>
+    <!-- Selector de idioma -->
+    <div class="langbar" aria-label="Language selector">
+      <button class="langbtn active" id="btn-es" type="button">ES</button>
+      <button class="langbtn" id="btn-en" type="button">EN</button>
+    </div>
   </div>
-</div>
 
-<div class="section">
-  <h2>🎥 Podcast</h2>
+  <!-- ======================= -->
+  <!-- ====== ESPAÑOL ========= -->
+  <!-- ======================= -->
+  <div data-lang="es" class="active">
+    <h1>🛠 Electronic Design <span class="tag">Recursos Académicos</span></h1>
 
-  <p>
-  <ul>
-<li><a href="Podcast/">Podcast</a></li>
-</ul>
-    Este podcast ofrece una guía técnica fundamental sobre el diseño de hardware utilizando el
-  lenguaje descriptivo <strong>VHDL</strong>. Se presenta una metodología basada en la
-  descomposición de problemas complejos en bloques simples, la definición precisa de interfaces
-  y el uso de arquitecturas jerárquicas.
-  </p>
+    <p class="lead">
+      Este espacio recoge materiales docentes orientados al <strong>diseño electrónico y digital</strong>,
+      con especial énfasis en el uso de <strong>VHDL</strong>, metodologías de diseño estructurado y
+      validación mediante simulación.
+    </p>
 
-  <p>
-  Se abordan conceptos clave como la diferencia entre lógica combinacional y secuencial, el
-  funcionamiento de los biestables y la naturaleza concurrente del código hardware.
-  Asimismo, se proporcionan pautas prácticas para la simulación en <strong>Vivado</strong> o
-  <strong>ModelSim</strong>, la gestión de señales y el uso de genéricos para crear diseños
-  parametrizables.
-  </p>
+    <div class="card">
+      <h2>🎥 Vídeos disponibles</h2>
+      <p class="muted"><em>Próximamente se incluirán enlaces a tutoriales de simululación, diseño y análisis.</em></p>
+    </div>
 
-  <p>
-  Finalmente, se subraya la importancia de la verificación mediante bancos de pruebas y la
-  optimización de recursos en dispositivos como las <strong>FPGAs</strong>.
-  </p>
+    <div class="card">
+      <h2>🎧 Podcast</h2>
 
-  <p>
-    👉 <a href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Podcast" target="_blank">
-    Acceder al repositorio del Podcast
-    </a>
-  </p>
-</div>
+      <p class="muted">
+        Este podcast ofrece una guía técnica fundamental sobre el diseño de hardware utilizando el lenguaje descriptivo
+        <strong>VHDL</strong>. Se presenta una metodología basada en la descomposición de problemas complejos en bloques simples,
+        la definición precisa de interfaces y el uso de arquitecturas jerárquicas.
+      </p>
 
-<div class="section">
-  <h2>🔗 Repositorios relacionados</h2>
+      <p class="muted">
+        Se abordan conceptos clave como la diferencia entre lógica combinacional y secuencial, el funcionamiento de los biestables
+        y la naturaleza concurrente del código hardware. Asimismo, se proporcionan pautas prácticas para la simulación en
+        <strong>Vivado</strong> o <strong>ModelSim</strong>, la gestión de señales y el uso de genéricos para crear diseños parametrizables.
+      </p>
 
-  <ul>
-    <li>
-      📘 <strong>Preguntas de teoría y revisión en VHDL</strong><br>
-      <a href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Questions" target="_blank">
-        https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Questions
-      </a>
-    </li>
+      <p class="muted">
+        Finalmente, se subraya la importancia de la verificación mediante bancos de pruebas y la optimización de recursos en dispositivos
+        como las <strong>FPGAs</strong>.
+      </p>
 
-    <li>
-      🛠️ <strong>Ejercicios prácticos de diseño electrónico</strong><br>
-      <a href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Exercises" target="_blank">
-        https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Exercises
-      </a>
-    </li>
-  </ul>
-</div>
+      <div class="btnrow">
+        <a class="btn" href="Podcast/">Abrir carpeta web (Podcast)</a>
+        <a class="btn primary" href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Podcast" target="_blank" rel="noopener">
+          Acceder al repositorio del Podcast
+        </a>
+      </div>
+    </div>
 
-<div class="section">
-  <h2>👨‍🏫 Asignatura impartida</h2>
-  <ul>
-    <li>Grado en Ingeniería en Sistemas de Telecomunicación</li>
-  </ul>
-</div>
+    <div class="card">
+      <h2>🔗 Repositorios relacionados</h2>
+      <ul>
+        <li>
+          📘 <strong>Preguntas de teoría y revisión en VHDL</strong><br>
+          <a href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Questions" target="_blank" rel="noopener">
+            https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Questions
+          </a>
+        </li>
+        <li>
+          🛠️ <strong>Ejercicios prácticos de diseño electrónico</strong><br>
+          <a href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Exercises" target="_blank" rel="noopener">
+            https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Exercises
+          </a>
+        </li>
+      </ul>
 
-<div class="section">
-  <h2>🛠 Herramientas recomendadas</h2>
-  <ul>
-    <li><strong>Quartus Prime</strong> – Diseño digital</li>
-    <li><strong>Vivado</strong> – Diseño y simulación de sistemas hardware</li>
-  </ul>
-</div>
+      <div class="btnrow">
+        <a class="btn primary" href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design" target="_blank" rel="noopener">
+          Abrir carpeta principal en GitHub
+        </a>
+      </div>
+    </div>
 
-<div class="section">
-  <h2>✉️ Contacto</h2>
+    <div class="card">
+      <h2>👨‍🏫 Asignatura impartida</h2>
+      <ul>
+        <li>Grado en Ingeniería en Sistemas de Telecomunicación</li>
+      </ul>
+    </div>
 
-  <p>
-  Este repositorio está dedicado al aprendizaje y difusión de conocimientos sobre diseño
-  electrónico. Para sugerencias, contribuciones o dudas, puedes abrir un
-  <em>issue</em> o proponer una <em>pull request</em>.
-  </p>
+    <div class="card">
+      <h2>🛠 Herramientas recomendadas</h2>
+      <ul>
+        <li><strong>Quartus Prime</strong> – Diseño digital</li>
+        <li><strong>Vivado</strong> – Diseño y simulación de sistemas hardware</li>
+      </ul>
+    </div>
 
-  <p>
-  <strong>¡Gracias por tu interés en el diseño electrónico y por formar parte del aprendizaje activo!</strong>
-  </p>
-</div>
+    <div class="card">
+      <h2>✉️ Contacto</h2>
+      <p class="muted">
+        Este repositorio está dedicado al aprendizaje y difusión de conocimientos sobre diseño electrónico.
+        Para sugerencias, contribuciones o dudas, puedes abrir un <em>issue</em> o proponer una <em>pull request</em>.
+      </p>
+      <p class="muted"><strong>¡Gracias por tu interés en el diseño electrónico y por formar parte del aprendizaje activo!</strong></p>
+    </div>
+  </div>
+
+  <!-- ======================= -->
+  <!-- ======= ENGLISH ======== -->
+  <!-- ======================= -->
+  <div data-lang="en">
+    <h1>🛠 Electronic Design <span class="tag">Academic Resources</span></h1>
+
+    <p class="lead">
+      This space gathers teaching materials focused on <strong>electronic and digital design</strong>,
+      with special emphasis on <strong>VHDL</strong>, structured design methodologies, and
+      simulation-based validation.
+    </p>
+
+    <div class="card">
+      <h2>🎥 Available videos</h2>
+      <p class="muted"><em>Tutorial links on simulation, design, and analysis will be added soon.</em></p>
+    </div>
+
+    <div class="card">
+      <h2>🎧 Podcast</h2>
+
+      <p class="muted">
+        This podcast provides a solid technical guide to hardware design using the <strong>VHDL</strong> hardware description language.
+        It presents a methodology based on breaking down complex problems into simple blocks, defining interfaces precisely,
+        and using hierarchical architectures.
+      </p>
+
+      <p class="muted">
+        Key topics include the difference between combinational and sequential logic, how flip-flops work, and the concurrent
+        nature of hardware code. It also provides practical guidelines for simulation in <strong>Vivado</strong> or <strong>ModelSim</strong>,
+        signal handling, and using generics to build parameterizable designs.
+      </p>
+
+      <p class="muted">
+        Finally, it highlights the importance of verification with testbenches and resource optimization on devices such as <strong>FPGAs</strong>.
+      </p>
+
+      <div class="btnrow">
+        <a class="btn" href="Podcast/">Open web folder (Podcast)</a>
+        <a class="btn primary" href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Podcast" target="_blank" rel="noopener">
+          Open Podcast repository
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🔗 Related repositories</h2>
+      <ul>
+        <li>
+          📘 <strong>VHDL theory questions and review</strong><br>
+          <a href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Questions" target="_blank" rel="noopener">
+            https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Questions
+          </a>
+        </li>
+        <li>
+          🛠️ <strong>Hands-on electronic design exercises</strong><br>
+          <a href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Exercises" target="_blank" rel="noopener">
+            https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design/Exercises
+          </a>
+        </li>
+      </ul>
+
+      <div class="btnrow">
+        <a class="btn primary" href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Design" target="_blank" rel="noopener">
+          Open main folder on GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>👨‍🏫 Taught in</h2>
+      <ul>
+        <li>Bachelor’s Degree in Telecommunication Systems Engineering</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>🛠 Recommended tools</h2>
+      <ul>
+        <li><strong>Quartus Prime</strong> – Digital design</li>
+        <li><strong>Vivado</strong> – Hardware system design and simulation</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>✉️ Contact</h2>
+      <p class="muted">
+        This repository is dedicated to learning and sharing knowledge on electronic design.
+        For suggestions, contributions, or questions, feel free to open an <em>issue</em> or propose a <em>pull request</em>.
+      </p>
+      <p class="muted"><strong>Thank you for your interest in electronic design and for being part of active learning!</strong></p>
+    </div>
+  </div>
+
+  <script>
+    const btnES = document.getElementById('btn-es');
+    const btnEN = document.getElementById('btn-en');
+    const blocks = document.querySelectorAll('[data-lang]');
+    const backES = document.getElementById('back-es');
+    const backEN = document.getElementById('back-en');
+
+    function setLang(lang){
+      blocks.forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === lang));
+      btnES.classList.toggle('active', lang === 'es');
+      btnEN.classList.toggle('active', lang === 'en');
+      backES.classList.toggle('active', lang === 'es');
+      backEN.classList.toggle('active', lang === 'en');
+      document.documentElement.lang = lang;
+
+      try { localStorage.setItem('lang', lang); } catch(e){}
+    }
+
+    btnES.addEventListener('click', () => setLang('es'));
+    btnEN.addEventListener('click', () => setLang('en'));
+
+    (function init(){
+      let lang = 'es';
+      try {
+        const saved = localStorage.getItem('lang');
+        if(saved === 'es' || saved === 'en') lang = saved;
+        else lang = (navigator.language || '').toLowerCase().startsWith('en') ? 'en' : 'es';
+      } catch(e){}
+      setLang(lang);
+    })();
+  </script>
 
 </body>
 </html>
