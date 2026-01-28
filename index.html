@@ -23,7 +23,6 @@
       background: var(--bg);
     }
     h1,h2{ color: var(--uah-blue); margin: 0.6em 0 0.35em; }
-    /* Títulos de asignaturas más grandes */
     h3{
       color: var(--uah-blue);
       margin: 0.6em 0 0.35em;
@@ -114,6 +113,27 @@
     }
     [data-lang]{ display:none; }
     [data-lang].active{ display:block; }
+
+    /* Perfil con foto */
+    .profile{
+      display:flex;
+      gap: 14px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .profile img{
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+    .profile .content{
+      flex: 1;
+      min-width: 240px;
+    }
   </style>
 </head>
 
@@ -138,16 +158,23 @@
 
     <div class="card">
       <h2>👤 Perfil oficial UAH</h2>
-      <p class="muted">
-        Para más detalles sobre mi trayectoria académica, investigación y docencia, puedes consultar mi perfil oficial en la UAH:
-      </p>
-      <div class="btnrow">
-        <a class="btn primary" href="https://www.uah.es/en/estudios/profesor/Carlos-Cruz-de-la-Torre/" target="_blank" rel="noopener">
-          🔗 Perfil UAH – Carlos Cruz de la Torre
-        </a>
-        <a class="btn" href="https://portalcientifico.uah.es/investigadores/201819/detalle" target="_blank" rel="noopener">
-          🔬 Portal Científico UAH – Perfil
-        </a>
+
+      <!-- Nota: guarda tu imagen como "profile.jpg" en esta misma carpeta -->
+      <div class="profile">
+        <img src="profile.jpg" alt="Foto de perfil">
+        <div class="content">
+          <p class="muted">
+            Para más detalles sobre mi trayectoria académica, investigación y docencia, puedes consultar mi perfil oficial en la UAH:
+          </p>
+          <div class="btnrow">
+            <a class="btn primary" href="https://www.uah.es/en/estudios/profesor/Carlos-Cruz-de-la-Torre/" target="_blank" rel="noopener">
+              🔗 Perfil UAH – Carlos Cruz de la Torre
+            </a>
+            <a class="btn" href="https://portalcientifico.uah.es/investigadores/201819/detalle" target="_blank" rel="noopener">
+              🔬 Portal Científico UAH – Perfil
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -228,20 +255,6 @@
       </div>
     </div>
 
-    <hr>
-
-    <h2>📂 Estructura común del repositorio</h2>
-    <pre>
-/asignatura/
-  /videos/             # Tutoriales y explicaciones en vídeo
-  /ejercicios/         # Ejercicios propuestos y resueltos
-  /proyectos/          # Proyectos de diseño y simulación
-  /pcb_design/         # Diseño de PCB (KiCad, Proteus, etc.)
-  /simulaciones/       # Archivos de simulación
-    </pre>
-
-    <p class="muted">Nota: algunas carpetas pueden variar según la asignatura y el curso académico.</p>
-
     <!-- ✅ MOVIDO AL FINAL -->
     <hr>
 
@@ -290,16 +303,23 @@
 
     <div class="card">
       <h2>👤 Official UAH profile</h2>
-      <p class="muted">
-        For more details about my academic background, research, and teaching activities, you can visit my official profile:
-      </p>
-      <div class="btnrow">
-        <a class="btn primary" href="https://www.uah.es/en/estudios/profesor/Carlos-Cruz-de-la-Torre/" target="_blank" rel="noopener">
-          🔗 UAH – Carlos Cruz de la Torre
-        </a>
-        <a class="btn" href="https://portalcientifico.uah.es/investigadores/201819/detalle" target="_blank" rel="noopener">
-          🔬 UAH Scientific Portal – Profile
-        </a>
+
+      <!-- Note: save your image as "profile.jpg" in this same folder -->
+      <div class="profile">
+        <img src="profile.jpg" alt="Profile photo">
+        <div class="content">
+          <p class="muted">
+            For more details about my academic background, research, and teaching activities, you can visit my official profile:
+          </p>
+          <div class="btnrow">
+            <a class="btn primary" href="https://www.uah.es/en/estudios/profesor/Carlos-Cruz-de-la-Torre/" target="_blank" rel="noopener">
+              🔗 UAH – Carlos Cruz de la Torre
+            </a>
+            <a class="btn" href="https://portalcientifico.uah.es/investigadores/201819/detalle" target="_blank" rel="noopener">
+              🔬 UAH Scientific Portal – Profile
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -379,20 +399,6 @@
         </div>
       </div>
     </div>
-
-    <hr>
-
-    <h2>📂 Common repository structure</h2>
-    <pre>
-/course/
-  /videos/             # Tutorials and video explanations
-  /exercises/          # Proposed and solved exercises
-  /projects/           # Design and simulation projects
-  /pcb_design/         # PCB design (KiCad, Proteus, etc.)
-  /simulations/        # Simulation files
-    </pre>
-
-    <p class="muted">Note: folders may vary depending on the course and academic year.</p>
 
     <!-- ✅ MOVED TO THE END -->
     <hr>
