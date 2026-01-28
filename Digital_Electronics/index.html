@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Electrónica Digital – Universidad de Alcalá (UAH)</title>
 
   <style>
@@ -121,9 +121,13 @@
 <body>
 
   <div class="topbar">
-    <!-- Back link -->
+    <!-- Back link (CORREGIDO para ES/EN) -->
     <div>
-      <a href="../">⬅ <span data-lang="es" class="active">Volver a Recursos Académicos</span><span data-lang="en">Back to Academic Resources</span></a>
+      <a href="../">
+        ⬅
+        <span data-lang="es" id="back-es">Volver a Recursos Académicos</span>
+        <span data-lang="en" id="back-en">Back to Academic Resources</span>
+      </a>
     </div>
 
     <!-- Selector de idioma -->
@@ -249,13 +253,20 @@
     const btnES = document.getElementById('btn-es');
     const btnEN = document.getElementById('btn-en');
     const blocks = document.querySelectorAll('[data-lang]');
+    const backES = document.getElementById('back-es');
+    const backEN = document.getElementById('back-en');
 
     function setLang(lang){
+      // Main blocks
       blocks.forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === lang));
+      // Buttons
       btnES.classList.toggle('active', lang === 'es');
       btnEN.classList.toggle('active', lang === 'en');
-      document.documentElement.lang = lang;
+      // Back link labels (ensure they match the selection)
+      backES.classList.toggle('active', lang === 'es');
+      backEN.classList.toggle('active', lang === 'en');
 
+      document.documentElement.lang = lang;
       try { localStorage.setItem('lang', lang); } catch(e){}
     }
 
