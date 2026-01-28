@@ -24,8 +24,10 @@ Diseño electrónico aplicado: prácticas de laboratorio, diseño de PCB, simula
 https://github.com/charlicruz/Teaching/tree/main/Electronic_Technology
 
 ### 🔍 Forensic Electronics  
+
 Aplicaciones de la electrónica en entornos forenses: análisis de señales, recuperación de evidencias, instrumentación avanzada y documentación técnica.
 https://github.com/charlicruz/Teaching/tree/main/Forensic_Electronics
+
 ---
 
 ## 📂 Estructura común del repositorio
