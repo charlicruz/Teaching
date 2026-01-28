@@ -22,7 +22,15 @@
       color: #222;
       background: var(--bg);
     }
-    h1,h2,h3{ color: var(--uah-blue); margin: 0.6em 0 0.35em; }
+    h1,h2{ color: var(--uah-blue); margin: 0.6em 0 0.35em; }
+    /* Bigger course titles */
+    h3{
+      color: var(--uah-blue);
+      margin: 0.6em 0 0.35em;
+      font-size: 1.35rem;   /* <- increased */
+      line-height: 1.25;
+    }
+
     p{ margin: 0.35em 0 0.8em; }
     a{ color: var(--link); text-decoration: none; }
     a:hover{ text-decoration: underline; }
@@ -106,6 +114,9 @@
       <a class="btn primary" href="https://www.uah.es/en/estudios/profesor/Carlos-Cruz-de-la-Torre/" target="_blank" rel="noopener">
         🔗 UAH – Carlos Cruz de la Torre
       </a>
+      <a class="btn" href="https://portalcientifico.uah.es/investigadores/201819/detalle" target="_blank" rel="noopener">
+        🔬 Scientific Portal (UAH) – Profile
+      </a>
     </div>
   </div>
 
@@ -132,13 +143,13 @@
         If you would like to schedule a meeting or tutoring session, you can book a time slot here:
       </p>
       <div class="btnrow">
-        <!-- Sustituye el href por tu enlace real de Calendly -->
+        <!-- Replace with your real Calendly link -->
         <a class="btn primary" href="https://calendly.com/" target="_blank" rel="noopener">
           📅 Calendly – Carlos Cruz
         </a>
       </div>
       <p class="muted" style="margin-top:10px;">
-        Tip: If you prefer, include a short note with the course name and topic so I can prepare in advance.
+        Tip: Include the course name and topic so I can prepare in advance.
       </p>
     </div>
   </div>
@@ -167,7 +178,7 @@
     <div class="card">
       <h3>🛠 Electronic Design</h3>
       <p>
-        Exercises and projects on digital and analog electronic design, including the use of tools such as Quartus, ModelSim, and simulators.
+        Exercises and projects on digital and analog electronic design, including tools such as Quartus, ModelSim, and simulators.
       </p>
       <div class="btnrow">
         <a class="btn" href="Electronic%20Design/">Open web folder</a>
@@ -218,16 +229,17 @@
 
     <div class="card">
       <h3>✅ Full overview</h3>
-      <p>
-        Full overview (web version): <strong>Academic Resources</strong>
+      <p class="muted">
+        Quick access to the full collection of resources (web) and the main repository.
       </p>
       <div class="btnrow">
-        <!-- Si tienes una página índice, enlázala aquí -->
-        <a class="btn primary" href="Academic%20Resources/">Open overview</a>
+        <a class="btn primary" href="https://charlicruz.github.io/Teaching/" target="_blank" rel="noopener">
+          🌐 Academic Resources (Web)
+        </a>
+        <a class="btn" href="https://github.com/charlicruz/Teaching/" target="_blank" rel="noopener">
+          🗂 Main GitHub Repository
+        </a>
       </div>
-      <p class="muted" style="margin-top:10px;">
-        If you don’t have an overview page yet, you can point this button to the main repository homepage.
-      </p>
     </div>
   </div>
 
