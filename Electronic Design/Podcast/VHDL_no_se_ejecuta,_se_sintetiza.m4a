@@ -1,3 +1,10 @@
-<audio controls>
-  <source src="audio/Update VHDL_no_se_ejecuta,_se_sintetiza.m4a" type="audio/mp4">
-</audio>
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8" />
+<body>
+  <h3>Audio</h3>
+  <audio controls>
+    <source src="audio/Update%20VHDL_no_se_ejecuta,_se_sintetiza.m4a" type="audio/mp4">
+  </audio>
+</body>
+</html>
