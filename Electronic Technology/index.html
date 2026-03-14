@@ -87,7 +87,6 @@
       vertical-align: middle;
     }
 
-    /* Idiomas */
     .topbar{
       display:flex;
       justify-content: space-between;
@@ -121,25 +120,20 @@
 <body>
 
   <div class="topbar">
-    <!-- Back link (bilingüe) -->
     <div>
-      <a href="../">
+      <a href="https://charlicruz.github.io/Teaching/">
         ⬅
         <span data-lang="es" id="back-es">Volver a Recursos Académicos</span>
         <span data-lang="en" id="back-en">Back to Academic Resources</span>
       </a>
     </div>
 
-    <!-- Selector de idioma -->
     <div class="langbar" aria-label="Language selector">
       <button class="langbtn active" id="btn-es" type="button">ES</button>
       <button class="langbtn" id="btn-en" type="button">EN</button>
     </div>
   </div>
 
-  <!-- ======================= -->
-  <!-- ====== ESPAÑOL ========= -->
-  <!-- ======================= -->
   <div data-lang="es" class="active">
     <h1>⚙️ Tecnología Electrónica <span class="tag">Laboratorio y Diseño de PCB</span></h1>
     <p class="lead">
@@ -147,6 +141,23 @@
       Este repositorio contiene materiales y recursos para la parte de <strong>laboratorio</strong> y <strong>diseño de PCB</strong>
       de las asignaturas <strong>Tecnología Electrónica</strong>.
     </p>
+
+    <div class="card">
+      <h2>🌐 Página web publicada</h2>
+      <p class="muted">Acceso directo a la versión web de esta página:</p>
+      <div class="btnrow">
+        <a class="btn primary"
+           href="TU_ENLACE_WEB_AQUI"
+           target="_blank" rel="noopener">
+          Abrir página web
+        </a>
+      </div>
+      <p>
+        <a href="TU_ENLACE_WEB_AQUI" target="_blank" rel="noopener">
+          TU_ENLACE_WEB_AQUI
+        </a>
+      </p>
+    </div>
 
     <div class="card">
       <h2>📚 Asignaturas oficiales</h2>
@@ -189,10 +200,20 @@
            target="_blank" rel="noopener">
           🖥️ Transparencias
         </a>
+          <a class="btn primary"
+           href="https://charlicruz.github.io/Teaching/Electronic%20Technology/PCB_site/index.html"
+           target="_blank" rel="noopener">
+          🖥️ Curso_PCB
+        </a>
         <a class="btn"
            href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Technology"
            target="_blank" rel="noopener">
           🗂 Carpeta principal en GitHub
+        </a>
+        <a class="btn"
+           href="https://github.com/charlicruz/Teaching/blob/main/Electronic%20Technology/PCB_site/index.html"
+           target="_blank" rel="noopener">
+          💻 Código HTML en GitHub
         </a>
       </div>
     </div>
@@ -212,9 +233,6 @@ README.md
     </div>
   </div>
 
-  <!-- ======================= -->
-  <!-- ======= ENGLISH ======== -->
-  <!-- ======================= -->
   <div data-lang="en">
     <h1>⚙️ Electronic Technology <span class="tag">Lab & PCB Design</span></h1>
     <p class="lead">
@@ -222,6 +240,23 @@ README.md
       This repository contains materials and resources for the <strong>laboratory</strong> and <strong>PCB design</strong>
       component of the <strong>Electronic Technology</strong> courses.
     </p>
+
+    <div class="card">
+      <h2>🌐 Published website</h2>
+      <p class="muted">Direct access to the web version of this page:</p>
+      <div class="btnrow">
+        <a class="btn primary"
+           href="TU_ENLACE_WEB_AQUI"
+           target="_blank" rel="noopener">
+          Open website
+        </a>
+      </div>
+      <p>
+        <a href="TU_ENLACE_WEB_AQUI" target="_blank" rel="noopener">
+          TU_ENLACE_WEB_AQUI
+        </a>
+      </p>
+    </div>
 
     <div class="card">
       <h2>📚 Official courses</h2>
@@ -269,6 +304,11 @@ README.md
            href="https://github.com/charlicruz/Teaching/tree/main/Electronic%20Technology"
            target="_blank" rel="noopener">
           🗂 Main folder on GitHub
+        </a>
+        <a class="btn"
+           href="https://github.com/charlicruz/Teaching/blob/main/Electronic%20Technology/PCB_site/index.html"
+           target="_blank" rel="noopener">
+          💻 HTML source on GitHub
         </a>
       </div>
     </div>
