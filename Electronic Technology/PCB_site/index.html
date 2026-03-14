@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Project 8 · 555 Blinker PCB</title>
+  <title>Projecto · 555 Blinker PCB</title>
   <link rel="icon" href="assets/images/ops_logo_favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,7 +100,7 @@
         <img src="assets/images/ops_logo_favicon.png" alt="logo">
         <div>
           <small>Open Project Space</small>
-          <div>Project 8 · 555 Blinker PCB</div>
+          <div>Projecto · 555 Blinker PCB</div>
         </div>
       </div>
       <div class="lang-switch" aria-label="Language selector">
@@ -120,7 +120,7 @@
         </div>
       </div>
       <div class="hero-media">
-        <img src="assets/images/ops_project_8_printed_circuit_board.jpg" alt="Printed circuit board">
+        <img src="assets/images/taller.png" alt="Printed circuit board">
         <div class="hero-badge" id="hero-badge"><strong>Updated layout</strong><br>Better spacing, improved cards and bilingual navigation.</div>
       </div>
     </section>
@@ -261,10 +261,10 @@
             <div class="section-head"><div><div class="section-kicker">Resumen del proyecto</div><h2>Del prototipado a una PCB real</h2></div><div class="meta">Actualizado 2026.03.14 </div></div>
             <div class="two-col">
               <div>
-                <p>En este proyecto pasarás de las breadboards y placas perforadas a una placa de circuito impreso completa del clásico 555 blinker usando KiCad 7. El objetivo es capturar el esquemático, asignar las huellas correctas, diseñar la PCB y generar los ficheros de fabricación.</p>
+                <p>En este proyecto pasarás de las breadboards y placas perforadas a una placa de circuito impreso complet del clásico 555 blinker usando KiCad 7. El objetivo es capturar el esquemático, asignar las huellas correctas, diseñar la PCB y generar los ficheros de fabricación.</p>
                 <div class="highlight"><strong>Configuración recomendada</strong><ul><li>Usa un ratón siempre que sea posible.</li><li>Guarda con frecuencia durante el esquemático y el layout.</li><li>Sigue los checkpoints en orden.</li></ul></div>
               </div>
-              <div class="image-card"><img src="assets/images/ops_project_8_printed_circuit_board.jpg" alt="PCB"><div class="caption muted">Ejemplo de PCB usado en la página original del proyecto.</div></div>
+              <div class="image-card"><img src="assets/images/taller.png" alt="PCB"><div class="caption muted">Ejemplo de PCB.</div></div>
             </div>
           </section>
 
@@ -368,19 +368,19 @@
       btnEs.classList.toggle('active', isEs);
       document.documentElement.lang = isEs ? 'es' : 'en';
       heroTitle.textContent = isEs
-        ? 'Diseña una PCB completa del 555 Blinker con un flujo más claro y visual.'
-        : 'Design a complete 555 Blinker PCB with a cleaner, more visual workflow.';
+        ? 'Diseña una PCB complet del 555 Blinker.'
+        : 'Design a complete 555 Blinker PCB.';
       heroLead.textContent = isEs
-        ? 'Esta versión rediseñada mantiene la estructura original del proyecto, pero mejora la legibilidad, la navegación y la jerarquía visual. Además, incorpora un modo en español para facilitar su uso en clase o en autoaprendizaje.'
-        : 'This redesigned page keeps the original project structure while improving readability, navigation and visual hierarchy. It also adds a built-in Spanish mode so the page is easier to use in class or in self-study.';
+        ? 'Este tutorial te ayudará a realizar tu primer PCB en la herramienta Kikad.'
+        : 'This tutorial will help you create your first PCB using the KiCad software.';
       heroBadge.innerHTML = isEs
-        ? '<strong>Diseño actualizado</strong><br>Mejor espaciado, tarjetas más claras y navegación bilingüe.'
-        : '<strong>Updated layout</strong><br>Better spacing, improved cards and bilingual navigation.';
+        ? 'Taller de diseño PCB.'
+        : 'PCB design Course.';
       btnGo.textContent = isEs ? 'Ir a instrucciones' : 'Go to instructions';
       btnParts.textContent = isEs ? 'Ver lista de componentes' : 'See parts list';
       footerText.textContent = isEs
-        ? 'Esta página rediseñada se ha preparado para GitHub Pages a partir del HTML del proyecto subido, manteniendo la estructura original pero mejorando la presentación y añadiendo un modo en español.'
-        : 'This redesigned page was prepared for GitHub Pages from the uploaded project HTML, preserving the original structure while improving layout and adding a Spanish mode.';
+        ? 'Esta página se ha diseñado para el taller de Diseño PCB. Carlos Cruz.'
+        : 'This page has been designed for the PCB Design workshop. Carlos Cruz.';
       try { localStorage.setItem('pcb_lang', lang); } catch(e) {}
       window.scrollTo({top:0, behavior:'instant'});
     }
