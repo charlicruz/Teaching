@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electronics Learning Hub</title>
+  <meta name="description" content="A GitHub Pages-ready site for electronics lectures, workshops, and a guided PCB project.">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top">Electronics Learning Hub</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
+      <nav id="primary-nav" class="primary-nav">
+        <a href="#overview">Overview</a>
+        <a href="#lectures">Lectures</a>
+        <a href="#workshops">Workshops</a>
+        <a href="#project">PCB Project</a>
+        <a href="#resources">Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <p class="eyebrow">GitHub Pages template</p>
+      <h1>Teach electronics with a clean, modern project website</h1>
+      <p class="hero-text">
+        A single static site for course information, lecture blocks, workshop activities, and a guided PCB project page.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#project">Explore the PCB project</a>
+        <a class="btn btn-secondary" href="#lectures">View learning blocks</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" id="overview">
+      <div class="container two-col intro-grid">
+        <div>
+          <p class="section-tag">Overview</p>
+          <h2>Built from your uploaded examples, redesigned for personal GitHub publishing</h2>
+          <p>
+            This page combines three recurring patterns: a visual landing section, card-based lecture and workshop collections,
+            and a structured project page with sidebar navigation, requirements, parts, schematics, checkpoints, and deliverables.
+          </p>
+          <p>
+            Replace the texts, links, dates, and downloadable materials with your own content and publish directly with GitHub Pages.
+          </p>
+        </div>
+        <div class="feature-panel">
+          <div class="feature-item">
+            <span>01</span>
+            <div>
+              <h3>Responsive layout</h3>
+              <p>Works as a single static site with no build process.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span>02</span>
+            <div>
+              <h3>Project sidebar</h3>
+              <p>Sticky in desktop view and compact on mobile.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span>03</span>
+            <div>
+              <h3>Reusable cards</h3>
+              <p>Ideal for lectures, workshops, tutorials, or project milestones.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="lectures">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-tag">Lectures</p>
+            <h2>Core learning blocks</h2>
+          </div>
+          <p class="section-note">Use each card for slides, videos, notes, or external repositories.</p>
+        </div>
+        <div class="card-grid">
+          <article class="info-card">
+            <div class="card-media gradient-1"></div>
+            <div class="card-body">
+              <p class="meta">Week 1</p>
+              <h3>Introduction to circuits</h3>
+              <p>Introduce voltage, current, resistance, and breadboard basics.</p>
+              <div class="card-links"><a href="#resources">Slides</a><a href="#resources">Video</a></div>
+            </div>
+          </article>
+          <article class="info-card">
+            <div class="card-media gradient-2"></div>
+            <div class="card-body">
+              <p class="meta">Week 3</p>
+              <h3>Embedded systems</h3>
+              <p>Move from prototyping toward programmable hardware and real devices.</p>
+              <div class="card-links"><a href="#resources">Slides</a><a href="#resources">Code</a></div>
+            </div>
+          </article>
+          <article class="info-card">
+            <div class="card-media gradient-3"></div>
+            <div class="card-body">
+              <p class="meta">Week 5</p>
+              <h3>Communication protocols</h3>
+              <p>Explain serial communication, buses, and practical integration examples.</p>
+              <div class="card-links"><a href="#resources">Slides</a><a href="#resources">Notes</a></div>
+            </div>
+          </article>
+          <article class="info-card">
+            <div class="card-media gradient-4"></div>
+            <div class="card-body">
+              <p class="meta">Week 7</p>
+              <h3>PCB design concepts</h3>
+              <p>Prepare students for schematic capture, footprints, routing, and design checks.</p>
+              <div class="card-links"><a href="#project">Project page</a><a href="#resources">Checklist</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workshops">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-tag">Workshops</p>
+            <h2>Hands-on practice sessions</h2>
+          </div>
+          <p class="section-note">A second card deck for practical activities, labs, or tutorials.</p>
+        </div>
+        <div class="card-grid">
+          <article class="info-card compact">
+            <div class="card-media image-card"><img src="assets/img/pcb-board.jpg" alt="Printed circuit board close-up"></div>
+            <div class="card-body">
+              <p class="meta">Workshop A</p>
+              <h3>Soldering fundamentals</h3>
+              <p>Component handling, solder joints, and safe bench setup.</p>
+            </div>
+          </article>
+          <article class="info-card compact">
+            <div class="card-media image-card"><img src="assets/img/schematic.png" alt="Electronic schematic"></div>
+            <div class="card-body">
+              <p class="meta">Workshop B</p>
+              <h3>Schematic capture</h3>
+              <p>Build symbols, connect nets, and verify electrical rules.</p>
+            </div>
+          </article>
+          <article class="info-card compact">
+            <div class="card-media image-card"><img src="assets/img/hero-classroom.jpg" alt="Students in a classroom"></div>
+            <div class="card-body">
+              <p class="meta">Workshop C</p>
+              <h3>Collaborative review</h3>
+              <p>Use peer review or checkpoints before manufacturing or submission.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="project">
+      <div class="container project-layout">
+        <aside class="project-sidebar">
+          <h3>Contents</h3>
+          <nav>
+            <a href="#proj-overview">Overview</a>
+            <a href="#proj-concepts">Concepts</a>
+            <a href="#proj-requirements">Requirements</a>
+            <a href="#proj-parts">Parts</a>
+            <a href="#proj-schematics">Schematics</a>
+            <a href="#proj-instructions">Instructions</a>
+            <a href="#proj-deliverables">Deliverables</a>
+          </nav>
+        </aside>
+
+        <article class="project-content">
+          <div class="project-head">
+            <div>
+              <p class="section-tag">Featured project</p>
+              <h2>PCB design assignment page</h2>
+            </div>
+            <div class="project-badge">
+              <strong>Updated</strong>
+              <span>2026.03.14</span>
+            </div>
+          </div>
+
+          <section id="proj-overview">
+            <h3>Overview</h3>
+            <p>
+              Use this section for the project brief. Explain the goal, expected software, and the final artifact students or visitors must produce.
+            </p>
+          </section>
+
+          <section id="proj-concepts">
+            <h3>Concepts</h3>
+            <p>
+              Introduce printed circuit boards, schematic capture, footprint assignment, PCB layout, and design-rule checking.
+            </p>
+            <div class="media-row">
+              <img src="assets/img/pcb-board.jpg" alt="PCB image">
+              <div class="media-note">
+                <h4>Why this format works</h4>
+                <p>
+                  Pair concise explanations with supporting visuals so the page stays readable and visually engaging.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="proj-requirements">
+            <h3>Requirements</h3>
+            <ul class="checklist">
+              <li>Produce a valid schematic for the proposed circuit.</li>
+              <li>Generate a PCB layout that passes your chosen design checks.</li>
+              <li>Use consistent symbols, footprints, and naming conventions.</li>
+              <li>Document the workflow with screenshots or short notes.</li>
+            </ul>
+          </section>
+
+          <section id="proj-parts">
+            <h3>Parts</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Qty</th>
+                    <th>Part</th>
+                    <th>Symbol</th>
+                    <th>Library</th>
+                    <th>Footprint</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>x1</td>
+                    <td>Timer IC</td>
+                    <td>U1</td>
+                    <td>Package_DIP</td>
+                    <td>DIP-8</td>
+                  </tr>
+                  <tr>
+                    <td>x2</td>
+                    <td>Resistor</td>
+                    <td>R</td>
+                    <td>Resistor_THT</td>
+                    <td>Axial horizontal</td>
+                  </tr>
+                  <tr>
+                    <td>x1</td>
+                    <td>LED</td>
+                    <td>D1</td>
+                    <td>LED_THT</td>
+                    <td>3 mm</td>
+                  </tr>
+                  <tr>
+                    <td>x1</td>
+                    <td>Capacitor</td>
+                    <td>C1</td>
+                    <td>Capacitor_THT</td>
+                    <td>Radial</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="proj-schematics">
+            <h3>Schematics</h3>
+            <div class="schematic-card">
+              <img src="assets/img/schematic.png" alt="Schematic example">
+            </div>
+          </section>
+
+          <section id="proj-instructions">
+            <h3>Instructions</h3>
+            <ol class="steps">
+              <li>Create the schematic and annotate all components.</li>
+              <li>Assign footprints and run your electrical rules check.</li>
+              <li>Switch to PCB layout and place the components logically.</li>
+              <li>Route tracks, review clearances, and verify the layout.</li>
+              <li>Export the required manufacturing or submission files.</li>
+            </ol>
+          </section>
+
+          <section id="proj-deliverables">
+            <h3>Deliverables</h3>
+            <div class="deliverables">
+              <div>
+                <strong>Design files</strong>
+                <p>Schematic, PCB, and project file set.</p>
+              </div>
+              <div>
+                <strong>Documentation</strong>
+                <p>Short report or screenshots describing the workflow.</p>
+              </div>
+              <div>
+                <strong>Exports</strong>
+                <p>Gerbers, PDFs, or presentation-ready figures.</p>
+              </div>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="resources">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-tag">Resources</p>
+            <h2>How to adapt this site</h2>
+          </div>
+        </div>
+        <div class="resource-grid">
+          <div class="resource-box">
+            <h3>Edit the content</h3>
+            <p>Open <code>index.html</code> and replace the placeholder cards, links, descriptions, and metadata.</p>
+          </div>
+          <div class="resource-box">
+            <h3>Swap the images</h3>
+            <p>Replace files inside <code>assets/img</code> while keeping the same names, or update the paths in HTML.</p>
+          </div>
+          <div class="resource-box">
+            <h3>Publish on GitHub Pages</h3>
+            <p>Upload the folder to a repository and enable Pages from the main branch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>Static site template for GitHub Pages.</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.primary-nav');
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
