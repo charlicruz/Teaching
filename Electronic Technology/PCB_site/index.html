@@ -3,25 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="page_title">Project 8 · 555 Blinker PCB</title>
+  <title>Project 8 · 555 Blinker PCB</title>
   <link rel="icon" href="assets/images/ops_logo_favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#f5f7fb;
+      --bg:#f3f6fb;
       --panel:#ffffff;
       --text:#172033;
-      --muted:#5f6b85;
-      --line:#dfe6f2;
-      --brand:#1f4aa8;
-      --brand-2:#5e83e1;
-      --accent:#eef4ff;
-      --shadow:0 20px 50px rgba(19,38,84,.08);
-      --radius:22px;
-      --radius-sm:16px;
-      --sidebar-width:280px;
+      --muted:#607089;
+      --line:#dde5f1;
+      --brand:#1e4ca6;
+      --brand-2:#eaf1ff;
+      --shadow:0 18px 48px rgba(19,38,84,.08);
+      --radius:24px;
+      --radius-sm:18px;
+      --sidebar:280px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -29,156 +28,79 @@
       margin:0;
       font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(circle at top right, rgba(94,131,225,.18), transparent 22%),
-        linear-gradient(180deg,#f7f9fc 0%,#eef3fb 100%);
+      background:radial-gradient(circle at top right, rgba(81,117,214,.18), transparent 22%), linear-gradient(180deg,#f7f9fd 0%,#edf3fb 100%);
     }
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
     img{max-width:100%;display:block}
-    .shell{max-width:1440px;margin:0 auto;padding:28px}
-    .topbar{
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
-      margin-bottom:22px
-    }
-    .brand{
-      display:flex;align-items:center;gap:12px;font-weight:800;color:var(--text)
-    }
+    .shell{max-width:1450px;margin:0 auto;padding:26px}
+    .topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
     .brand img{width:42px;height:42px;border-radius:12px;box-shadow:var(--shadow)}
-    .lang-switch{
-      display:flex;gap:8px;background:rgba(255,255,255,.8);padding:6px;border:1px solid var(--line);
-      border-radius:999px;backdrop-filter: blur(10px);box-shadow:var(--shadow)
-    }
-    .lang-switch button{
-      border:0;background:transparent;padding:10px 14px;border-radius:999px;font-weight:700;cursor:pointer;color:var(--muted)
-    }
+    .brand small{display:block;color:var(--muted);font-weight:700}
+    .lang-switch{display:flex;gap:8px;padding:6px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.9);box-shadow:var(--shadow)}
+    .lang-switch button{border:0;background:transparent;border-radius:999px;padding:10px 14px;font-weight:800;color:var(--muted);cursor:pointer}
     .lang-switch button.active{background:var(--brand);color:#fff}
-    .hero{
-      display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:stretch;margin-bottom:22px
-    }
-    .hero-card,.hero-media,.sidebar,.content-section,.checkpoint-card,.parts-card,.note-card,.footer-card{
-      background:rgba(255,255,255,.9);border:1px solid rgba(223,230,242,.8);box-shadow:var(--shadow);backdrop-filter: blur(10px)
-    }
-    .hero-card{
-      border-radius:28px;padding:34px
-    }
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 12px;border-radius:999px;background:var(--accent);color:var(--brand);font-size:.9rem;font-weight:700;margin-bottom:18px
-    }
-    h1{font-size:clamp(2rem,4vw,3.7rem);line-height:1.02;margin:.15em 0 .25em}
+    .page{display:none}
+    .page.active{display:block}
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch;margin-bottom:22px}
+    .card,.sidebar,.hero-card,.hero-media,.checkpoint-card,.footer-card,.image-card,.note{background:rgba(255,255,255,.92);border:1px solid var(--line);box-shadow:var(--shadow)}
+    .hero-card,.hero-media,.sidebar,.card,.checkpoint-card,.footer-card{border-radius:var(--radius)}
+    .hero-card{padding:34px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:var(--brand-2);color:var(--brand);font-size:.9rem;font-weight:800;margin-bottom:16px}
+    h1{font-size:clamp(2rem,4vw,3.6rem);line-height:1.03;margin:.1em 0 .25em}
     .lead{font-size:1.08rem;color:var(--muted);max-width:62ch}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;
-      border:1px solid var(--line);font-weight:700;background:#fff;color:var(--text)
-    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:14px;border:1px solid var(--line);background:#fff;font-weight:700;color:var(--text)}
     .btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
-    .hero-media{
-      border-radius:28px;overflow:hidden;position:relative;min-height:320px
-    }
+    .hero-media{overflow:hidden;position:relative;min-height:320px}
     .hero-media img{width:100%;height:100%;object-fit:cover}
-    .hero-badge{
-      position:absolute;left:18px;bottom:18px;background:rgba(12,22,43,.72);color:#fff;padding:14px 16px;border-radius:16px;max-width:75%
-    }
-    .grid{
-      display:grid;grid-template-columns:var(--sidebar-width) minmax(0,1fr);gap:22px;align-items:start
-    }
-    .sidebar{
-      position:sticky;top:20px;border-radius:24px;padding:18px
-    }
-    .sidebar h3{margin:8px 10px 14px;font-size:1rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+    .hero-badge{position:absolute;left:18px;bottom:18px;max-width:76%;padding:14px 16px;border-radius:16px;background:rgba(12,22,43,.76);color:#fff}
+    .layout{display:grid;grid-template-columns:var(--sidebar) minmax(0,1fr);gap:22px;align-items:start}
+    .sidebar{position:sticky;top:20px;padding:18px}
+    .sidebar h3{margin:8px 10px 14px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:1rem}
     .toc{list-style:none;padding:0;margin:0}
     .toc li{margin:4px 0}
-    .toc a{
-      display:block;padding:10px 12px;border-radius:12px;color:var(--text);font-weight:600
-    }
-    .toc a:hover{background:#f3f7ff;text-decoration:none}
-    .toc .sub a{padding-left:26px;font-size:.95rem;color:var(--muted)}
+    .toc a{display:block;padding:10px 12px;border-radius:12px;color:var(--text);font-weight:600}
+    .toc a:hover{background:#f2f7ff;text-decoration:none}
+    .toc .sub a{padding-left:26px;color:var(--muted);font-size:.95rem}
     .content{display:grid;gap:22px}
-    .content-section{
-      border-radius:24px;padding:28px
-    }
-    .section-head{
-      display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap;margin-bottom:16px
-    }
-    .section-kicker{
-      font-size:.84rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--brand)
-    }
+    .card{padding:28px}
+    .section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+    .section-kicker{font-size:.84rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}
     h2{font-size:1.65rem;margin:.2rem 0 .45rem}
-    h3{font-size:1.2rem;margin:1.3rem 0 .6rem}
+    h3{font-size:1.2rem;margin:1.2rem 0 .6rem}
     p,li{line-height:1.72}
-    .meta{
-      padding:14px 16px;border-radius:16px;background:#f7f9fd;border:1px solid var(--line);color:var(--muted);font-size:.95rem
-    }
+    .meta{padding:14px 16px;border-radius:16px;background:#f7f9fd;border:1px solid var(--line);color:var(--muted);font-size:.95rem}
     .two-col{display:grid;grid-template-columns:1.08fr .92fr;gap:20px;align-items:start}
-    .highlight-box{
-      border-radius:20px;background:linear-gradient(180deg,#f8fbff,#edf4ff);padding:18px;border:1px solid #d6e4ff
-    }
-    .highlight-box ul{margin:.4rem 0 0 1rem;padding:0}
-    .parts-grid{
-      display:grid;grid-template-columns:1fr 1fr;gap:18px
-    }
-    table{
-      width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden
-    }
+    .highlight{padding:18px;border-radius:20px;background:linear-gradient(180deg,#f8fbff,#edf4ff);border:1px solid #d6e4ff}
+    .highlight ul{margin:.4rem 0 0 1rem;padding:0}
+    .schem-wrap{display:grid;grid-template-columns:360px 1fr;gap:20px;align-items:start}
+    .image-card{border-radius:20px;overflow:hidden}
+    .image-card .caption{padding:16px}
+    table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
     th,td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;font-size:.95rem}
     th{background:#f7f9fd;text-align:left}
     tr:last-child td{border-bottom:0}
-    .schem-wrap{
-      display:grid;grid-template-columns:360px 1fr;gap:20px;align-items:start
-    }
-    .image-card,.note-card{
-      border-radius:20px;overflow:hidden;background:#fff;border:1px solid var(--line)
-    }
-    .image-card img{width:100%;height:auto}
-    .image-card .caption,.note-card{padding:16px}
-    .note-card{overflow:visible}
-    .checkpoint-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .checkpoint-card{
-      border-radius:22px;padding:20px
-    }
-    .checkpoint-card img{
-      border-radius:16px;border:1px solid var(--line);margin-top:14px
-    }
+    .checkpoint-list{display:grid;grid-template-columns:1fr;gap:24px}
+    .checkpoint-card{padding:30px}
+    .checkpoint-card img{width:100%;border-radius:20px;border:1px solid var(--line);margin-top:18px;box-shadow:0 10px 30px rgba(19,38,84,.08)}
     .checkpoint-card ol,.checkpoint-card ul{margin:.35rem 0 0 1.1rem;padding:0}
-    .callout{
-      margin-top:14px;padding:14px 16px;border-radius:16px;background:#fff9e8;border:1px solid #f0d98b;color:#6d5400
-    }
-    .download-cards{
-      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px
-    }
-    .download-item{
-      padding:18px;border-radius:18px;background:#fff;border:1px solid var(--line)
-    }
-    .footer-card{
-      border-radius:24px;padding:24px;margin-top:22px
-    }
+    .callout{margin-top:14px;padding:14px 16px;border-radius:16px;background:#fff9e8;border:1px solid #f0d98b;color:#6d5400}
+    .footer-card{padding:24px;margin-top:22px}
     .muted{color:var(--muted)}
-    .lang-es{display:none}
-    body.lang-es .lang-en{display:none}
-    body.lang-es .lang-es{display:block}
-    body.lang-en .lang-en{display:block}
-    body.lang-en .lang-es{display:none}
-    @media (max-width: 1100px){
-      .hero,.grid,.two-col,.schem-wrap,.checkpoint-grid,.parts-grid{grid-template-columns:1fr}
-      .sidebar{position:relative;top:0}
-    }
-    @media (max-width: 700px){
-      .shell{padding:16px}
-      .hero-card,.hero-media,.sidebar,.content-section,.checkpoint-card,.footer-card{border-radius:20px}
-      .download-cards{grid-template-columns:1fr}
-    }
+    @media (max-width:1100px){.hero,.layout,.two-col,.schem-wrap{grid-template-columns:1fr}.sidebar{position:relative;top:0}}
+    @media (max-width:700px){.shell{padding:16px}.hero-card,.hero-media,.sidebar,.card,.checkpoint-card,.footer-card{border-radius:20px}}
   </style>
 </head>
-<body class="lang-en">
+<body>
   <div class="shell">
     <div class="topbar">
       <div class="brand">
         <img src="assets/images/ops_logo_favicon.png" alt="logo">
         <div>
-          <div style="font-size:.82rem;color:var(--muted);font-weight:700">Open Project Space</div>
-          <div style="font-size:1.08rem">Project 8 · 555 Blinker PCB</div>
+          <small>Open Project Space</small>
+          <div>Project 8 · 555 Blinker PCB</div>
         </div>
       </div>
       <div class="lang-switch" aria-label="Language selector">
@@ -189,415 +111,288 @@
 
     <section class="hero">
       <div class="hero-card">
-        <span class="eyebrow lang-en">PCB design · KiCad · Guided project</span>
-        <span class="eyebrow lang-es">Diseño PCB · KiCad · Proyecto guiado</span>
-
-        <h1 class="lang-en">Design a complete 555 Blinker PCB with a cleaner, more visual workflow.</h1>
-        <h1 class="lang-es">Diseña una PCB completa del 555 Blinker con un flujo más claro y visual.</h1>
-
-        <p class="lead lang-en">
-          This redesigned page keeps the original project structure while improving readability, navigation and visual hierarchy.
-          It also adds a built-in Spanish mode so the page is easier to use in class or in self-study.
-        </p>
-        <p class="lead lang-es">
-          Esta versión rediseñada mantiene la estructura original del proyecto, pero mejora la legibilidad, la navegación
-          y la jerarquía visual. Además, incorpora un modo en español para facilitar su uso en clase o en autoaprendizaje.
-        </p>
-
+        <span class="eyebrow">PCB design · KiCad · Guided project</span>
+        <h1 id="hero-title">Design a complete 555 Blinker PCB with a cleaner, more visual workflow.</h1>
+        <p class="lead" id="hero-lead">This redesigned page keeps the original project structure while improving readability, navigation and visual hierarchy. It also adds a built-in Spanish mode so the page is easier to use in class or in self-study.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#instructions"><span class="lang-en">Go to instructions</span><span class="lang-es">Ir a instrucciones</span></a>
-          <a class="btn" href="#parts"><span class="lang-en">See parts list</span><span class="lang-es">Ver lista de componentes</span></a>
-          <a class="btn" href="#deliverables"><span class="lang-en">View deliverables</span><span class="lang-es">Ver entregables</span></a>
+          <a class="btn primary" href="#instructions" id="btn-go">Go to instructions</a>
+          <a class="btn" href="#parts" id="btn-parts">See parts list</a>
         </div>
       </div>
       <div class="hero-media">
         <img src="assets/images/ops_project_8_printed_circuit_board.jpg" alt="Printed circuit board">
-        <div class="hero-badge">
-          <div class="lang-en"><strong>Updated layout</strong><br>Better spacing, improved cards and bilingual navigation.</div>
-          <div class="lang-es"><strong>Diseño actualizado</strong><br>Mejor espaciado, tarjetas más claras y navegación bilingüe.</div>
-        </div>
+        <div class="hero-badge" id="hero-badge"><strong>Updated layout</strong><br>Better spacing, improved cards and bilingual navigation.</div>
       </div>
     </section>
 
-    <div class="grid">
-      <aside class="sidebar">
-        <h3 class="lang-en">Contents</h3>
-        <h3 class="lang-es">Contenidos</h3>
-        <ul class="toc">
-          <li><a href="#overview"><span class="lang-en">Overview</span><span class="lang-es">Resumen</span></a></li>
-          <li><a href="#concepts"><span class="lang-en">Concepts</span><span class="lang-es">Conceptos</span></a></li>
-          <li class="sub"><a href="#pcbs"><span class="lang-en">Printed Circuit Boards</span><span class="lang-es">Placas de circuito impreso</span></a></li>
-          <li class="sub"><a href="#pcb-design"><span class="lang-en">PCB Design Overview</span><span class="lang-es">Visión general del diseño PCB</span></a></li>
-          <li><a href="#install"><span class="lang-en">Installing KiCad</span><span class="lang-es">Instalación de KiCad</span></a></li>
-          <li><a href="#requirements"><span class="lang-en">Requirements</span><span class="lang-es">Requisitos</span></a></li>
-          <li><a href="#parts"><span class="lang-en">Parts</span><span class="lang-es">Componentes</span></a></li>
-          <li><a href="#schematics"><span class="lang-en">Schematics</span><span class="lang-es">Esquemas</span></a></li>
-          <li><a href="#instructions"><span class="lang-en">Instructions</span><span class="lang-es">Instrucciones</span></a></li>
-          <li class="sub"><a href="#checkpoint1">Checkpoint 1</a></li>
-          <li class="sub"><a href="#checkpoint2">Checkpoint 2</a></li>
-          <li class="sub"><a href="#checkpoint3">Checkpoint 3</a></li>
-          <li class="sub"><a href="#checkpoint4">Checkpoint 4</a></li>
-          <li class="sub"><a href="#checkpoint5">Checkpoint 5</a></li>
-          <li><a href="#deliverables"><span class="lang-en">Deliverables</span><span class="lang-es">Entregables</span></a></li>
-        </ul>
-      </aside>
-
-      <main class="content">
-        <section id="overview" class="content-section">
-          <div class="section-head">
-            <div>
-              <div class="section-kicker lang-en">Project overview</div>
-              <div class="section-kicker lang-es">Resumen del proyecto</div>
-              <h2 class="lang-en">From prototyping to a real PCB</h2>
-              <h2 class="lang-es">Del prototipado a una PCB real</h2>
-            </div>
-            <div class="meta">
-              <div class="lang-en">Updated 2025.02.28 · Original project by Patrick R Cabanban</div>
-              <div class="lang-es">Actualizado 2025.02.28 · Proyecto original de Patrick R Cabanban</div>
-            </div>
-          </div>
-          <div class="two-col">
-            <div>
-              <p class="lang-en">
-                In this project you move beyond breadboards and perfboards and create a complete printed circuit board
-                for the classic 555 blinker using KiCad 7. The objective is to capture the schematic, assign the correct
-                footprints, lay out the PCB and generate manufacturing files.
-              </p>
-              <p class="lang-es">
-                En este proyecto darás el salto desde las breadboards y placas perforadas hacia una placa de circuito
-                impreso completa del clásico 555 blinker usando KiCad 7. El objetivo es capturar el esquema, asignar
-                las huellas correctas, diseñar la PCB y generar los ficheros de fabricación.
-              </p>
-              <div class="highlight-box">
-                <strong class="lang-en">Recommended setup</strong>
-                <strong class="lang-es">Configuración recomendada</strong>
-                <ul>
-                  <li class="lang-en">Use a mouse whenever possible.</li>
-                  <li class="lang-es">Usa un ratón siempre que sea posible.</li>
-                  <li class="lang-en">Save frequently during schematic and layout work.</li>
-                  <li class="lang-es">Guarda con frecuencia durante el esquemático y el layout.</li>
-                  <li class="lang-en">Follow the checkpoints in order.</li>
-                  <li class="lang-es">Sigue los checkpoints en orden.</li>
-                </ul>
-              </div>
-            </div>
-            <div class="image-card">
-              <img src="assets/images/ops_project_8_printed_circuit_board.jpg" alt="PCB image">
-              <div class="caption">
-                <div class="lang-en"><strong>Goal:</strong> reproduce the 555 blinker as a manufacturable PCB.</div>
-                <div class="lang-es"><strong>Meta:</strong> reproducir el 555 blinker como una PCB fabricable.</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="concepts" class="content-section">
-          <div class="section-head">
-            <div>
-              <div class="section-kicker lang-en">Concepts</div>
-              <div class="section-kicker lang-es">Conceptos</div>
-              <h2 class="lang-en">What you need to understand before starting</h2>
-              <h2 class="lang-es">Qué debes entender antes de empezar</h2>
-            </div>
-          </div>
-          <div class="parts-grid">
-            <div class="note-card" id="pcbs">
-              <h3 class="lang-en">Printed Circuit Boards (PCB)</h3>
-              <h3 class="lang-es">Placas de circuito impreso (PCB)</h3>
-              <p class="lang-en">
-                PCBs are used when circuits are ready for more compact, reliable and reproducible implementations.
-                They connect components on a board designed with CAD tools and make complex circuits easier to build and mass produce.
-              </p>
-              <p class="lang-es">
-                Las PCB se utilizan cuando un circuito requiere una implementación más compacta, fiable y reproducible.
-                Conectan componentes sobre una placa diseñada con herramientas CAD y permiten fabricar circuitos complejos con mayor facilidad.
-              </p>
-              <p class="lang-en">Lecture material: <a href="lectures.html" target="_blank" rel="noopener">lectures.html</a></p>
-              <p class="lang-es">Material teórico: <a href="lectures.html" target="_blank" rel="noopener">lectures.html</a></p>
-            </div>
-            <div class="note-card" id="pcb-design">
-              <h3 class="lang-en">PCB Design Overview</h3>
-              <h3 class="lang-es">Visión general del diseño PCB</h3>
-              <p class="lang-en">
-                The workflow has two main stages: schematic capture and PCB layout. First you represent the circuit digitally,
-                then you position components, route traces and prepare the board for fabrication.
-              </p>
-              <p class="lang-es">
-                El flujo de trabajo tiene dos etapas principales: captura del esquemático y diseño del layout PCB.
-                Primero representas digitalmente el circuito y después colocas los componentes, enrutas pistas y preparas la placa para fabricar.
-              </p>
-              <p class="lang-en">Workshop material: <a href="workshops.html" target="_blank" rel="noopener">workshops.html</a></p>
-              <p class="lang-es">Material del taller: <a href="workshops.html" target="_blank" rel="noopener">workshops.html</a></p>
-            </div>
-          </div>
-        </section>
-
-        <section id="install" class="content-section">
-          <div class="section-head">
-            <div>
-              <div class="section-kicker lang-en">Software</div>
-              <div class="section-kicker lang-es">Software</div>
-              <h2 class="lang-en">Install KiCad 7.0.11</h2>
-              <h2 class="lang-es">Instala KiCad 7.0.11</h2>
-            </div>
-          </div>
-          <div class="download-cards">
-            <div class="download-item">
-              <strong>Windows</strong>
-              <p class="muted lang-en">Stable installer for the original project version.</p>
-              <p class="muted lang-es">Instalador estable para la versión usada en el proyecto original.</p>
-              <p><a class="btn primary" href="https://downloads.kicad.org/kicad/windows/explore/stable/download/kicad-7.0.11-x86_64.exe">Download</a></p>
-            </div>
-            <div class="download-item">
-              <strong>macOS</strong>
-              <p class="muted lang-en">Universal package for Intel and Apple Silicon.</p>
-              <p class="muted lang-es">Paquete universal para Intel y Apple Silicon.</p>
-              <p><a class="btn primary" href="https://downloads.kicad.org/kicad/macos/explore/stable/download/kicad-unified-universal-7.0.11.dmg">Download</a></p>
-            </div>
-          </div>
-        </section>
-
-        <section id="requirements" class="content-section">
-          <div class="section-head">
-            <div>
-              <div class="section-kicker lang-en">Assessment</div>
-              <div class="section-kicker lang-es">Evaluación</div>
-              <h2 class="lang-en">Minimum requirements</h2>
-              <h2 class="lang-es">Requisitos mínimos</h2>
-            </div>
-          </div>
-          <ul>
-            <li class="lang-en">Create a full schematic that reproduces the provided 555 blinker circuit diagram.</li>
-            <li class="lang-es">Crear un esquema completo que reproduzca el circuito 555 blinker proporcionado.</li>
-            <li class="lang-en">The schematic must pass ERC except for the power-pin warning mentioned in the original project.</li>
-            <li class="lang-es">El esquema debe superar el ERC salvo la advertencia de alimentación indicada en el proyecto original.</li>
-            <li class="lang-en">Design a PCB from your schematic and make sure the layout passes DRC.</li>
-            <li class="lang-es">Diseñar una PCB a partir del esquemático y verificar que el layout supera el DRC.</li>
-            <li class="lang-en">Use the exact symbols and footprints listed in the project parts table.</li>
-            <li class="lang-es">Utilizar exactamente los símbolos y huellas indicados en la tabla de componentes.</li>
+    <div class="page active" id="page-en">
+      <div class="layout">
+        <aside class="sidebar">
+          <h3>Contents</h3>
+          <ul class="toc">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#concepts">Concepts</a></li>
+            <li class="sub"><a href="#pcbs">Printed Circuit Boards</a></li>
+            <li class="sub"><a href="#pcb-design">PCB Design Overview</a></li>
+            <li><a href="#install">Installing KiCad</a></li>
+            <li><a href="#requirements">Requirements</a></li>
+            <li><a href="#parts">Parts</a></li>
+            <li><a href="#schematics">Schematics</a></li>
+            <li><a href="#instructions">Instructions</a></li>
+            <li class="sub"><a href="#checkpoint1">Checkpoint 1</a></li>
+            <li class="sub"><a href="#checkpoint2">Checkpoint 2</a></li>
+            <li class="sub"><a href="#checkpoint3">Checkpoint 3</a></li>
+            <li class="sub"><a href="#checkpoint4">Checkpoint 4</a></li>
+            <li class="sub"><a href="#checkpoint5">Checkpoint 5</a></li>
           </ul>
-        </section>
-
-        <section id="parts" class="content-section">
-          <div class="section-head">
-            <div>
-              <div class="section-kicker lang-en">EDA parts</div>
-              <div class="section-kicker lang-es">Componentes en EDA</div>
-              <h2 class="lang-en">Parts and footprints</h2>
-              <h2 class="lang-es">Componentes y huellas</h2>
+        </aside>
+        <main class="content">
+          <section id="overview" class="card">
+            <div class="section-head"><div><div class="section-kicker">Project overview</div><h2>From prototyping to a real PCB</h2></div><div class="meta">Updated 2025.02.28 · Original project by Patrick R Cabanban</div></div>
+            <div class="two-col">
+              <div>
+                <p>In this project you move beyond breadboards and perfboards and create a complete printed circuit board for the classic 555 blinker using KiCad 7. The objective is to capture the schematic, assign the correct footprints, lay out the PCB and generate manufacturing files.</p>
+                <div class="highlight"><strong>Recommended setup</strong><ul><li>Use a mouse whenever possible.</li><li>Save frequently during schematic and layout work.</li><li>Follow the checkpoints in order.</li></ul></div>
+              </div>
+              <div class="image-card"><img src="assets/images/ops_project_8_printed_circuit_board.jpg" alt="PCB"><div class="caption muted">Example PCB image used in the original project page.</div></div>
             </div>
-          </div>
-          <table>
-            <thead>
-              <tr>
-                <th>Qty</th>
-                <th class="lang-en">Part</th><th class="lang-es">Componente</th>
-                <th>Symbol</th>
-                <th class="lang-en">Footprint Library</th><th class="lang-es">Biblioteca de huellas</th>
-                <th>Footprint</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>x2</td><td class="lang-en">Header, 2.54 mm, Female, 1x2</td><td class="lang-es">Cabecera hembra 1x2, 2.54 mm</td><td>Conn_01x02_Socket</td><td>Connector_PinHeader_2.54mm</td><td>PinHeader_1x02_P2.54mm_Vertical</td></tr>
-              <tr><td>x1</td><td class="lang-en">NE555P IC</td><td class="lang-es">Circuito integrado NE555P</td><td>NE555P</td><td>Package_DIP</td><td>DIP-8_W7.62mm</td></tr>
-              <tr><td>x1</td><td class="lang-en">Resistor, 1 kΩ</td><td class="lang-es">Resistencia, 1 kΩ</td><td>R_US</td><td>Resistor_THT</td><td>R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</td></tr>
-              <tr><td>x1</td><td class="lang-en">Resistor, 470 kΩ</td><td class="lang-es">Resistencia, 470 kΩ</td><td>R_US</td><td>Resistor_THT</td><td>R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</td></tr>
-              <tr><td>x1</td><td class="lang-en">LED, 3.2 V</td><td class="lang-es">LED, 3.2 V</td><td>LED</td><td>LED_THT</td><td>LED_D3.00mm</td></tr>
-              <tr><td>x1</td><td class="lang-en">Capacitor, 1 μF</td><td class="lang-es">Condensador, 1 μF</td><td>C</td><td>Capacitor_THT</td><td>CP_Radial_D4.0mm_P2.00mm</td></tr>
-            </tbody>
-          </table>
-        </section>
+          </section>
 
-        <section id="schematics" class="content-section">
-          <div class="section-head">
-            <div>
-              <div class="section-kicker lang-en">Reference schematic</div>
-              <div class="section-kicker lang-es">Esquema de referencia</div>
-              <h2 class="lang-en">Schematic A</h2>
-              <h2 class="lang-es">Esquema A</h2>
-            </div>
-          </div>
-          <div class="schem-wrap">
-            <div class="image-card">
-              <img src="assets/images/ops_schem_proj8.png" alt="Schematic A">
-              <div class="caption">
-                <div class="lang-en">Use this as the source for the schematic capture stage.</div>
-                <div class="lang-es">Úsalo como referencia en la etapa de captura del esquemático.</div>
+          <section id="concepts" class="card">
+            <div class="section-kicker">Concepts</div>
+            <h2>Printed circuit boards and design workflow</h2>
+            <h3 id="pcbs">Printed Circuit Boards (PCB)</h3>
+            <p>Printed circuit boards are the standard medium for compact, reliable and reproducible electronic products. They replace temporary prototyping structures with permanent copper traces, pads and footprints connected through a CAD-defined layout.</p>
+            <h3 id="pcb-design">PCB design overview</h3>
+            <p>The workflow has two main stages: schematic capture and PCB layout. First, the circuit is translated into a digital schematic with symbols, nets and footprints. Then the board outline is defined, footprints are placed, tracks are routed and manufacturing outputs are generated.</p>
+          </section>
+
+          <section id="install" class="card">
+            <div class="section-kicker">Software setup</div>
+            <h2>Installing KiCad 7.0.11</h2>
+            <p>Use KiCad 7.0.11 for this project. Download the installer for your operating system and keep the default installation settings except for optional help files if needed.</p>
+            <table>
+              <thead><tr><th>Operating system</th><th>Download</th></tr></thead>
+              <tbody>
+                <tr><td>Windows</td><td><a href="https://downloads.kicad.org/kicad/windows/explore/stable/download/kicad-7.0.11-x86_64.exe" target="_blank" rel="noopener">Download installer</a></td></tr>
+                <tr><td>Mac</td><td><a href="https://downloads.kicad.org/kicad/macos/explore/stable/download/kicad-unified-universal-7.0.11.dmg" target="_blank" rel="noopener">Download installer</a></td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="requirements" class="card">
+            <div class="section-kicker">Assessment</div>
+            <h2>Minimum requirements</h2>
+            <ul>
+              <li>Create a full schematic that reproduces the provided 555 blinker circuit.</li>
+              <li>Pass ERC except for the expected power warning.</li>
+              <li>Create a PCB layout that passes DRC.</li>
+              <li>Use the symbols and footprints listed in the parts section.</li>
+            </ul>
+          </section>
+
+          <section id="parts" class="card">
+            <div class="section-kicker">Components</div>
+            <h2>Parts and reference selections</h2>
+            <p class="muted">This is a compact version prepared for GitHub Pages. Adapt the exact values and footprints to your course requirements.</p>
+            <table>
+              <thead><tr><th>Qty</th><th>Part</th><th>Symbol / value</th><th>Suggested footprint</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>Timer IC</td><td>NE555</td><td>DIP-8_W7.62mm</td></tr>
+                <tr><td>1</td><td>LED</td><td>D1</td><td>LED_D5.0mm</td></tr>
+                <tr><td>2</td><td>Resistor</td><td>R1, R2</td><td>Axial_DIN0207</td></tr>
+                <tr><td>2</td><td>Capacitor</td><td>C1, C2</td><td>Radial / Disc_THT</td></tr>
+                <tr><td>1</td><td>Battery / supply connector</td><td>BT1 or J1</td><td>TerminalBlock / BatteryHolder</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="schematics" class="card">
+            <div class="section-kicker">Reference diagram</div>
+            <h2>Schematics</h2>
+            <div class="schem-wrap">
+              <div class="image-card"><img src="assets/images/ops_schem_proj8.png" alt="Schematic"><div class="caption muted">Reference schematic used to build the PCB.</div></div>
+              <div>
+                <p>Use the schematic as the basis for your KiCad capture. Check pin orientation, reference designators, values and power connections before assigning footprints and moving to layout.</p>
+                <div class="note">Tip: keep symbol values and footprint names consistent from the beginning to reduce ERC and PCB update issues later.</div>
               </div>
             </div>
-            <div class="note-card">
-              <h3 class="lang-en">How to use it</h3>
-              <h3 class="lang-es">Cómo usarlo</h3>
-              <ul>
-                <li class="lang-en">Replicate the full circuit in the schematic editor.</li>
-                <li class="lang-es">Reproduce el circuito completo en el editor esquemático.</li>
-                <li class="lang-en">Assign the correct footprints before moving to PCB layout.</li>
-                <li class="lang-es">Asigna las huellas correctas antes de pasar al layout PCB.</li>
-                <li class="lang-en">Keep net labels and no-connect flags where needed.</li>
-                <li class="lang-es">Mantén etiquetas de red y marcas de no conexión cuando sea necesario.</li>
-              </ul>
+          </section>
+
+          <section id="instructions" class="card">
+            <div class="section-kicker">Step-by-step</div>
+            <h2>Instructions and checkpoints</h2>
+            <p>Follow the checkpoints below in order. Each card is larger than before so screenshots and animated guidance are easier to view on GitHub Pages.</p>
+            <div class="checkpoint-list">
+              <article class="checkpoint-card" id="checkpoint1"><div class="section-kicker">Checkpoint 1</div><h3>Create the project and capture the schematic</h3><ol><li>Create a new KiCad project and open the schematic editor.</li><li>Add power symbols, parts, values and footprint assignments.</li><li>Wire the circuit, add net labels and no-connection flags.</li></ol><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_add_symbols.gif" alt="Checkpoint 1"></article>
+              <article class="checkpoint-card" id="checkpoint2"><div class="section-kicker">Checkpoint 2</div><h3>Annotate and validate the schematic</h3><ol><li>Run schematic annotation to replace placeholder references.</li><li>Run ERC and verify that only the expected power warning remains.</li></ol><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_electrical_rules_check.gif" alt="Checkpoint 2"></article>
+              <article class="checkpoint-card" id="checkpoint3"><div class="section-kicker">Checkpoint 3</div><h3>Create the board and route the PCB</h3><ol><li>Open PCB Editor and update the board from the schematic.</li><li>Set track and via sizes, define board outline and place footprints.</li><li>Route tracks, add vias if needed, and create the ground fill.</li></ol><div class="callout">Use 40 mil for power/ground and 30 mil for signal traces. Avoid 90° corners.</div><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_add_traces.gif" alt="Checkpoint 3"></article>
+              <article class="checkpoint-card" id="checkpoint4"><div class="section-kicker">Checkpoint 4</div><h3>Run design rule checks</h3><ol><li>Open DRC and run the checker.</li><li>Resolve all violations before generating outputs.</li></ol><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_design_rules_check.gif" alt="Checkpoint 4"></article>
+              <article class="checkpoint-card" id="checkpoint5"><div class="section-kicker">Checkpoint 5</div><h3>Generate manufacturing files</h3><ol><li>Plot the fabrication layers and create drill files.</li><li>Review the generated files before sharing or submitting them.</li><li>Compress the project folder with the required naming format.</li></ol><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_design_rules_generate_manufacturing_files.gif" alt="Checkpoint 5"></article>
             </div>
-          </div>
-        </section>
-
-        <section id="instructions" class="content-section">
-          <div class="section-head">
-            <div>
-              <div class="section-kicker lang-en">Step-by-step workflow</div>
-              <div class="section-kicker lang-es">Flujo de trabajo paso a paso</div>
-              <h2 class="lang-en">Instructions and checkpoints</h2>
-              <h2 class="lang-es">Instrucciones y checkpoints</h2>
-            </div>
-          </div>
-          <p class="lang-en">The project is divided into five checkpoints that take you from a new KiCad project to manufacturing outputs.</p>
-          <p class="lang-es">El proyecto se divide en cinco checkpoints que te llevan desde un proyecto nuevo en KiCad hasta los ficheros de fabricación.</p>
-
-          <div class="checkpoint-grid">
-            <article class="checkpoint-card" id="checkpoint1">
-              <div class="section-kicker">Checkpoint 1</div>
-              <h3 class="lang-en">Create the project and capture the schematic</h3>
-              <h3 class="lang-es">Crear el proyecto y capturar el esquemático</h3>
-              <ol>
-                <li class="lang-en">Create a new KiCad project and open the schematic editor.</li>
-                <li class="lang-es">Crea un nuevo proyecto de KiCad y abre el editor esquemático.</li>
-                <li class="lang-en">Add power symbols, parts, values and footprint assignments.</li>
-                <li class="lang-es">Añade símbolos de alimentación, componentes, valores y asignación de huellas.</li>
-                <li class="lang-en">Wire the circuit, add net labels and no-connection flags.</li>
-                <li class="lang-es">Cablea el circuito, añade etiquetas de red y marcas de no conexión.</li>
-              </ol>
-              <img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_add_symbols.gif" alt="Checkpoint 1">
-            </article>
-
-            <article class="checkpoint-card" id="checkpoint2">
-              <div class="section-kicker">Checkpoint 2</div>
-              <h3 class="lang-en">Annotate and validate the schematic</h3>
-              <h3 class="lang-es">Anotar y validar el esquemático</h3>
-              <ol>
-                <li class="lang-en">Run schematic annotation to replace placeholder references.</li>
-                <li class="lang-es">Ejecuta la anotación del esquema para reemplazar referencias temporales.</li>
-                <li class="lang-en">Run ERC and verify that only the expected power warning remains.</li>
-                <li class="lang-es">Ejecuta el ERC y comprueba que solo queda la advertencia de alimentación esperada.</li>
-              </ol>
-              <img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_electrical_rules_check.gif" alt="Checkpoint 2">
-            </article>
-
-            <article class="checkpoint-card" id="checkpoint3">
-              <div class="section-kicker">Checkpoint 3</div>
-              <h3 class="lang-en">Create the board and route the PCB</h3>
-              <h3 class="lang-es">Crear la placa y enrutar la PCB</h3>
-              <ol>
-                <li class="lang-en">Open PCB Editor and update the board from the schematic.</li>
-                <li class="lang-es">Abre PCB Editor y actualiza la placa a partir del esquemático.</li>
-                <li class="lang-en">Set track and via sizes, define board outline and place footprints.</li>
-                <li class="lang-es">Configura tamaños de pistas y vías, define el contorno y coloca las huellas.</li>
-                <li class="lang-en">Route tracks, add vias if needed, and create the ground fill.</li>
-                <li class="lang-es">Enruta pistas, añade vías si hace falta y crea el plano de tierra.</li>
-              </ol>
-              <div class="callout">
-                <div class="lang-en">Use 40 mil for power/ground and 30 mil for signal traces. Avoid 90° corners.</div>
-                <div class="lang-es">Usa 40 mil para alimentación/tierra y 30 mil para señal. Evita esquinas de 90°.</div>
-              </div>
-              <img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_add_traces.gif" alt="Checkpoint 3">
-            </article>
-
-            <article class="checkpoint-card" id="checkpoint4">
-              <div class="section-kicker">Checkpoint 4</div>
-              <h3 class="lang-en">Run design rule checks</h3>
-              <h3 class="lang-es">Ejecutar las verificaciones de diseño</h3>
-              <ol>
-                <li class="lang-en">Open DRC and run the checker.</li>
-                <li class="lang-es">Abre el DRC y ejecuta la comprobación.</li>
-                <li class="lang-en">Resolve all violations before generating outputs.</li>
-                <li class="lang-es">Resuelve todas las violaciones antes de generar resultados.</li>
-              </ol>
-              <img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_design_rules_check.gif" alt="Checkpoint 4">
-            </article>
-
-            <article class="checkpoint-card" id="checkpoint5">
-              <div class="section-kicker">Checkpoint 5</div>
-              <h3 class="lang-en">Generate manufacturing files</h3>
-              <h3 class="lang-es">Generar ficheros de fabricación</h3>
-              <ol>
-                <li class="lang-en">Plot the fabrication layers and create drill files.</li>
-                <li class="lang-es">Genera los ficheros de capas de fabricación y los taladros.</li>
-                <li class="lang-en">Review the generated files before submission.</li>
-                <li class="lang-es">Revisa los ficheros generados antes de la entrega.</li>
-                <li class="lang-en">Compress the project folder with the required naming format.</li>
-                <li class="lang-es">Comprime la carpeta del proyecto con el formato de nombre solicitado.</li>
-              </ol>
-              <img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_design_rules_generate_manufacturing_files.gif" alt="Checkpoint 5">
-            </article>
-
-            <article class="checkpoint-card">
-              <div class="section-kicker lang-en">Final result</div>
-              <div class="section-kicker lang-es">Resultado final</div>
-              <h3 class="lang-en">Expected board layout</h3>
-              <h3 class="lang-es">Layout esperado de la placa</h3>
-              <p class="lang-en">Your board should look close to this after component placement, routing and fill.</p>
-              <p class="lang-es">Tu placa debería parecerse a esto después de colocar componentes, enrutar y rellenar zonas.</p>
-              <img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_completed.png" alt="Completed PCB">
-            </article>
-          </div>
-        </section>
-
-        <section id="deliverables" class="content-section">
-          <div class="section-head">
-            <div>
-              <div class="section-kicker lang-en">Submission</div>
-              <div class="section-kicker lang-es">Entrega</div>
-              <h2 class="lang-en">Deliverables</h2>
-              <h2 class="lang-es">Entregables</h2>
-            </div>
-          </div>
-          <p class="lang-en">Compress the full KiCad project as a ZIP file and include the following items:</p>
-          <p class="lang-es">Comprime el proyecto completo de KiCad en un archivo ZIP e incluye los siguientes elementos:</p>
-          <ul>
-            <li class="lang-en">KiCad project file (.kicad_pro)</li>
-            <li class="lang-es">Archivo de proyecto KiCad (.kicad_pro)</li>
-            <li class="lang-en">KiCad PCB file (.kicad_pcb)</li>
-            <li class="lang-es">Archivo PCB de KiCad (.kicad_pcb)</li>
-            <li class="lang-en">KiCad schematic file (.kicad_sch)</li>
-            <li class="lang-es">Archivo esquemático de KiCad (.kicad_sch)</li>
-            <li class="lang-en">Manufacturing and drill files folder</li>
-            <li class="lang-es">Carpeta con ficheros de fabricación y taladrado</li>
-          </ul>
-          <div class="callout">
-            <div class="lang-en">Recommended filename: <strong>ops_project8_lastname_firstname.zip</strong></div>
-            <div class="lang-es">Nombre recomendado: <strong>ops_project8_apellido_nombre.zip</strong></div>
-          </div>
-        </section>
-      </main>
-    </div>
-
-    <div class="footer-card">
-      <div class="lang-en">
-        This redesigned page was prepared for GitHub Pages from the uploaded project HTML, preserving the original structure
-        and technical content while improving layout and adding a Spanish mode.
-      </div>
-      <div class="lang-es">
-        Esta página rediseñada se ha preparado para GitHub Pages a partir del HTML del proyecto subido, manteniendo la
-        estructura y el contenido técnico originales, pero mejorando la presentación y añadiendo un modo en español.
+          </section>
+        </main>
       </div>
     </div>
+
+    <div class="page" id="page-es">
+      <div class="layout">
+        <aside class="sidebar">
+          <h3>Contenidos</h3>
+          <ul class="toc">
+            <li><a href="#overview-es">Resumen</a></li>
+            <li><a href="#concepts-es">Conceptos</a></li>
+            <li class="sub"><a href="#pcbs-es">Placas de circuito impreso</a></li>
+            <li class="sub"><a href="#pcb-design-es">Visión general del diseño PCB</a></li>
+            <li><a href="#install-es">Instalación de KiCad</a></li>
+            <li><a href="#requirements-es">Requisitos</a></li>
+            <li><a href="#parts-es">Componentes</a></li>
+            <li><a href="#schematics-es">Esquemas</a></li>
+            <li><a href="#instructions-es">Instrucciones</a></li>
+            <li class="sub"><a href="#checkpoint1-es">Checkpoint 1</a></li>
+            <li class="sub"><a href="#checkpoint2-es">Checkpoint 2</a></li>
+            <li class="sub"><a href="#checkpoint3-es">Checkpoint 3</a></li>
+            <li class="sub"><a href="#checkpoint4-es">Checkpoint 4</a></li>
+            <li class="sub"><a href="#checkpoint5-es">Checkpoint 5</a></li>
+          </ul>
+        </aside>
+        <main class="content">
+          <section id="overview-es" class="card">
+            <div class="section-head"><div><div class="section-kicker">Resumen del proyecto</div><h2>Del prototipado a una PCB real</h2></div><div class="meta">Actualizado 2025.02.28 · Proyecto original de Patrick R Cabanban</div></div>
+            <div class="two-col">
+              <div>
+                <p>En este proyecto pasarás de las breadboards y placas perforadas a una placa de circuito impreso completa del clásico 555 blinker usando KiCad 7. El objetivo es capturar el esquemático, asignar las huellas correctas, diseñar la PCB y generar los ficheros de fabricación.</p>
+                <div class="highlight"><strong>Configuración recomendada</strong><ul><li>Usa un ratón siempre que sea posible.</li><li>Guarda con frecuencia durante el esquemático y el layout.</li><li>Sigue los checkpoints en orden.</li></ul></div>
+              </div>
+              <div class="image-card"><img src="assets/images/ops_project_8_printed_circuit_board.jpg" alt="PCB"><div class="caption muted">Ejemplo de PCB usado en la página original del proyecto.</div></div>
+            </div>
+          </section>
+
+          <section id="concepts-es" class="card">
+            <div class="section-kicker">Conceptos</div>
+            <h2>Placas de circuito impreso y flujo de diseño</h2>
+            <h3 id="pcbs-es">Placas de circuito impreso (PCB)</h3>
+            <p>Las placas de circuito impreso son el soporte estándar para productos electrónicos compactos, fiables y reproducibles. Sustituyen estructuras temporales de prototipado por pistas de cobre, pads y huellas permanentes definidos mediante CAD.</p>
+            <h3 id="pcb-design-es">Visión general del diseño PCB</h3>
+            <p>El flujo de trabajo tiene dos etapas principales: captura esquemática y diseño del layout PCB. Primero se traduce el circuito a un esquemático digital con símbolos, redes y huellas. Después se define el contorno, se colocan las huellas, se enrutan las pistas y se generan los ficheros de fabricación.</p>
+          </section>
+
+          <section id="install-es" class="card">
+            <div class="section-kicker">Configuración del software</div>
+            <h2>Instalación de KiCad 7.0.11</h2>
+            <p>Usa KiCad 7.0.11 para este proyecto. Descarga el instalador correspondiente a tu sistema operativo y mantén la configuración por defecto salvo opciones auxiliares si las necesitas.</p>
+            <table>
+              <thead><tr><th>Sistema operativo</th><th>Descarga</th></tr></thead>
+              <tbody>
+                <tr><td>Windows</td><td><a href="https://downloads.kicad.org/kicad/windows/explore/stable/download/kicad-7.0.11-x86_64.exe" target="_blank" rel="noopener">Descargar instalador</a></td></tr>
+                <tr><td>Mac</td><td><a href="https://downloads.kicad.org/kicad/macos/explore/stable/download/kicad-unified-universal-7.0.11.dmg" target="_blank" rel="noopener">Descargar instalador</a></td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="requirements-es" class="card">
+            <div class="section-kicker">Evaluación</div>
+            <h2>Requisitos mínimos</h2>
+            <ul>
+              <li>Crea un esquemático completo que reproduzca el circuito 555 blinker proporcionado.</li>
+              <li>Supera el ERC salvo la advertencia esperada de alimentación.</li>
+              <li>Crea un layout PCB que supere el DRC.</li>
+              <li>Usa los símbolos y huellas indicados en la sección de componentes.</li>
+            </ul>
+          </section>
+
+          <section id="parts-es" class="card">
+            <div class="section-kicker">Componentes</div>
+            <h2>Lista de componentes y referencias</h2>
+            <p class="muted">Esta es una versión compacta preparada para GitHub Pages. Adapta los valores y huellas exactos según tu asignatura.</p>
+            <table>
+              <thead><tr><th>Cant.</th><th>Componente</th><th>Símbolo / valor</th><th>Huella sugerida</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>Circuito integrado temporizador</td><td>NE555</td><td>DIP-8_W7.62mm</td></tr>
+                <tr><td>1</td><td>LED</td><td>D1</td><td>LED_D5.0mm</td></tr>
+                <tr><td>2</td><td>Resistencia</td><td>R1, R2</td><td>Axial_DIN0207</td></tr>
+                <tr><td>2</td><td>Condensador</td><td>C1, C2</td><td>Radial / Disc_THT</td></tr>
+                <tr><td>1</td><td>Conector de batería / alimentación</td><td>BT1 o J1</td><td>TerminalBlock / BatteryHolder</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="schematics-es" class="card">
+            <div class="section-kicker">Diagrama de referencia</div>
+            <h2>Esquemas</h2>
+            <div class="schem-wrap">
+              <div class="image-card"><img src="assets/images/ops_schem_proj8.png" alt="Esquema"><div class="caption muted">Esquema de referencia usado para construir la PCB.</div></div>
+              <div>
+                <p>Usa este esquema como base para la captura en KiCad. Comprueba la orientación de pines, referencias, valores y conexiones de alimentación antes de asignar huellas y pasar al layout.</p>
+                <div class="note">Consejo: mantén consistentes los valores y los nombres de huellas desde el inicio para reducir problemas de ERC y de actualización hacia PCB.</div>
+              </div>
+            </div>
+          </section>
+
+          <section id="instructions-es" class="card">
+            <div class="section-kicker">Paso a paso</div>
+            <h2>Instrucciones y checkpoints</h2>
+            <p>Sigue los checkpoints en orden. Cada tarjeta se ha hecho más grande para que las capturas y animaciones se vean mejor en GitHub Pages.</p>
+            <div class="checkpoint-list">
+              <article class="checkpoint-card" id="checkpoint1-es"><div class="section-kicker">Checkpoint 1</div><h3>Crear el proyecto y capturar el esquemático</h3><ol><li>Crea un nuevo proyecto en KiCad y abre el editor esquemático.</li><li>Añade símbolos de alimentación, componentes, valores y asignación de huellas.</li><li>Cablea el circuito, añade etiquetas de red y marcas de no conexión.</li></ol><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_add_symbols.gif" alt="Checkpoint 1"></article>
+              <article class="checkpoint-card" id="checkpoint2-es"><div class="section-kicker">Checkpoint 2</div><h3>Anotar y validar el esquemático</h3><ol><li>Ejecuta la anotación del esquema para reemplazar referencias temporales.</li><li>Ejecuta el ERC y comprueba que solo queda la advertencia de alimentación esperada.</li></ol><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_electrical_rules_check.gif" alt="Checkpoint 2"></article>
+              <article class="checkpoint-card" id="checkpoint3-es"><div class="section-kicker">Checkpoint 3</div><h3>Crear la placa y enrutar la PCB</h3><ol><li>Abre PCB Editor y actualiza la placa a partir del esquemático.</li><li>Configura tamaños de pistas y vías, define el contorno y coloca las huellas.</li><li>Enruta pistas, añade vías si hace falta y crea el plano de tierra.</li></ol><div class="callout">Usa 40 mil para alimentación/tierra y 30 mil para señal. Evita esquinas de 90°.</div><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_add_traces.gif" alt="Checkpoint 3"></article>
+              <article class="checkpoint-card" id="checkpoint4-es"><div class="section-kicker">Checkpoint 4</div><h3>Ejecutar las verificaciones de diseño</h3><ol><li>Abre el DRC y ejecuta la comprobación.</li><li>Resuelve todas las violaciones antes de generar resultados.</li></ol><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_design_rules_check.gif" alt="Checkpoint 4"></article>
+              <article class="checkpoint-card" id="checkpoint5-es"><div class="section-kicker">Checkpoint 5</div><h3>Generar ficheros de fabricación</h3><ol><li>Genera las capas de fabricación y los taladros.</li><li>Revisa los ficheros generados antes de compartirlos o entregarlos.</li><li>Comprime la carpeta del proyecto con el formato de nombre requerido.</li></ol><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_design_rules_generate_manufacturing_files.gif" alt="Checkpoint 5"></article>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div class="footer-card" id="footer-text">This redesigned page was prepared for GitHub Pages from the uploaded project HTML, preserving the original structure while improving layout and adding a Spanish mode.</div>
   </div>
 
   <script>
     const btnEn = document.getElementById('btn-en');
     const btnEs = document.getElementById('btn-es');
+    const pageEn = document.getElementById('page-en');
+    const pageEs = document.getElementById('page-es');
+    const heroTitle = document.getElementById('hero-title');
+    const heroLead = document.getElementById('hero-lead');
+    const heroBadge = document.getElementById('hero-badge');
+    const btnGo = document.getElementById('btn-go');
+    const btnParts = document.getElementById('btn-parts');
+    const footerText = document.getElementById('footer-text');
+
     function setLang(lang){
-      document.body.classList.remove('lang-en','lang-es');
-      document.body.classList.add('lang-' + lang);
-      btnEn.classList.toggle('active', lang === 'en');
-      btnEs.classList.toggle('active', lang === 'es');
-      document.documentElement.lang = lang;
-      try { localStorage.setItem('pcb_lang', lang); } catch (e) {}
+      const isEs = lang === 'es';
+      pageEn.classList.toggle('active', !isEs);
+      pageEs.classList.toggle('active', isEs);
+      btnEn.classList.toggle('active', !isEs);
+      btnEs.classList.toggle('active', isEs);
+      document.documentElement.lang = isEs ? 'es' : 'en';
+      heroTitle.textContent = isEs
+        ? 'Diseña una PCB completa del 555 Blinker con un flujo más claro y visual.'
+        : 'Design a complete 555 Blinker PCB with a cleaner, more visual workflow.';
+      heroLead.textContent = isEs
+        ? 'Esta versión rediseñada mantiene la estructura original del proyecto, pero mejora la legibilidad, la navegación y la jerarquía visual. Además, incorpora un modo en español para facilitar su uso en clase o en autoaprendizaje.'
+        : 'This redesigned page keeps the original project structure while improving readability, navigation and visual hierarchy. It also adds a built-in Spanish mode so the page is easier to use in class or in self-study.';
+      heroBadge.innerHTML = isEs
+        ? '<strong>Diseño actualizado</strong><br>Mejor espaciado, tarjetas más claras y navegación bilingüe.'
+        : '<strong>Updated layout</strong><br>Better spacing, improved cards and bilingual navigation.';
+      btnGo.textContent = isEs ? 'Ir a instrucciones' : 'Go to instructions';
+      btnParts.textContent = isEs ? 'Ver lista de componentes' : 'See parts list';
+      footerText.textContent = isEs
+        ? 'Esta página rediseñada se ha preparado para GitHub Pages a partir del HTML del proyecto subido, manteniendo la estructura original pero mejorando la presentación y añadiendo un modo en español.'
+        : 'This redesigned page was prepared for GitHub Pages from the uploaded project HTML, preserving the original structure while improving layout and adding a Spanish mode.';
+      try { localStorage.setItem('pcb_lang', lang); } catch(e) {}
+      window.scrollTo({top:0, behavior:'instant'});
     }
+
     btnEn.addEventListener('click', () => setLang('en'));
     btnEs.addEventListener('click', () => setLang('es'));
     try {
       const saved = localStorage.getItem('pcb_lang');
-      if (saved === 'es' || saved === 'en') setLang(saved);
-    } catch(e) {}
+      setLang(saved === 'es' ? 'es' : 'en');
+    } catch(e) {
+      setLang('en');
+    }
   </script>
 </body>
 </html>
