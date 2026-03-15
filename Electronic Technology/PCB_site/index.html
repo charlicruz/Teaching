@@ -148,13 +148,13 @@
         </aside>
         <main class="content">
           <section id="overview" class="card">
-            <div class="section-head"><div><div class="section-kicker">Project overview</div><h2>From prototyping to a real PCB</h2></div><div class="meta">Updated 2025.02.28 · Original project by Patrick R Cabanban</div></div>
+            <div class="section-head"><div><div class="section-kicker">Project overview</div><h2>From prototyping to a real PCB</h2></div><div class="meta">Updated 2026.03.14</div></div>
             <div class="two-col">
               <div>
                 <p>In this project you move beyond breadboards and perfboards and create a complete printed circuit board for the classic 555 blinker using KiCad 7. The objective is to capture the schematic, assign the correct footprints, lay out the PCB and generate manufacturing files.</p>
                 <div class="highlight"><strong>Recommended setup</strong><ul><li>Use a mouse whenever possible.</li><li>Save frequently during schematic and layout work.</li><li>Follow the checkpoints in order.</li></ul></div>
               </div>
-              <div class="image-card"><img src="assets/images/ops_project_8_printed_circuit_board.jpg" alt="PCB"><div class="caption muted">Example PCB image used in the original project page.</div></div>
+              <div class="image-card"><img src="assets/images/ops_project_8_printed_circuit_board.jpg" alt="PCB"><div class="caption muted">Example of PCB board.</div></div>
             </div>
           </section>
 
@@ -216,6 +216,9 @@
                 <p>Use the schematic as the basis for your KiCad capture. Check pin orientation, reference designators, values and power connections before assigning footprints and moving to layout.</p>
                 <div class="note">Tip: keep symbol values and footprint names consistent from the beginning to reduce ERC and PCB update issues later.</div>
               </div>
+               <div class="schem-wrap">
+              <div class="image-card"><img src="assets/images/ops.png" alt="Schematic"><div class="caption muted">Example of the PCB.</div></div>
+              <div>
             </div>
           </section>
 
@@ -264,7 +267,7 @@
                 <p>En este proyecto pasarás de las breadboards y placas perforadas a una placa de circuito impreso complet del clásico 555 blinker usando KiCad 7. El objetivo es capturar el esquemático, asignar las huellas correctas, diseñar la PCB y generar los ficheros de fabricación.</p>
                 <div class="highlight"><strong>Configuración recomendada</strong><ul><li>Usa un ratón siempre que sea posible.</li><li>Guarda con frecuencia durante el esquemático y el layout.</li><li>Sigue los checkpoints en orden.</li></ul></div>
               </div>
-              <div class="image-card"><img src="assets/images/taller.png" alt="PCB"><div class="caption muted">Ejemplo de PCB.</div></div>
+              <div class="image-card"><img src="assets/images/ops_project_8_printed_circuit_board.jpg" alt="PCB"><div class="caption muted">Ejemplo de PCB.</div></div>
             </div>
           </section>
 
@@ -326,6 +329,9 @@
                 <p>Usa este esquema como base para la captura en KiCad. Comprueba la orientación de pines, referencias, valores y conexiones de alimentación antes de asignar huellas y pasar al layout.</p>
                 <div class="note">Consejo: mantén consistentes los valores y los nombres de huellas desde el inicio para reducir problemas de ERC y de actualización hacia PCB.</div>
               </div>
+               <div class="schem-wrap">
+              <div class="image-card"><img src="assets/images/ops.png" alt="Schematic"><div class="caption muted">Ejemplo de PCB.</div></div>
+              <div>
             </div>
           </section>
 
@@ -368,8 +374,8 @@
       btnEs.classList.toggle('active', isEs);
       document.documentElement.lang = isEs ? 'es' : 'en';
       heroTitle.textContent = isEs
-        ? 'Diseña una PCB complet del 555 Blinker.'
-        : 'Design a complete 555 Blinker PCB.';
+        ? 'Diseña tu primera placa de circuito impreso.'
+        : 'Design your first PCB board.';
       heroLead.textContent = isEs
         ? 'Este tutorial te ayudará a realizar tu primer PCB en la herramienta Kikad.'
         : 'This tutorial will help you create your first PCB using the KiCad software.';
