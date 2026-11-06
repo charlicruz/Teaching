@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projecto · 555 Blinker PCB</title>
-  <link rel="icon" href="assets/images/ops_logo_favicon.png">
+  <title>555 Blinker PCB · KiCad and sustainable electronics</title>
+  <link rel="icon" href="https://charlicruz.github.io/Teaching/Electronic%20Technology/PCB_site/assets/images/ops_logo_favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,6 +17,9 @@
       --line:#dde5f1;
       --brand:#1e4ca6;
       --brand-2:#eaf1ff;
+      --eco:#176b55;
+      --eco-dark:#0d5140;
+      --eco-soft:#eff9f3;
       --shadow:0 18px 48px rgba(19,38,84,.08);
       --radius:24px;
       --radius-sm:18px;
@@ -89,6 +92,26 @@
     .callout{margin-top:14px;padding:14px 16px;border-radius:16px;background:#fff9e8;border:1px solid #f0d98b;color:#6d5400}
     .footer-card{padding:24px;margin-top:22px}
     .muted{color:var(--muted)}
+    .content, .card, .checkpoint-card{min-width:0}
+    .eco-card, .eco-intro, .eco-tip{overflow-wrap:anywhere}
+    .eco-intro{border-left:4px solid var(--eco);background:var(--eco-soft);border-radius:0 14px 14px 0;padding:14px 18px;margin:14px 0;color:#234d40}
+    .eco-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}
+    .eco-card{padding:16px;border:1px solid #cde5d9;border-radius:16px;background:#f9fdfa}
+    .eco-card h3{margin:0 0 7px;color:var(--eco-dark);font-size:1.04rem}
+    .eco-card p{margin:0 0 8px;font-size:.96rem}
+    .eco-card small{display:block;color:#48685b;line-height:1.55}
+    .eco-tip{margin-top:14px;padding:13px 16px;border:1px solid #b9dec8;border-left:4px solid var(--eco);border-radius:13px;background:#f1fbf5;color:#245543;line-height:1.65}
+    .eco-table-wrap{overflow-x:auto;margin-top:16px}
+    .eco-table th:first-child{width:28%}
+    .eco-table td:first-child{font-weight:650}
+    .eco-eval{list-style:none;padding:0;margin:16px 0}
+    .eco-eval li{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+    .eco-eval input{width:19px;height:19px;accent-color:var(--eco);margin-top:4px;flex:none}
+    .eco-eval label{cursor:pointer}
+    .eco-eval strong{color:var(--eco-dark)}
+    .eco-resources{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .eco-resources .btn{border-color:#bbdecb}
+    @media (max-width:700px){.eco-grid{grid-template-columns:1fr}}
     @media (max-width:1100px){.hero,.layout,.two-col,.schem-wrap{grid-template-columns:1fr}.sidebar{position:relative;top:0}}
     @media (max-width:700px){.shell{padding:16px}.hero-card,.hero-media,.sidebar,.card,.checkpoint-card,.footer-card{border-radius:20px}}
   </style>
@@ -97,15 +120,15 @@
   <div class="shell">
     <div class="topbar">
       <div class="brand">
-        <img src="assets/images/ops_logo_favicon.png" alt="logo">
+        <img src="https://charlicruz.github.io/Teaching/Electronic%20Technology/PCB_site/assets/images/ops_logo_favicon.png" alt="logo">
         <div>
           <small>Open Project Space</small>
-          <div>Projecto · 555 Blinker PCB</div>
+          <div>555 Blinker PCB · Sustainable electronics</div>
         </div>
       </div>
       <div class="lang-switch" aria-label="Language selector">
-        <button id="btn-en" class="active" type="button">EN</button>
-        <button id="btn-es" type="button">ES</button>
+        <button id="btn-en" type="button">EN</button>
+        <button id="btn-es" class="active" type="button">ES</button>
       </div>
     </div>
 
@@ -120,12 +143,12 @@
         </div>
       </div>
       <div class="hero-media">
-        <img src="assets/images/taller.png" alt="Printed circuit board">
+        <img src="https://charlicruz.github.io/Teaching/Electronic%20Technology/PCB_site/assets/images/taller.png" alt="Printed circuit board">
         <div class="hero-badge" id="hero-badge"><strong>Updated layout</strong><br>Better spacing, improved cards and bilingual navigation.</div>
       </div>
     </section>
 
-    <div class="page active" id="page-en">
+    <div class="page" id="page-en">
       <div class="layout">
         <aside class="sidebar">
           <h3>Contents</h3>
@@ -136,6 +159,7 @@
             <li class="sub"><a href="#pcb-design">PCB Design Overview</a></li>
             <li><a href="#install">Installing KiCad</a></li>
             <li><a href="#requirements">Requirements</a></li>
+            <li><a href="#sustainability">Sustainability criteria</a></li>
             <li><a href="#parts">Parts</a></li>
             <li><a href="#schematics">Schematics</a></li>
             <li><a href="#instructions">Instructions</a></li>
@@ -144,6 +168,7 @@
             <li class="sub"><a href="#checkpoint3">Checkpoint 3</a></li>
             <li class="sub"><a href="#checkpoint4">Checkpoint 4</a></li>
             <li class="sub"><a href="#checkpoint5">Checkpoint 5</a></li>
+            <li><a href="#eco-assessment">Eco-design assessment</a></li>
           </ul>
         </aside>
         <main class="content">
@@ -152,9 +177,10 @@
             <div class="two-col">
               <div>
                 <p>In this project you move beyond breadboards and perfboards and create a complete printed circuit board for the classic 555 blinker using KiCad 7. The objective is to capture the schematic, assign the correct footprints, lay out the PCB and generate manufacturing files.</p>
+                <div class="eco-intro"><strong>Sustainable electronics focus:</strong> At each stage, consider power consumption, modularity, reuse, repairability, waste prevention and the environmental implications of design choices. These criteria guide discussion; their benefits must be justified rather than assumed. This workshop contributes to UAH teaching innovation project <strong>UAH/EV1812</strong>.</div>
                 <div class="highlight"><strong>Recommended setup</strong><ul><li>Use a mouse whenever possible.</li><li>Save frequently during schematic and layout work.</li><li>Follow the checkpoints in order.</li></ul></div>
               </div>
-              <div class="image-card"><img src="assets/images/ops_project_8_printed_circuit_board.jpg" alt="PCB"><div class="caption muted">Example of PCB board.</div></div>
+              <div class="image-card"><img src="https://charlicruz.github.io/Teaching/Electronic%20Technology/PCB_site/assets/images/ops_project_8_printed_circuit_board.jpg" alt="PCB"><div class="caption muted">Example of PCB board.</div></div>
             </div>
           </section>
 
@@ -188,7 +214,23 @@
               <li>Pass ERC except for the expected power warning.</li>
               <li>Create a PCB layout that passes DRC.</li>
               <li>Use the symbols and footprints listed in the parts section.</li>
+              <li>Justify at least two sustainability decisions and complete the final eco-design checklist.</li>
             </ul>
+          </section>
+
+          <section id="sustainability" class="card">
+            <div class="section-kicker">Sustainability in practice · UAH/EV1812</div>
+            <h2>Eco-design criteria for the 555 blinker PCB</h2>
+            <p>In addition to making the blinker work correctly, examine whether the board can be powered efficiently, repaired, adapted and reused. You do not need to redesign the entire reference circuit: propose and justify feasible improvements, marking optional modifications as such.</p>
+            <div class="eco-grid">
+              <div class="eco-card"><h3>01 · Energy consumption</h3><p>Identify the supply voltage, LED current-limiting resistance and approximate load current. Compare feasible LED current settings and consider battery life.</p><small>Evidence: brief estimated current or power calculation. Portable power does not automatically mean low consumption.</small></div>
+              <div class="eco-card"><h3>02 · Modularity</h3><p>Use an accessible, clearly labelled power connector. Consider whether a labelled pulse output or test point would allow the board to work with other experiments.</p><small>Evidence: connector/test point on the drawing or a justified proposal. Optional extension if the base circuit has no output connector.</small></div>
+              <div class="eco-card"><h3>03 · Reuse</h3><p>Identify a future educational use for the board, e.g. a timer or pulse source, instead of building a single-use prototype.</p><small>Evidence: a brief description of a possible future lab activity.</small></div>
+              <div class="eco-card"><h3>04 · Repairability</h3><p>Check that standard through-hole components are accessible and replaceable. Assess using an 8-pin socket for the NE555 if available.</p><small>Evidence: replaceable components and accessible footprint arrangement.</small></div>
+              <div class="eco-card"><h3>05 · Waste and materials</h3><p>Check ERC and DRC before fabrication, avoid unnecessary board revisions and choose reasonable board dimensions without compromising repairability.</p><small>Evidence: verification results and a simple explanation of board-size trade-offs.</small></div>
+              <div class="eco-card"><h3>06 · Environmental awareness</h3><p>Compare a new PCB with reusing an existing one. Discuss how durability, material choice, maintenance or energy demand may influence environmental impact.</p><small>Evidence: one trade-off and a justified improvement. No environmental benefit is proven without supporting data.</small></div>
+            </div>
+            <div class="eco-intro"><strong>Additional criterion — open tools and documentation:</strong> Use KiCad to preserve editable schematic and PCB files; document components and connectors so the board can be maintained and reused by future students. Open-source design tools improve access but do not, on their own, guarantee lower environmental impact.</div>
           </section>
 
           <section id="parts" class="card">
@@ -205,21 +247,17 @@
                 <tr><td>1</td><td>Battery / supply connector</td><td>BT1 or J1</td><td>TerminalBlock / BatteryHolder</td></tr>
               </tbody>
             </table>
+            <div class="eco-tip"><strong>Repair and reuse:</strong> the suggested through-hole footprints can facilitate component replacement. As an optional extension, consider a DIP-8 socket and a labelled pulse test point, checking compatibility and available parts before changing the reference schematic.</div>
           </section>
 
           <section id="schematics" class="card">
             <div class="section-kicker">Reference diagram</div>
             <h2>Schematics</h2>
             <div class="schem-wrap">
-              <div class="image-card"><img src="assets/images/ops_schem_proj8.png" alt="Schematic"><div class="caption muted">Reference schematic used to build the PCB.</div></div>
-              <div>
-                <p>Use the schematic as the basis for your KiCad capture. Check pin orientation, reference designators, values and power connections before assigning footprints and moving to layout.</p>
-                <div class="note">Tip: keep symbol values and footprint names consistent from the beginning to reduce ERC and PCB update issues later.</div>
-              </div>
-               <div class="schem-wrap">
-              <div class="image-card"><img src="assets/images/ops.png" alt="Schematic"><div class="caption muted">Example of the PCB.</div></div>
-              <div>
+              <div class="image-card"><img src="https://charlicruz.github.io/Teaching/Electronic%20Technology/PCB_site/assets/images/ops_schem_proj8.png" alt="Reference 555 schematic"><div class="caption muted">Reference schematic used to build the PCB.</div></div>
+              <div><p>Use this schematic as the basis for KiCad capture. Check pin orientation, component values and supply connections before assigning footprints.</p><div class="note">Tip: keep component values and footprint names consistent from the start to avoid ERC and PCB update problems.</div></div>
             </div>
+            <div class="image-card" style="max-width:580px;margin-top:18px"><img src="https://charlicruz.github.io/Teaching/Electronic%20Technology/PCB_site/assets/images/ops.png" alt="Example of 555 PCB"><div class="caption muted">Example of the PCB.</div></div>
           </section>
 
           <section id="instructions" class="card">
@@ -227,18 +265,39 @@
             <h2>Instructions and checkpoints</h2>
             <p>Follow the checkpoints below in order. Each card is larger than before so screenshots and animated guidance are easier to view on GitHub Pages.</p>
             <div class="checkpoint-list">
-              <article class="checkpoint-card" id="checkpoint1"><div class="section-kicker">Checkpoint 1</div><h3>Create the project and capture the schematic</h3><ol><li>Create a new KiCad project and open the schematic editor.</li><li>Add power symbols, parts, values and footprint assignments.</li><li>Wire the circuit, add net labels and no-connection flags.</li></ol><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_add_symbols.gif" alt="Checkpoint 1"></article>
-              <article class="checkpoint-card" id="checkpoint2"><div class="section-kicker">Checkpoint 2</div><h3>Annotate and validate the schematic</h3><ol><li>Run schematic annotation to replace placeholder references.</li><li>Run ERC and verify that only the expected power warning remains.</li></ol><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_electrical_rules_check.gif" alt="Checkpoint 2"></article>
-              <article class="checkpoint-card" id="checkpoint3"><div class="section-kicker">Checkpoint 3</div><h3>Create the board and route the PCB</h3><ol><li>Open PCB Editor and update the board from the schematic.</li><li>Set track and via sizes, define board outline and place footprints.</li><li>Route tracks, add vias if needed, and create the ground fill.</li></ol><div class="callout">Use 40 mil for power/ground and 30 mil for signal traces. Avoid 90° corners.</div><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_add_traces.gif" alt="Checkpoint 3"></article>
-              <article class="checkpoint-card" id="checkpoint4"><div class="section-kicker">Checkpoint 4</div><h3>Run design rule checks</h3><ol><li>Open DRC and run the checker.</li><li>Resolve all violations before generating outputs.</li></ol><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_design_rules_check.gif" alt="Checkpoint 4"></article>
-              <article class="checkpoint-card" id="checkpoint5"><div class="section-kicker">Checkpoint 5</div><h3>Generate manufacturing files</h3><ol><li>Plot the fabrication layers and create drill files.</li><li>Review the generated files before sharing or submitting them.</li><li>Compress the project folder with the required naming format.</li></ol><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_design_rules_generate_manufacturing_files.gif" alt="Checkpoint 5"></article>
+              <article class="checkpoint-card" id="checkpoint1"><div class="section-kicker">Checkpoint 1</div><h3>Create the project and capture the schematic</h3><ol><li>Create a new KiCad project and open the schematic editor.</li><li>Add power symbols, parts, values and footprint assignments.</li><li>Wire the circuit, add net labels and no-connection flags.</li></ol><div class="eco-tip"><strong>Eco-design check · energy:</strong> note the supply voltage, LED current-limiting resistor and possible battery supply. Estimate current from the circuit and component data; do not equate battery power with energy efficiency.</div><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_add_symbols.gif" alt="Checkpoint 1"></article>
+              <article class="checkpoint-card" id="checkpoint2"><div class="section-kicker">Checkpoint 2</div><h3>Annotate and validate the schematic</h3><ol><li>Run schematic annotation to replace placeholder references.</li><li>Run ERC and verify that only the expected power warning remains.</li></ol><div class="eco-tip"><strong>Eco-design check · reliability:</strong> verify the supply and component connections. Investigate the known power warning rather than ignoring unexpected ERC warnings; detecting errors early can prevent unnecessary board revisions.</div><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_electrical_rules_check.gif" alt="Checkpoint 2"></article>
+              <article class="checkpoint-card" id="checkpoint3"><div class="section-kicker">Checkpoint 3</div><h3>Create the board and route the PCB</h3><ol><li>Open PCB Editor and update the board from the schematic.</li><li>Set track and via sizes, define board outline and place footprints.</li><li>Route tracks, add vias if needed, and create the ground fill.</li></ol><div class="callout">Use 40 mil for power/ground and 30 mil for signal traces. Avoid 90° corners.</div><div class="eco-tip"><strong>Eco-design check · modularity and repair:</strong> keep the connector and through-hole parts accessible; reserve labels or space for possible future pulse testing. Minimise board size only as far as assembly and repair remain practical.</div><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_add_traces.gif" alt="Checkpoint 3"></article>
+              <article class="checkpoint-card" id="checkpoint4"><div class="section-kicker">Checkpoint 4</div><h3>Run design rule checks</h3><ol><li>Open DRC and run the checker.</li><li>Resolve all violations before generating outputs.</li></ol><div class="eco-tip"><strong>Eco-design check · waste prevention:</strong> resolve electrical and layout issues before fabrication. DRC is a technical verification step, not an environmental life-cycle assessment.</div><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_design_rules_check.gif" alt="Checkpoint 4"></article>
+              <article class="checkpoint-card" id="checkpoint5"><div class="section-kicker">Checkpoint 5</div><h3>Generate manufacturing files</h3><ol><li>Plot the fabrication layers and create drill files.</li><li>Review the generated files before sharing or submitting them.</li><li>Compress the project folder with the required naming format.</li></ol><div class="eco-tip"><strong>Eco-design check · reuse:</strong> preserve the editable .kicad_sch and .kicad_pcb files, BOM and revision notes. Consider reusing the board in future timing or digital-electronics labs.</div><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_design_rules_generate_manufacturing_files.gif" alt="Checkpoint 5"></article>
+            </div>
+          </section>
+          <section id="eco-assessment" class="card">
+            <div class="section-kicker">Final activity · reflection</div>
+            <h2>Eco-design self-assessment</h2>
+            <p>Tick the items that you have <strong>actually checked or justified</strong>. An unchecked item does not mean failure: it may be a future improvement. This checklist stays in your browser and <strong>does not submit responses</strong>.</p>
+            <ul class="eco-eval">
+              <li><input id="eco-en-1" type="checkbox"><label for="eco-en-1"><strong>Energy:</strong> I identified the supply voltage and estimated at least one relevant current or power value.</label></li>
+              <li><input id="eco-en-2" type="checkbox"><label for="eco-en-2"><strong>Modularity:</strong> I checked connector accessibility and considered a useful test point or output.</label></li>
+              <li><input id="eco-en-3" type="checkbox"><label for="eco-en-3"><strong>Reuse:</strong> I proposed at least one future educational application for this board.</label></li>
+              <li><input id="eco-en-4" type="checkbox"><label for="eco-en-4"><strong>Repairability:</strong> I checked whether the key components can be accessed and replaced.</label></li>
+              <li><input id="eco-en-5" type="checkbox"><label for="eco-en-5"><strong>Waste prevention:</strong> I ran or planned ERC/DRC verification and avoided unnecessary fabrication iterations.</label></li>
+              <li><input id="eco-en-6" type="checkbox"><label for="eco-en-6"><strong>Environmental awareness:</strong> I justified one improvement and recognised at least one design trade-off.</label></li>
+              <li><input id="eco-en-7" type="checkbox"><label for="eco-en-7"><strong>Open documentation:</strong> I will retain the editable KiCad project and component information.</label></li>
+            </ul>
+            <div class="eco-intro"><strong>Reflection (2–3 sentences):</strong> Which two changes would you propose to make this specific 555 board more sustainable? What technical, cost or maintenance trade-offs might those changes involve?</div>
+            <p><strong>Want to assess the impact of the workshop?</strong> Watch the sustainable electronics resource and complete the voluntary questionnaire. Responses are collected through Microsoft Forms, not this local checklist.</p>
+            <div class="eco-resources">
+              <a class="btn primary" href="https://youtu.be/miIaRYKboC8" target="_blank" rel="noopener noreferrer">Watch the video</a>
+              <a class="btn" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=UsXSzh99MUeqOi8OyWKeJmUz8OkWQOFGtOzalf_WhLFUMTdSUzQ0OTdFRDVIVExIVVpZMkoxTU9JRi4u" target="_blank" rel="noopener noreferrer">Student questionnaire</a>
+              <a class="btn" href="https://charlicruz.github.io/PID2026_Electronica_sostenible/" target="_blank" rel="noopener noreferrer">UAH/EV1812 project</a>
             </div>
           </section>
         </main>
       </div>
     </div>
 
-    <div class="page" id="page-es">
+    <div class="page active" id="page-es">
       <div class="layout">
         <aside class="sidebar">
           <h3>Contenidos</h3>
@@ -249,6 +308,7 @@
             <li class="sub"><a href="#pcb-design-es">Visión general del diseño PCB</a></li>
             <li><a href="#install-es">Instalación de KiCad</a></li>
             <li><a href="#requirements-es">Requisitos</a></li>
+            <li><a href="#sustainability-es">Criterios de sostenibilidad</a></li>
             <li><a href="#parts-es">Componentes</a></li>
             <li><a href="#schematics-es">Esquemas</a></li>
             <li><a href="#instructions-es">Instrucciones</a></li>
@@ -257,6 +317,7 @@
             <li class="sub"><a href="#checkpoint3-es">Checkpoint 3</a></li>
             <li class="sub"><a href="#checkpoint4-es">Checkpoint 4</a></li>
             <li class="sub"><a href="#checkpoint5-es">Checkpoint 5</a></li>
+            <li><a href="#eco-assessment-es">Evaluación del ecodiseño</a></li>
           </ul>
         </aside>
         <main class="content">
@@ -264,10 +325,11 @@
             <div class="section-head"><div><div class="section-kicker">Resumen del proyecto</div><h2>Del prototipado a una PCB real</h2></div><div class="meta">Actualizado 2026.03.14 </div></div>
             <div class="two-col">
               <div>
-                <p>En este proyecto pasarás de las breadboards y placas perforadas a una placa de circuito impreso complet del clásico 555 blinker usando KiCad 7. El objetivo es capturar el esquemático, asignar las huellas correctas, diseñar la PCB y generar los ficheros de fabricación.</p>
+                <p>En este proyecto pasarás de las protoboards y placas perforadas a una placa de circuito impreso completa para el clásico circuito intermitente con temporizador 555, utilizando KiCad 7. El objetivo es capturar el esquemático, asignar las huellas correctas, diseñar la PCB y generar los ficheros de fabricación.</p>
+                <div class="eco-intro"><strong>Enfoque de electrónica sostenible:</strong> En cada fase se considerarán el consumo energético, la modularidad, la reutilización, la reparabilidad, la prevención de residuos y las implicaciones ambientales de las decisiones de diseño. Estos criterios orientan la reflexión y sus posibles beneficios deben justificarse, no darse por supuestos. El taller se vincula al proyecto de innovación docente <strong>UAH/EV1812</strong>.</div>
                 <div class="highlight"><strong>Configuración recomendada</strong><ul><li>Usa un ratón siempre que sea posible.</li><li>Guarda con frecuencia durante el esquemático y el layout.</li><li>Sigue los checkpoints en orden.</li></ul></div>
               </div>
-              <div class="image-card"><img src="assets/images/ops_project_8_printed_circuit_board.jpg" alt="PCB"><div class="caption muted">Ejemplo de PCB.</div></div>
+              <div class="image-card"><img src="https://charlicruz.github.io/Teaching/Electronic%20Technology/PCB_site/assets/images/ops_project_8_printed_circuit_board.jpg" alt="PCB"><div class="caption muted">Ejemplo de PCB.</div></div>
             </div>
           </section>
 
@@ -301,7 +363,23 @@
               <li>Supera el ERC salvo la advertencia esperada de alimentación.</li>
               <li>Crea un layout PCB que supere el DRC.</li>
               <li>Usa los símbolos y huellas indicados en la sección de componentes.</li>
+              <li>Justifica al menos dos decisiones relacionadas con la sostenibilidad y completa la ficha final de ecodiseño.</li>
             </ul>
+          </section>
+
+          <section id="sustainability-es" class="card">
+            <div class="section-kicker">Sostenibilidad aplicada · UAH/EV1812</div>
+            <h2>Criterios de ecodiseño para la placa con temporizador 555</h2>
+            <p>Además de obtener un circuito intermitente funcional, analiza si la placa puede alimentarse eficientemente, repararse, adaptarse y reutilizarse. No es necesario modificar por completo el circuito de referencia: propón y justifica mejoras viables, diferenciando las modificaciones opcionales.</p>
+            <div class="eco-grid">
+              <div class="eco-card"><h3>01 · Bajo consumo energético</h3><p>Identifica la tensión de alimentación, la resistencia limitadora del LED y la corriente aproximada de la carga. Valora alternativas de corriente del LED y su efecto en la autonomía.</p><small>Evidencia: cálculo breve de corriente o potencia. La alimentación portátil no implica por sí sola bajo consumo.</small></div>
+              <div class="eco-card"><h3>02 · Modularidad</h3><p>Emplea un conector de alimentación accesible e identificado. Considera si una salida de pulsos o un punto de prueba etiquetado permitiría integrar la placa en otras prácticas.</p><small>Evidencia: conector o punto de prueba en el diseño, o propuesta justificada. Ampliación opcional si el circuito original no incluye salida externa.</small></div>
+              <div class="eco-card"><h3>03 · Reutilización</h3><p>Identifica una aplicación docente futura de la placa, por ejemplo como temporizador o fuente de pulsos, para evitar que sea un prototipo de un solo uso.</p><small>Evidencia: descripción breve de una posible práctica posterior.</small></div>
+              <div class="eco-card"><h3>04 · Reparabilidad</h3><p>Comprueba que los componentes comerciales de montaje pasante (THT) sean accesibles y sustituibles. Valora el empleo de un zócalo DIP-8 para el NE555, si se dispone de él.</p><small>Evidencia: componentes reemplazables y disposición de huellas accesible.</small></div>
+              <div class="eco-card"><h3>05 · Reducción de residuos y materiales</h3><p>Comprueba ERC y DRC antes de fabricar, evita revisiones innecesarias y dimensiona razonablemente la PCB sin dificultar su reparación.</p><small>Evidencia: verificaciones y explicación del compromiso entre tamaño y accesibilidad.</small></div>
+              <div class="eco-card"><h3>06 · Conciencia ambiental</h3><p>Compara fabricar una PCB nueva con reutilizar una existente. Reflexiona sobre la durabilidad, los materiales, el mantenimiento y la demanda energética.</p><small>Evidencia: una decisión de diseño justificada y sus contrapartidas. El beneficio ambiental requiere datos para demostrarse.</small></div>
+            </div>
+            <div class="eco-intro"><strong>Criterio adicional — herramientas abiertas y documentación:</strong> Utiliza KiCad y conserva los ficheros editables del esquema y la PCB. Documenta componentes y conectores para facilitar mantenimiento y reutilización en futuros cursos. Una herramienta abierta facilita el acceso, pero no garantiza por sí sola un menor impacto ambiental.</div>
           </section>
 
           <section id="parts-es" class="card">
@@ -318,21 +396,17 @@
                 <tr><td>1</td><td>Conector de batería / alimentación</td><td>BT1 o J1</td><td>TerminalBlock / BatteryHolder</td></tr>
               </tbody>
             </table>
+            <div class="eco-tip"><strong>Reparación y reutilización:</strong> las huellas de montaje pasante sugeridas pueden facilitar la sustitución de componentes. Como ampliación opcional, valora un zócalo DIP-8 y un punto de prueba para los pulsos, comprobando la compatibilidad y los materiales disponibles antes de modificar el esquema.</div>
           </section>
 
           <section id="schematics-es" class="card">
             <div class="section-kicker">Diagrama de referencia</div>
             <h2>Esquemas</h2>
             <div class="schem-wrap">
-              <div class="image-card"><img src="assets/images/ops_schem_proj8.png" alt="Esquema"><div class="caption muted">Esquema de referencia usado para construir la PCB.</div></div>
-              <div>
-                <p>Usa este esquema como base para la captura en KiCad. Comprueba la orientación de pines, referencias, valores y conexiones de alimentación antes de asignar huellas y pasar al layout.</p>
-                <div class="note">Consejo: mantén consistentes los valores y los nombres de huellas desde el inicio para reducir problemas de ERC y de actualización hacia PCB.</div>
-              </div>
-               <div class="schem-wrap">
-              <div class="image-card"><img src="assets/images/ops.png" alt="Schematic"><div class="caption muted">Ejemplo de PCB.</div></div>
-              <div>
+              <div class="image-card"><img src="https://charlicruz.github.io/Teaching/Electronic%20Technology/PCB_site/assets/images/ops_schem_proj8.png" alt="Esquema del temporizador 555"><div class="caption muted">Esquema de referencia utilizado para construir la PCB.</div></div>
+              <div><p>Utiliza el esquema como base para la captura en KiCad. Comprueba la orientación de pines, los valores de componentes y las conexiones de alimentación antes de asignar huellas.</p><div class="note">Consejo: mantén consistentes los valores y nombres de las huellas desde el principio para evitar problemas de ERC y de actualización de la PCB.</div></div>
             </div>
+            <div class="image-card" style="max-width:580px;margin-top:18px"><img src="https://charlicruz.github.io/Teaching/Electronic%20Technology/PCB_site/assets/images/ops.png" alt="Ejemplo de PCB con temporizador 555"><div class="caption muted">Ejemplo de PCB.</div></div>
           </section>
 
           <section id="instructions-es" class="card">
@@ -340,18 +414,39 @@
             <h2>Instrucciones y checkpoints</h2>
             <p>Sigue los checkpoints en orden. Cada tarjeta se ha hecho más grande para que las capturas y animaciones se vean mejor en GitHub Pages.</p>
             <div class="checkpoint-list">
-              <article class="checkpoint-card" id="checkpoint1-es"><div class="section-kicker">Checkpoint 1</div><h3>Crear el proyecto y capturar el esquemático</h3><ol><li>Crea un nuevo proyecto en KiCad y abre el editor esquemático.</li><li>Añade símbolos de alimentación, componentes, valores y asignación de huellas.</li><li>Cablea el circuito, añade etiquetas de red y marcas de no conexión.</li></ol><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_add_symbols.gif" alt="Checkpoint 1"></article>
-              <article class="checkpoint-card" id="checkpoint2-es"><div class="section-kicker">Checkpoint 2</div><h3>Anotar y validar el esquemático</h3><ol><li>Ejecuta la anotación del esquema para reemplazar referencias temporales.</li><li>Ejecuta el ERC y comprueba que solo queda la advertencia de alimentación esperada.</li></ol><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_electrical_rules_check.gif" alt="Checkpoint 2"></article>
-              <article class="checkpoint-card" id="checkpoint3-es"><div class="section-kicker">Checkpoint 3</div><h3>Crear la placa y enrutar la PCB</h3><ol><li>Abre PCB Editor y actualiza la placa a partir del esquemático.</li><li>Configura tamaños de pistas y vías, define el contorno y coloca las huellas.</li><li>Enruta pistas, añade vías si hace falta y crea el plano de tierra.</li></ol><div class="callout">Usa 40 mil para alimentación/tierra y 30 mil para señal. Evita esquinas de 90°.</div><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_add_traces.gif" alt="Checkpoint 3"></article>
-              <article class="checkpoint-card" id="checkpoint4-es"><div class="section-kicker">Checkpoint 4</div><h3>Ejecutar las verificaciones de diseño</h3><ol><li>Abre el DRC y ejecuta la comprobación.</li><li>Resuelve todas las violaciones antes de generar resultados.</li></ol><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_design_rules_check.gif" alt="Checkpoint 4"></article>
-              <article class="checkpoint-card" id="checkpoint5-es"><div class="section-kicker">Checkpoint 5</div><h3>Generar ficheros de fabricación</h3><ol><li>Genera las capas de fabricación y los taladros.</li><li>Revisa los ficheros generados antes de compartirlos o entregarlos.</li><li>Comprime la carpeta del proyecto con el formato de nombre requerido.</li></ol><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_design_rules_generate_manufacturing_files.gif" alt="Checkpoint 5"></article>
+              <article class="checkpoint-card" id="checkpoint1-es"><div class="section-kicker">Checkpoint 1</div><h3>Crear el proyecto y capturar el esquemático</h3><ol><li>Crea un nuevo proyecto en KiCad y abre el editor esquemático.</li><li>Añade símbolos de alimentación, componentes, valores y asignación de huellas.</li><li>Cablea el circuito, añade etiquetas de red y marcas de no conexión.</li></ol><div class="eco-tip"><strong>Comprobación de ecodiseño · consumo:</strong> identifica la tensión, la resistencia limitadora del LED y la posible alimentación con batería. Estima el consumo a partir del circuito y los datos de los componentes; usar batería no equivale a ahorrar energía.</div><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_add_symbols.gif" alt="Checkpoint 1"></article>
+              <article class="checkpoint-card" id="checkpoint2-es"><div class="section-kicker">Checkpoint 2</div><h3>Anotar y validar el esquemático</h3><ol><li>Ejecuta la anotación del esquema para reemplazar referencias temporales.</li><li>Ejecuta el ERC y comprueba que solo queda la advertencia de alimentación esperada.</li></ol><div class="eco-tip"><strong>Comprobación de ecodiseño · fiabilidad:</strong> revisa las conexiones de alimentación y de los componentes. Analiza la advertencia esperada de ERC y no ignores avisos imprevistos; evitar errores permite reducir revisiones de placas.</div><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_electrical_rules_check.gif" alt="Checkpoint 2"></article>
+              <article class="checkpoint-card" id="checkpoint3-es"><div class="section-kicker">Checkpoint 3</div><h3>Crear la placa y enrutar la PCB</h3><ol><li>Abre PCB Editor y actualiza la placa a partir del esquemático.</li><li>Configura tamaños de pistas y vías, define el contorno y coloca las huellas.</li><li>Enruta pistas, añade vías si hace falta y crea el plano de tierra.</li></ol><div class="callout">Usa 40 mil para alimentación/tierra y 30 mil para señal. Evita esquinas de 90°.</div><div class="eco-tip"><strong>Comprobación de ecodiseño · modularidad y reparación:</strong> mantén accesibles el conector y los componentes THT; considera puntos de prueba para posibles prácticas posteriores. Reduce el tamaño de la placa solo si mantiene la facilidad de montaje y reparación.</div><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_add_traces.gif" alt="Checkpoint 3"></article>
+              <article class="checkpoint-card" id="checkpoint4-es"><div class="section-kicker">Checkpoint 4</div><h3>Ejecutar las verificaciones de diseño</h3><ol><li>Abre el DRC y ejecuta la comprobación.</li><li>Resuelve todas las violaciones antes de generar resultados.</li></ol><div class="eco-tip"><strong>Comprobación de ecodiseño · prevención de residuos:</strong> corrige incidencias eléctricas y de trazado antes de fabricar. El DRC verifica reglas técnicas, pero no sustituye a un análisis de ciclo de vida.</div><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_design_rules_check.gif" alt="Checkpoint 4"></article>
+              <article class="checkpoint-card" id="checkpoint5-es"><div class="section-kicker">Checkpoint 5</div><h3>Generar ficheros de fabricación</h3><ol><li>Genera las capas de fabricación y los taladros.</li><li>Revisa los ficheros generados antes de compartirlos o entregarlos.</li><li>Comprime la carpeta del proyecto con el formato de nombre requerido.</li></ol><div class="eco-tip"><strong>Comprobación de ecodiseño · reutilización:</strong> conserva los archivos editables .kicad_sch y .kicad_pcb, la lista de materiales y las notas de versión. Valora su uso posterior en prácticas de temporización o electrónica digital.</div><img src="https://ieee.ics.uci.edu/ops/assets/images/project_8/ops_project_8_kicad_design_rules_generate_manufacturing_files.gif" alt="Checkpoint 5"></article>
+            </div>
+          </section>
+          <section id="eco-assessment-es" class="card">
+            <div class="section-kicker">Actividad final · reflexión</div>
+            <h2>Autoevaluación del ecodiseño</h2>
+            <p>Marca únicamente los aspectos que hayas <strong>comprobado o justificado</strong>. Que un criterio no esté marcado no implica suspender: puede ser una mejora futura. Esta lista funciona en el navegador y <strong>no envía respuestas</strong>.</p>
+            <ul class="eco-eval">
+              <li><input id="eco-es-1" type="checkbox"><label for="eco-es-1"><strong>Consumo:</strong> he identificado la tensión de alimentación y estimado al menos una corriente o potencia relevante.</label></li>
+              <li><input id="eco-es-2" type="checkbox"><label for="eco-es-2"><strong>Modularidad:</strong> he comprobado el acceso a conectores y valorado un punto de prueba o salida útil.</label></li>
+              <li><input id="eco-es-3" type="checkbox"><label for="eco-es-3"><strong>Reutilización:</strong> he propuesto al menos una aplicación docente posterior de la placa.</label></li>
+              <li><input id="eco-es-4" type="checkbox"><label for="eco-es-4"><strong>Reparabilidad:</strong> he comprobado si los componentes principales son accesibles y sustituibles.</label></li>
+              <li><input id="eco-es-5" type="checkbox"><label for="eco-es-5"><strong>Prevención de residuos:</strong> he realizado o previsto ERC/DRC y evitado iteraciones innecesarias de fabricación.</label></li>
+              <li><input id="eco-es-6" type="checkbox"><label for="eco-es-6"><strong>Conciencia ambiental:</strong> he justificado una mejora y reconocido alguna contrapartida del diseño.</label></li>
+              <li><input id="eco-es-7" type="checkbox"><label for="eco-es-7"><strong>Documentación abierta:</strong> conservaré el proyecto editable de KiCad y la información de componentes.</label></li>
+            </ul>
+            <div class="eco-intro"><strong>Reflexión (2–3 frases):</strong> ¿Qué dos modificaciones propondrías para mejorar la sostenibilidad de esta placa con temporizador 555? ¿Qué compromisos técnicos, económicos o de mantenimiento podrían presentar?</div>
+            <p><strong>¿Quieres contribuir a la evaluación del seminario?</strong> Visualiza el recurso audiovisual sobre electrónica sostenible y responde al cuestionario voluntario. Las respuestas se recogen mediante Microsoft Forms, no mediante esta lista local.</p>
+            <div class="eco-resources">
+              <a class="btn primary" href="https://youtu.be/miIaRYKboC8" target="_blank" rel="noopener noreferrer">Ver vídeo docente</a>
+              <a class="btn" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=UsXSzh99MUeqOi8OyWKeJmUz8OkWQOFGtOzalf_WhLFUMTdSUzQ0OTdFRDVIVExIVVpZMkoxTU9JRi4u" target="_blank" rel="noopener noreferrer">Cuestionario del alumnado</a>
+              <a class="btn" href="https://charlicruz.github.io/PID2026_Electronica_sostenible/" target="_blank" rel="noopener noreferrer">Proyecto UAH/EV1812</a>
             </div>
           </section>
         </main>
       </div>
     </div>
 
-    <div class="footer-card" id="footer-text">This redesigned page was prepared for GitHub Pages from the uploaded project HTML, preserving the original structure while improving layout and adding a Spanish mode.</div>
+    <div class="footer-card" id="footer-text">KiCad PCB workshop · UAH teaching innovation project UAH/EV1812 · Carlos Cruz.</div>
   </div>
 
   <script>
@@ -374,30 +469,32 @@
       btnEs.classList.toggle('active', isEs);
       document.documentElement.lang = isEs ? 'es' : 'en';
       heroTitle.textContent = isEs
-        ? 'Diseña tu primera placa de circuito impreso.'
-        : 'Design your first PCB board.';
+        ? 'Diseña una PCB con KiCad y criterios de sostenibilidad.'
+        : 'Design a PCB with KiCad and sustainability in mind.';
       heroLead.textContent = isEs
-        ? 'Este tutorial te ayudará a realizar tu primer PCB en la herramienta Kikad.'
-        : 'This tutorial will help you create your first PCB using the KiCad software.';
+        ? 'Este taller te ayudará a diseñar una PCB con KiCad aplicando criterios de sostenibilidad.'
+        : 'This workshop helps you design a PCB in KiCad while considering sustainability criteria.';
       heroBadge.innerHTML = isEs
         ? 'Taller de diseño PCB.'
         : 'PCB design Course.';
       btnGo.textContent = isEs ? 'Ir a instrucciones' : 'Go to instructions';
       btnParts.textContent = isEs ? 'Ver lista de componentes' : 'See parts list';
+      btnGo.href = isEs ? '#instructions-es' : '#instructions';
+      btnParts.href = isEs ? '#parts-es' : '#parts';
       footerText.textContent = isEs
-        ? 'Esta página se ha diseñado para el taller de Diseño PCB. Carlos Cruz.'
-        : 'This page has been designed for the PCB Design workshop. Carlos Cruz.';
+        ? 'Taller de diseño PCB con criterios de sostenibilidad · PID UAH/EV1812 · Carlos Cruz.'
+        : 'Sustainable PCB design workshop · UAH/EV1812 · Carlos Cruz.';
       try { localStorage.setItem('pcb_lang', lang); } catch(e) {}
-      window.scrollTo({top:0, behavior:'instant'});
+      window.scrollTo(0, 0);
     }
 
     btnEn.addEventListener('click', () => setLang('en'));
     btnEs.addEventListener('click', () => setLang('es'));
     try {
       const saved = localStorage.getItem('pcb_lang');
-      setLang(saved === 'es' ? 'es' : 'en');
+      setLang(saved === 'en' ? 'en' : 'es');
     } catch(e) {
-      setLang('en');
+      setLang('es');
     }
   </script>
 </body>

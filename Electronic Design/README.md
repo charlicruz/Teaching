@@ -23,7 +23,7 @@ Este podcast ofrece una guía técnica fundamental sobre el diseño de hardware 
 
 ## 👨‍🏫 Asignatura impartida en los grados
 
-- Grado en Ingeniería en Sistemas de Telecomunicación  
+- Grado en Ingeniería en Tecnologías de la Telecomunicación  
 
 
 ---
@@ -41,4 +41,3 @@ Para sugerencias, contribuciones o dudas, puedes abrir un *issue* o proponer una
 
 ---
 
-¡Gracias por tu interés en el diseño electrónico y por formar parte del aprendizaje activo!
