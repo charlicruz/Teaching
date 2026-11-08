@@ -342,7 +342,7 @@
             <li><a href="#overview-es">Resumen</a></li>
             <li><a href="#concepts-es">Conceptos</a></li>
             <li class="sub"><a href="#pcbs-es">Placas de circuito impreso</a></li>
-            <li class="sub"><a href="#pcb-design-es">Visión general del diseño PCB</a></li>
+            <li class="sub"><a href="#pcb-design-es">Visión general del diseño PCI</a></li>
             <li><a href="#install-es">Instalación de KiCad</a></li>
             <li><a href="#requirements-es">Requisitos</a></li>
             <li><a href="#sustainability-es">Criterios de sostenibilidad</a></li>
@@ -363,21 +363,21 @@
             <div class="section-head"><div><div class="section-kicker">Resumen del proyecto</div><h2>Del prototipado a una PCI real</h2></div><div class="meta">Actualizado 2026.03.14 </div></div>
             <div class="two-col">
               <div>
-                <p>En este proyecto pasarás de la protoboard a una placa de circuito impreso (PCI) completa utilizando KiCad 7. El objetivo es desarrollar el esquemático, asignar las huellas correctas, diseñar la PCB y generar los ficheros de fabricación.</p>
+                <p>En este proyecto pasarás de la protoboard a una placa de circuito impreso (PCI) completa utilizando KiCad 7. El objetivo es desarrollar el esquemático, asignar las huellas correctas, diseñar la PCI y generar los ficheros de fabricación.</p>
                 <div class="eco-intro"><strong>Enfoque de electrónica sostenible:</strong> En cada fase se considerarán el consumo energético, la modularidad, la reutilización, la reparabilidad, la prevención de residuos y las implicaciones ambientales de las decisiones de diseño. Estos criterios orientan la reflexión y sus posibles beneficios deben justificarse, no darse por supuestos. El taller se vincula al proyecto de innovación docente <strong>UAH/EV1812</strong>.</div>
                 <div class="highlight"><strong>Configuración recomendada</strong><ul><li>Usa un ratón siempre que sea posible.</li><li>Guarda con frecuencia durante el esquemático y el layout.</li><li>Sigue los checkpoints en orden.</li></ul></div>
               </div>
-              <div class="image-card"><img src="https://charlicruz.github.io/Teaching/Electronic%20Technology/PCB_site/assets/images/ops_project_8_printed_circuit_board.jpg" alt="PCB"><div class="caption muted">Ejemplo de PCB.</div></div>
+              <div class="image-card"><img src="https://charlicruz.github.io/Teaching/Electronic%20Technology/PCB_site/assets/images/ops_project_8_printed_circuit_board.jpg" alt="PCB"><div class="caption muted">Ejemplo de PCI.</div></div>
             </div>
           </section>
 
           <section id="concepts-es" class="card">
             <div class="section-kicker">Conceptos</div>
             <h2>Placas de circuito impreso y flujo de diseño</h2>
-            <h3 id="pcbs-es">Placas de circuito impreso (PCB)</h3>
+            <h3 id="pcbs-es">Placas de circuito impreso (PCI)</h3>
             <p>Las placas de circuito impreso son el soporte estándar para productos electrónicos compactos, fiables y reproducibles. Sustituyen estructuras temporales de prototipado por pistas de cobre, pads y huellas permanentes definidos mediante CAD.</p>
-            <h3 id="pcb-design-es">Visión general del diseño PCB</h3>
-            <p>El flujo de trabajo tiene dos etapas principales: captura esquemática y diseño del layout PCB. Primero se traduce el circuito a un esquemático digital con símbolos, redes y huellas. Después se define el contorno, se colocan las huellas, se enrutan las pistas y se generan los ficheros de fabricación.</p>
+            <h3 id="pcb-design-es">Visión general del diseño PCI</h3>
+            <p>El flujo de trabajo tiene dos etapas principales: captura esquemática y diseño del layout PCI. Primero se traduce el circuito a un esquemático digital con símbolos, redes y huellas. Después se define el contorno, se colocan las huellas, se enrutan las pistas y se generan los ficheros de fabricación.</p>
           </section>
 
           <section id="install-es" class="card">
@@ -399,7 +399,7 @@
             <ul>
               <li>Crea un esquemático completo que reproduzca el circuito 555 blinker proporcionado.</li>
               <li>Supera el "Electrical Rules Check" (ERC) salvo la advertencia esperada de alimentación.</li>
-              <li>Crea un layout PCB que supere el "Design Rules Check" (DRC).</li>
+              <li>Crea un layout PCI que supere el "Design Rules Check" (DRC).</li>
               <li>Usa los símbolos y huellas indicados en la sección de componentes.</li>
               <li>Justifica al menos dos decisiones relacionadas con la sostenibilidad y completa la ficha final de ecodiseño.</li>
             </ul>
@@ -414,10 +414,10 @@
               <div class="eco-card"><h3>02 · Modularidad</h3><p>Emplea un conector de alimentación accesible e identificado. Considera si una salida de pulsos o un punto de prueba etiquetado permitiría integrar la placa en otras prácticas.</p><small>Evidencia: conector o punto de prueba en el diseño, o propuesta justificada. Ampliación opcional si el circuito original no incluye salida externa.</small></div>
               <div class="eco-card"><h3>03 · Reutilización</h3><p>Identifica una aplicación docente futura de la placa, por ejemplo como temporizador o fuente de pulsos, para evitar que sea un prototipo de un solo uso.</p><small>Evidencia: descripción breve de una posible práctica posterior.</small></div>
               <div class="eco-card"><h3>04 · Reparabilidad</h3><p>Comprueba que los componentes comerciales de montaje pasante (THT) sean accesibles y sustituibles. Valora el empleo de un zócalo DIP-8 para el NE555, si se dispone de él.</p><small>Evidencia: componentes reemplazables y disposición de huellas accesible.</small></div>
-              <div class="eco-card"><h3>05 · Reducción de residuos y materiales</h3><p>Comprueba ERC y DRC antes de fabricar, evita revisiones innecesarias y dimensiona razonablemente la PCB sin dificultar su reparación.</p><small>Evidencia: verificaciones y explicación del compromiso entre tamaño y accesibilidad.</small></div>
-              <div class="eco-card"><h3>06 · Conciencia ambiental</h3><p>Compara fabricar una PCB nueva con reutilizar una existente. Reflexiona sobre la durabilidad, los materiales, el mantenimiento y la demanda energética.</p><small>Evidencia: una decisión de diseño justificada y sus contrapartidas. El beneficio ambiental requiere datos para demostrarse.</small></div>
+              <div class="eco-card"><h3>05 · Reducción de residuos y materiales</h3><p>Comprueba ERC y DRC antes de fabricar, evita revisiones innecesarias y dimensiona razonablemente la PCI sin dificultar su reparación.</p><small>Evidencia: verificaciones y explicación del compromiso entre tamaño y accesibilidad.</small></div>
+              <div class="eco-card"><h3>06 · Conciencia ambiental</h3><p>Compara fabricar una PCI nueva con reutilizar una existente. Reflexiona sobre la durabilidad, los materiales, el mantenimiento y la demanda energética.</p><small>Evidencia: una decisión de diseño justificada y sus contrapartidas. El beneficio ambiental requiere datos para demostrarse.</small></div>
             </div>
-            <div class="eco-intro"><strong>Criterio adicional — herramientas abiertas y documentación:</strong> Utiliza KiCad y conserva los ficheros editables del esquema y la PCB. Documenta componentes y conectores para facilitar mantenimiento y reutilización en futuros cursos. Una herramienta abierta facilita el acceso, pero no garantiza por sí sola un menor impacto ambiental.</div>
+            <div class="eco-intro"><strong>Criterio adicional — herramientas abiertas y documentación:</strong> Utiliza KiCad y conserva los ficheros editables del esquema y la PCI. Documenta componentes y conectores para facilitar mantenimiento y reutilización en futuros cursos. Una herramienta abierta facilita el acceso, pero no garantiza por sí sola un menor impacto ambiental.</div>
           </section>
 
           <section id="parts-es" class="card">
@@ -441,10 +441,10 @@
             <div class="section-kicker">Diagrama de referencia</div>
             <h2>Esquemas</h2>
             <div class="schem-wrap">
-              <div class="image-card"><img src="https://charlicruz.github.io/Teaching/Electronic%20Technology/PCB_site/assets/images/ops_schem_proj8.png" alt="Esquema del temporizador 555"><div class="caption muted">Esquema de referencia utilizado para construir la PCB.</div></div>
+              <div class="image-card"><img src="https://charlicruz.github.io/Teaching/Electronic%20Technology/PCB_site/assets/images/ops_schem_proj8.png" alt="Esquema del temporizador 555"><div class="caption muted">Esquema de referencia utilizado para construir la PCI.</div></div>
               <div><p>Utiliza el esquema como base para la captura en KiCad. Comprueba la orientación de pines, los valores de componentes y las conexiones de alimentación antes de asignar huellas.</p><div class="note">Consejo: mantén consistentes los valores y nombres de las huellas desde el principio para evitar problemas de ERC y de actualización de la PCB.</div></div>
             </div>
-            <div class="image-card" style="max-width:580px;margin-top:18px"><img src="https://charlicruz.github.io/Teaching/Electronic%20Technology/PCB_site/assets/images/ops.png" alt="Ejemplo de PCB con temporizador 555"><div class="caption muted">Ejemplo de PCB.</div></div>
+            <div class="image-card" style="max-width:580px;margin-top:18px"><img src="https://charlicruz.github.io/Teaching/Electronic%20Technology/PCB_site/assets/images/ops.png" alt="Ejemplo de PCI con temporizador 555"><div class="caption muted">Ejemplo de PCI.</div></div>
           </section>
 
           <section id="instructions-es" class="card">
