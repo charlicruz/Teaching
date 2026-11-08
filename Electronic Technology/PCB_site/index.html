@@ -152,7 +152,7 @@
       <div class="hero-card">
         <span class="eyebrow">PCB design · KiCad · Guided project</span>
         <h1 id="hero-title">Diseña una placa de circuito impreso (PCI) con KiCad.</h1>
-        <p class="lead" id="hero-lead">Aprende a diseñar una PCB y a aplicar criterios de sostenibilidad.</p>
+        <p class="lead" id="hero-lead">Aprende a diseñar una PCI y a aplicar criterios de sostenibilidad.</p>
         <div class="hero-actions">
           <a class="btn primary" id="btn-go" href="#instructions-es">Ir a instrucciones</a>
           <a class="btn" id="btn-parts" href="#parts-es">Ver lista de componentes</a>
@@ -363,7 +363,7 @@
             <div class="section-head"><div><div class="section-kicker">Resumen del proyecto</div><h2>Del prototipado a una PCB real</h2></div><div class="meta">Actualizado 2026.03.14 </div></div>
             <div class="two-col">
               <div>
-                <p>En este proyecto pasarás de las protoboards y placas perforadas a una placa de circuito impreso completa para el clásico circuito intermitente con temporizador 555, utilizando KiCad 7. El objetivo es capturar el esquemático, asignar las huellas correctas, diseñar la PCB y generar los ficheros de fabricación.</p>
+                <p>En este proyecto pasarás de la protoboard a una placa de circuito impreso (PCI) completa utilizando KiCad 7. El objetivo es desarrollar el esquemático, asignar las huellas correctas, diseñar la PCB y generar los ficheros de fabricación.</p>
                 <div class="eco-intro"><strong>Enfoque de electrónica sostenible:</strong> En cada fase se considerarán el consumo energético, la modularidad, la reutilización, la reparabilidad, la prevención de residuos y las implicaciones ambientales de las decisiones de diseño. Estos criterios orientan la reflexión y sus posibles beneficios deben justificarse, no darse por supuestos. El taller se vincula al proyecto de innovación docente <strong>UAH/EV1812</strong>.</div>
                 <div class="highlight"><strong>Configuración recomendada</strong><ul><li>Usa un ratón siempre que sea posible.</li><li>Guarda con frecuencia durante el esquemático y el layout.</li><li>Sigue los checkpoints en orden.</li></ul></div>
               </div>
@@ -398,8 +398,8 @@
             <h2>Requisitos mínimos</h2>
             <ul>
               <li>Crea un esquemático completo que reproduzca el circuito 555 blinker proporcionado.</li>
-              <li>Supera el ERC salvo la advertencia esperada de alimentación.</li>
-              <li>Crea un layout PCB que supere el DRC.</li>
+              <li>Supera el "Electrical Rules Check" (ERC) salvo la advertencia esperada de alimentación.</li>
+              <li>Crea un layout PCB que supere el "Design Rules Check" (DRC).</li>
               <li>Usa los símbolos y huellas indicados en la sección de componentes.</li>
               <li>Justifica al menos dos decisiones relacionadas con la sostenibilidad y completa la ficha final de ecodiseño.</li>
             </ul>
@@ -455,7 +455,7 @@
               <article class="checkpoint-card" id="checkpoint1-es"><div class="section-kicker">Checkpoint 1</div><h3>Crear el proyecto y capturar el esquemático</h3><ol><li>Crea un nuevo proyecto en KiCad y abre el editor esquemático.</li><li>Añade símbolos de alimentación, componentes, valores y asignación de huellas.</li><li>Cablea el circuito, añade etiquetas de red y marcas de no conexión.</li></ol><div class="eco-tip"><strong>Comprobación de ecodiseño · consumo:</strong> identifica la tensión, la resistencia limitadora del LED y la posible alimentación con batería. Estima el consumo a partir del circuito y los datos de los componentes; usar batería no equivale a ahorrar energía.</div><img src="assets/images/project_8/ops_project_8_kicad_add_symbols.gif" alt="Checkpoint 1"></article>
               <article class="checkpoint-card" id="checkpoint2-es"><div class="section-kicker">Checkpoint 2</div><h3>Anotar y validar el esquemático</h3><ol><li>Ejecuta la anotación del esquema para reemplazar referencias temporales.</li><li>Ejecuta el ERC y comprueba que solo queda la advertencia de alimentación esperada.</li></ol><div class="eco-tip"><strong>Comprobación de ecodiseño · fiabilidad:</strong> revisa las conexiones de alimentación y de los componentes. Analiza la advertencia esperada de ERC y no ignores avisos imprevistos; evitar errores permite reducir revisiones de placas.</div><img src="assets/images/project_8/ops_project_8_kicad_electrical_rules_check.gif" alt="Checkpoint 2"></article>
               <article class="checkpoint-card" id="checkpoint3-es"><div class="section-kicker">Checkpoint 3</div><h3>Crear la placa y enrutar la PCB</h3><ol><li>Abre PCB Editor y actualiza la placa a partir del esquemático.</li><li>Configura tamaños de pistas y vías, define el contorno y coloca las huellas.</li><li>Enruta pistas, añade vías si hace falta y crea el plano de tierra.</li></ol><div class="callout">Usa 40 mil para alimentación/tierra y 30 mil para señal. Evita esquinas de 90°.</div><div class="eco-tip"><strong>Comprobación de ecodiseño · modularidad y reparación:</strong> mantén accesibles el conector y los componentes THT; considera puntos de prueba para posibles prácticas posteriores. Reduce el tamaño de la placa solo si mantiene la facilidad de montaje y reparación.</div><img src="assets/images/project_8/ops_project_8_kicad_add_traces.gif" alt="Checkpoint 3"></article>
-              <article class="checkpoint-card" id="checkpoint4-es"><div class="section-kicker">Checkpoint 4</div><h3>Ejecutar las verificaciones de diseño</h3><ol><li>Abre el DRC y ejecuta la comprobación.</li><li>Resuelve todas las violaciones antes de generar resultados.</li></ol><div class="eco-tip"><strong>Comprobación de ecodiseño · prevención de residuos:</strong> corrige incidencias eléctricas y de trazado antes de fabricar. El DRC verifica reglas técnicas, pero no sustituye a un análisis de ciclo de vida.</div><img src="assets/images/project_8/ops_project_8_kicad_design_rules_check.gif" alt="Checkpoint 4"></article>
+              <article class="checkpoint-card" id="checkpoint4-es"><div class="section-kicker">Checkpoint 4</div><h3>Ejecutar las verificaciones de diseño</h3><ol><li>Abre el DRC y ejecuta la comprobación.</li><li>Resuelve todas las reglas de diseño  antes de generar resultados.</li></ol><div class="eco-tip"><strong>Comprobación de ecodiseño · prevención de residuos:</strong> corrige incidencias eléctricas y de trazado antes de fabricar. El DRC verifica reglas técnicas, pero no sustituye a un análisis de ciclo de vida.</div><img src="assets/images/project_8/ops_project_8_kicad_design_rules_check.gif" alt="Checkpoint 4"></article>
               <article class="checkpoint-card" id="checkpoint5-es"><div class="section-kicker">Checkpoint 5</div><h3>Generar ficheros de fabricación</h3><ol><li>Genera las capas de fabricación y los taladros.</li><li>Revisa los ficheros generados antes de compartirlos o entregarlos.</li><li>Comprime la carpeta del proyecto con el formato de nombre requerido.</li></ol><div class="eco-tip"><strong>Comprobación de ecodiseño · reutilización:</strong> conserva los archivos editables .kicad_sch y .kicad_pcb, la lista de materiales y las notas de versión. Valora su uso posterior en prácticas de temporización o electrónica digital.</div><img src="assets/images/project_8/ops_project_8_kicad_design_rules_generate_manufacturing_files.gif" alt="Checkpoint 5"></article>
             </div>
 
